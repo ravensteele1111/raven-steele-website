@@ -700,3 +700,34 @@ section[id],
    row of text sitting beside a number, and wrong for a back link.          */
 .step{ text-align:left; }
 .back{ display:block; text-align:left; }
+
+/* =========================================================================
+   Skool tiles
+   -------------------------------------------------------------------------
+   The customer asked for big picture tiles using each Skool's own icon,
+   not text cards: "Raven is very visual, more pictures and less text."
+   So the picture leads and the words sit under it.
+   ========================================================================= */
+.skool-tiles{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.85rem; }
+.skool-tile{ display:block; text-decoration:none; }
+.skool-tile .ph{ aspect-ratio:1; margin-bottom:.6rem; }
+.skool-tile .name{
+  display:block;
+  font-family:var(--display); font-size:1.15rem;
+  text-transform:uppercase; letter-spacing:.02em;
+}
+.skool-tile .line{ display:block; color:var(--grey); font-size:.78rem; line-height:1.45; }
+.skool-tile.main .name{ color:var(--red); }
+.skool-tile.main{ grid-column:1 / -1; }
+.skool-tile.main .ph{ aspect-ratio:16/9; }
+.skool-tile .free-tag{
+  display:inline-block; margin-left:.4rem;
+  font-family:var(--body); font-size:.55rem; font-weight:700;
+  letter-spacing:.14em; color:var(--gold);
+  border:1px solid rgba(201,162,39,.45); border-radius:999px; padding:.1rem .4rem;
+  vertical-align:middle;
+}
+@media (min-width:46rem){
+  .skool-tiles{ grid-template-columns:repeat(3,minmax(0,1fr)); max-width:46rem; margin-left:auto; margin-right:auto; }
+  .skool-tile.main{ grid-column:1 / -1; }
+}

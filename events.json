@@ -1,0 +1,74 @@
+{
+  "_note": "The events. Add one here and run build-events.py; it writes the page and the listing. Nobody hand-edits event pages.",
+  "_status": "draft means the date, story or guest list still needs confirming.",
+
+  "events": [
+    {
+      "slug": "boss-and-ballers-baby-shower",
+      "name": "Boss and Ballers Baby Shower",
+      "date": "November 2026",
+      "year": "2026",
+      "draft": true,
+      "story": "A high-glam baby shower for Keisha: rose gold, diamonds and crowns at sunset. Red carpet arrivals, then the diaper derby, blindfolded nappy changes and a bottle-chugging race before the party took over.",
+      "guests": ["Raven", "Ethan", "Keisha", "Jes", "Alandis", "Pablo", "Pablo's wife"],
+      "guests_complete": false,
+      "photos": 8
+    },
+    {
+      "slug": "busy-bees-baby-shower",
+      "name": "Busy Bees Baby Shower",
+      "date": "November 2026",
+      "year": "2026",
+      "draft": true,
+      "story": "A bee-themed shower for Chanel and Niko's twins: the twin reveal, a water gun fight, a popcorn fight, a bottle race and a sparkler goodbye.",
+      "guests": ["Raven", "Ethan", "Chanel", "Niko", "The Yamé kids", "Smurf", "Gio", "Gio's family"],
+      "guests_complete": false,
+      "photos": 8
+    },
+    {
+      "slug": "love-at-first-trivia",
+      "name": "Love at First Trivia",
+      "date": "November 2026",
+      "year": "2026",
+      "draft": true,
+      "story": "A rooftop couples trivia night. Raven and Ethan came fifth and won a his and hers fragrance set, then Raven borrowed the winners' St Lucia trip prize before giving it back.",
+      "guests": ["Raven", "Ethan", "loveezilia", "ez_sleaze", "musecoded_", "tay.st.james", "mydreamnook", "Keke", "Pierce", "itsamarashanice"],
+      "guests_complete": true,
+      "photos": 8
+    },
+    {
+      "slug": "donuts-with-mom",
+      "name": "Donuts With Mom",
+      "date": "",
+      "year": "2026",
+      "draft": true,
+      "story": "",
+      "guests": ["Raven", "Ethan"],
+      "guests_complete": false,
+      "photos": 8
+    },
+    {
+      "slug": "haunted-carnival",
+      "name": "Haunted Carnival",
+      "date": "",
+      "year": "2026",
+      "draft": true,
+      "story": "",
+      "guests": ["Raven", "Ethan"],
+      "guests_complete": false,
+      "photos": 8
+    },
+    {
+      "slug": "insta-jail",
+      "name": "Insta Jail",
+      "date": "",
+      "year": "2026",
+      "draft": true,
+      "story": "",
+      "subtitle": "Pablo x Giothaplugg Halloween Pajama Jam",
+      "guests": ["Raven", "Ethan", "Pablo", "Giothaplugg"],
+      "guests_complete": false,
+      "photos": 8
+    }
+  ]
+}

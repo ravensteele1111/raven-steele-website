@@ -1,141 +1,93 @@
-# Placeholders
+# What is still missing
 
-Everything on the site that is waiting for real content. Anything written in
-`[SQUARE BRACKETS]` on a page appears in this list, and every dashed grey box is a
-picture or video that does not exist yet.
+Updated 13 November 2026, after the first round of answers came back.
 
-Nothing here is broken. These are deliberate gaps, left visible so they cannot be
-forgotten. Tick them off as the real things arrive.
-
-Last updated: 12 November 2026.
+Most of the words and every link are now real. What is left is pictures, prices and a
+handful of specifics.
 
 ---
 
-## Home page
+## 1. Pictures, the big one
 
-### Pictures and video
+**No photos have arrived yet.** Every grey dashed box on the site is a real gap. The
+Google Drive folder link was left blank on the form.
 
-- [ ] **Hero** — a video loop or photo of Raven on stage, filling the screen.
-      Portrait or square works best; it is seen on a phone. The viral mirror video
-      is an obvious candidate.
-- [ ] **The Story** — one photo of Raven and Ethan together.
-- [ ] **Latest release** — the newest music video.
-- [ ] **From the events** — four photos, one per event.
-- [ ] **Get the gear** — two product photos.
+Nothing else on the site matters as much as this. It is the difference between a layout
+and a website.
 
-### Words
+- [ ] **HERO** - Raven on stage. A video loop or a tall photo. First thing anyone sees
+- [ ] **STORY-RAVEN-AND-ETHAN**, **STORY-WIDE** - the two of them
+- [ ] **CAST portraits x8** - Raven, Ethan, Lucky, Zeus, Baby Rebel, Jordyn, Betty, Sprout
+- [ ] **EVENT covers x6** - one per event
+- [ ] **EVENT photos** - eight or more per event, each marked goofy, sweet or action
+- [ ] **EVENT group shots x6**
+- [ ] **SKOOL icons x4** - Revenue Revolution, AI for Beginners, Digital Marketing 4
+      Beginners, Digital Products with Claude. The customer asked for the real icons, and
+      the tiles are built to lead with the picture
+- [ ] **PRODUCT pictures x5** - the best seller plus four
 
-- [ ] **`[YOUR FREE GIFT]`** — appears three times: under the hero button, in the Join
-      the Rebels block, and on the pinned bar. What does somebody actually get for
-      signing up? One short phrase.
-- [ ] **`[SHORT INTRO]`** — two or three lines on who Raven and Ethan are, how they met
-      and where the story is now.
-- [ ] **`[STORY TITLE]` ×3** — the three stories featured on the home page.
-- [ ] **`[SONG TITLE]` ×4** — the latest music video plus three songs.
-- [ ] **`[EVENT NAME]` ×4** — the four events in the gallery.
-- [ ] **`[YOUR SKOOL NAMES AND ONE LINE EACH]`** — Revenue Revolution is the main one.
-      The others follow.
-- [ ] **`[PRODUCT NAME]` and `[YOUR PRICE]` ×2** — the two featured products.
+## 2. Prices and the shop
 
-### Links that go nowhere yet
+- [ ] **Prices for all five products.** Names are in, `[PRICE]` is showing
+- [ ] **The best seller** - still being worked out from Beacons
+- [ ] **Where "Get it" sends people.** The Beacons link is still to come.
+      `revenuerevolution.store` is used in Skool posts, but it was not confirmed as the
+      place to send buyers from here
 
-- [ ] **The menu** — five of the six pages are marked "Soon" because they are not built.
-      They turn into real links as each page is built.
-- [ ] **Pick your door** — Watch, Listen and Learn point at The Story, Music and
-      Be Like Raven. Not clickable until those pages exist.
-- [ ] **Read the full story**, **See all events** — same.
-- [ ] **Song rows** — each needs a YouTube link.
-- [ ] **TikTok and YouTube** in the footer — need the real account addresses.
-      Instagram is already wired to `@therealravenai`.
-- [ ] **Privacy, Terms, Cookies** — the pages do not exist yet.
+## 3. Words still open
 
-### The signup form
+- [ ] **`[YOUR FREE STARTER GIFT]`** on Be Like Raven. The main free gift is answered,
+      photos that never go on Instagram plus every new song first, but this second one
+      was left blank. Same thing, or different?
+- [ ] **`[ONE LINE]`** for AI for Beginners. The other three Skools have their line
+- [ ] **`[NEXT CHAPTER TITLE]`** - chapter 13, shown dimmed as coming next
+- [ ] **Dates and stories for three events** - Donuts With Mom, Haunted Carnival and
+      Insta Jail have names only
+- [ ] **`[MORE GUESTS]`** - the guest lists for five of the six events are marked
+      incomplete. Love at First Trivia is the only full one
 
-- [ ] **No email list is connected.** The form is built and the Watch / Listen / Learn
-      tagging works, but submitting it says so plainly instead of showing a fake
-      thank-you. A fake thank-you during a review is how a broken signup reaches the
-      public.
-- [ ] Needs an email provider account **in the customer's name**, then the form points
-      at it. The Watch / Listen / Learn answer must be saved as a tag on the subscriber —
-      that is the whole point of asking.
+## 4. Waiting on somebody else's permission
 
----
+- [ ] **The two Rebel wins are written and NOT on the site.** The answers came with
+      "ask her before it goes live", so the two members' quotes are deliberately held
+      back. The repository is public, and a real person's name and words do not go up
+      without their yes. The text is ready the moment it comes
 
----
+## 5. Questions the answers raised
 
-## The Story page
+- [ ] **There are no Ethan solo songs.** 25 songs are on the Music page: 6 duets and 19
+      of Raven's. The Ethan filter is built, as the design asked, and currently shows
+      "nothing in that one yet". Are his coming, or should the filter go?
+- [ ] **"The Meadows"** is one of Raven's Instagram highlights but was not matched to a
+      chapter. Which part of the story is it?
+- [ ] **Every event is 2026**, so the year filter is just Newest and 2026. The 2025 chip
+      came out and goes back the moment there is an older event
+- [ ] **Chapter titles** - six were renamed to match the Instagram highlights: First
+      Date, Second Date, The 3rd Date, The Saga, Hale's Secret, Sprout. Six kept the
+      names written here: the night he saw her on stage, the white shirt, the recording
+      studio, the mirror video, Jamaica, babysitting
 
-### Pictures
+## 6. Legal
 
-- [ ] **Opening** — a wide shot of Raven and Ethan.
-- [ ] **Cast portraits ×8** — Raven, Ethan, Lucky, Zeus, Baby Rebel, Jordyn, Betty,
-      and one empty slot.
+The Privacy, Terms and Cookies questions came back blank, so those pages are not built
+and the footer links still go nowhere.
 
-### Words
+What we do have: **Marketing Ambition PTY LTD, Australia**, and
+**aiinfluencerraven@gmail.com** as the contact. That is everything needed to write them
+the moment the answer is yes.
 
-- [ ] **The chapter titles are proposed, not approved.** The Brand Bible records what
-      happened in each chapter but not what each one is called, so the twelve titles
-      on the page were written here from the Bible's own details. They are meant to be
-      argued with. The *events* in them are the Bible's, not invented.
-- [ ] **`[NEXT CHAPTER TITLE]`** — chapter thirteen, shown dimmed as "coming next".
-      Candidates from the Bible: Kiki and Pierce renewing their vows, the Boss and
-      Ballers baby shower, the safari, the cruise ship, the recording studio series.
-- [ ] **`[CAST MEMBER]` / `[ONE LINE]`** — the eighth cast slot. The wider world has
-      plenty more: Lacy and Daniel, Rosie and Gio, Kiki and Pierce, Andy, Rip, Roxy.
-- [ ] **`[MINI STORY TITLE]` ×3**, with their format labels.
+## 7. The email list
 
-### Still to decide
-
-- [ ] **Does each chapter get its own page?** Right now the timeline is the whole
-      story: title and a few lines each. If a chapter should open into a full page with
-      its video and photos, that is a bigger build and worth saying now.
-- [ ] **The Easter eggs.** The Bible has a table of them — the keychain, the baseball
-      bat, the white shirt, the Blue Mustang, the crown collection, the RR collars.
-      An index of them is the single strongest fan feature available, it needs no new
-      footage, and it is not in the mockup. One word and it gets built.
+Still not connected. The form works, the Watch / Listen / Learn tagging works, and
+submitting says so plainly. It needs an account in the customer's name.
 
 ---
 
-## Music
+## Standing note
 
-- [ ] **Newest music video** plus `[SONG TITLE]`.
-- [ ] **Five songs** — each needs its title, who it belongs to (duet / Raven / Ethan) and a link.
-- [ ] **Watch** and **Lyrics** buttons go nowhere yet.
-- [ ] **Listen on** — YouTube is a live slot waiting for the channel address. Spotify and Apple
-      are marked "Coming" until the distributor lands.
+The customer's last line on the form: *"Make the Skools big picture tiles using each
+school's real icon, not text cards. Raven is very visual, so more pictures everywhere and
+less text."*
 
-## Events
-
-- [ ] **Three event covers**, names, dates and photo counts.
-- [ ] **The guest lists** currently hold real cast names so the search can be tried. They become
-      the real guest lists when the events are real.
-- [ ] Every event card points at the same template page until there are real events.
-
-## One event (the template)
-
-- [ ] **Group shot**, `[DATE]`, `[EVENT NAME]`, `[WHAT HAPPENED]`.
-- [ ] **Two `[GUEST]` slots** beside Raven and Ethan.
-- [ ] **Eight photos**, each needing a mood (goofy or sweet) and whether it is a video.
-- [ ] **Share event** does nothing yet — needs a decision: copy the link, or the phone's share sheet.
-- [ ] The lightbox works; it opens the placeholder because the photos are placeholders.
-
-## Be Like Raven
-
-- [ ] **Where the three doors point** — `[YOUR BEGINNER SKOOL]`, `[YOUR PRODUCTS SKOOL]`,
-      `[YOUR COMMUNITY SKOOL]`.
-- [ ] **`[YOUR FREE STARTER GIFT]`** — what it is.
-- [ ] **The Skools** — Revenue Revolution is in and leading. Two more slots need names, one line
-      each, thumbnails and links.
-- [ ] **Rebel wins** — two real member wins, a screenshot or a quote each, with names.
-
-## Shop
-
-- [ ] **Best seller** — name, price, picture, and where "Get it" sends people.
-- [ ] **Four products** — name, price, picture, and which filter each belongs to.
-- [ ] **Merch tab** is deliberately switched off until there is merch.
-
----
-
-## Not yet built
-
-Legal pages: Privacy, Terms, Cookies.
+The Skool tiles are rebuilt that way. The rest of that instruction is waiting on photos.
+Once they arrive, the pages get more picture and less text throughout.

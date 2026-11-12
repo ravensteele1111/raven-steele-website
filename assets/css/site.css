@@ -421,3 +421,62 @@ a.card:hover{ border-color:rgba(255,255,255,.28); background:#161616; }
   html{ scroll-behavior:auto; }
   *{ transition:none !important; }
 }
+
+/* =========================================================================
+   The Story page
+   ========================================================================= */
+
+/* Two entry buttons: start at the beginning, or jump to the latest. */
+.entry{ display:grid; gap:.7rem; margin-top:1.4rem; }
+
+/* --- Meet the cast ------------------------------------------------------ */
+.cast{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.85rem; }
+.cast .who{ margin-top:.55rem; font-size:.95rem; font-weight:600; }
+.cast .what{ color:var(--grey); font-size:.8rem; line-height:1.45; }
+
+/* --- The timeline -------------------------------------------------------
+   A line down the left with a numbered marker per chapter. The line is
+   drawn on the list, not on each item, so it never breaks between them.  */
+.timeline{ position:relative; list-style:none; margin-top:1.4rem; padding-left:2.4rem; }
+.timeline::before{
+  content:"";
+  position:absolute; left:.72rem; top:.4rem; bottom:.4rem;
+  width:2px;
+  background:linear-gradient(var(--red), rgba(201,162,39,.5));
+}
+.chapter{ position:relative; padding-bottom:1.6rem; }
+.chapter:last-child{ padding-bottom:0; }
+.chapter .num{
+  position:absolute; left:-2.4rem; top:0;
+  width:1.5rem; height:1.5rem;
+  display:grid; place-items:center;
+  border-radius:50%;
+  background:var(--black);
+  border:2px solid var(--red);
+  font-size:.65rem; font-weight:700;
+  color:var(--white);
+}
+.chapter .label{
+  color:var(--gold);
+  font-size:.6rem; font-weight:600;
+  letter-spacing:.2em; text-transform:uppercase;
+}
+.chapter h3{ font-size:1.25rem; margin:.15rem 0 .3rem; }
+.chapter p{ color:var(--grey); font-size:.86rem; line-height:1.55; }
+.chapter.next .num{ border-color:var(--gold); color:var(--gold); }
+.chapter.next h3{ color:var(--grey-dim); }
+
+/* --- Mini stories ------------------------------------------------------- */
+.mini .kind{
+  color:var(--gold);
+  font-size:.62rem; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase;
+}
+.mini .title{ margin-top:.3rem; font-size:.95rem; font-weight:600; }
+
+@media (min-width:46rem){
+  .entry{ grid-template-columns:repeat(2,minmax(0,1fr)); max-width:40rem; margin-left:auto; margin-right:auto; }
+  .cast{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .timeline{ max-width:38rem; margin-left:auto; margin-right:auto; }
+  .mini-grid{ grid-template-columns:repeat(3,minmax(0,1fr)); max-width:46rem; margin-left:auto; margin-right:auto; }
+}

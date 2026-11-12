@@ -3,129 +3,313 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raven Steele</title>
+<title>Raven Steele | The official home</title>
 
-<!-- This is a holding page, not the website.
+<!-- Built to the approved mockup. Section order, headings and wording come
+     from it. Anything in [SQUARE BRACKETS] is a gap waiting for real
+     content — every one of them is listed in PLACEHOLDERS.md. -->
 
-     It exists so the repository is not empty, which is what GitHub needs
-     before a branch appears and Pages can be switched on. It gets replaced
-     by the real home page.
-
-     Colours are the agreed ones: black page, white text, red for anything
-     you click, gold for the small quiet marks. The real headline face is a
-     condensed display sans and gets self-hosted properly with the home page;
-     this page uses what is already on the device. -->
-
-<meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Raven Steele. Site in progress.">
+<meta name="description" content="The official home of Raven Steele. The story, the music, the events, and the Rebels.">
 <meta name="theme-color" content="#000000">
 
-<style>
-  :root{
-    /* One place for every colour. Changing the palette is editing these. */
-    --black:   #000000;
-    --panel:   #0e0e0e;
-    --white:   #ffffff;
-    --grey:    #a8a6a2;
-    --red:     #e01a24;
-    --gold:    #c9a227;
-  }
+<!-- Off until the site goes live on its own domain. -->
+<meta name="robots" content="noindex, nofollow">
 
-  *{ box-sizing:border-box; margin:0; padding:0; }
+<meta property="og:type" content="website">
+<meta property="og:title" content="Raven Steele">
+<meta property="og:description" content="Rock star. Rebel. Storyteller.">
+<meta name="twitter:card" content="summary_large_image">
 
-  html,body{ height:100%; }
-
-  body{
-    background:var(--black);
-    color:var(--white);
-    font-family:"Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing:antialiased;
-    display:grid;
-    grid-template-columns:minmax(0, 1fr);
-    align-content:center;
-    justify-items:center;
-    padding:2rem 1.5rem;
-    overflow-x:hidden;
-    text-align:center;
-  }
-
-  /* A very faint red wash from the top, so the black is not flat. */
-  body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:radial-gradient(120% 70% at 50% -10%, rgba(224,26,36,.16), transparent 60%);
-    pointer-events:none;
-  }
-
-  main{ position:relative; min-width:0; width:100%; max-width:34rem; }
-
-  .eyebrow{
-    color:var(--gold);
-    font-size:.68rem;
-    font-weight:600;
-    letter-spacing:.42em;
-    text-transform:uppercase;
-    margin-bottom:1.6rem;
-  }
-
-  h1{
-    font-size:clamp(2.4rem, 12.5vw, 6.5rem);
-    font-weight:900;
-    line-height:.94;
-    letter-spacing:-.035em;
-    text-transform:uppercase;
-  }
-
-  .tagline{
-    color:var(--grey);
-    font-size:clamp(.95rem, 3.6vw, 1.15rem);
-    margin-top:1.5rem;
-  }
-
-  .rule{
-    width:3.5rem;
-    height:2px;
-    background:var(--gold);
-    margin:2.4rem auto;
-  }
-
-  .status{
-    color:var(--grey);
-    font-size:.8rem;
-    line-height:1.8;
-    max-width:17rem;
-    margin:0 auto;
-    overflow-wrap:break-word;
-  }
-
-  .status strong{ color:var(--white); font-weight:600; }
-
-  .dot{
-    display:inline-block;
-    width:.5rem;
-    height:.5rem;
-    border-radius:50%;
-    background:var(--red);
-    margin-right:.5rem;
-    vertical-align:middle;
-  }
-</style>
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/site.js" defer></script>
 </head>
 <body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="index.html">Raven Steele</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="site-nav" id="site-nav" data-open="false">
+    <div class="wrap">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><span>The Story <em class="soon">Soon</em></span></li>
+        <li><span>Music <em class="soon">Soon</em></span></li>
+        <li><span>Events <em class="soon">Soon</em></span></li>
+        <li><span>Be Like Raven <em class="soon">Soon</em></span></li>
+        <li><span>Shop <em class="soon">Soon</em></span></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
 <main>
-  <p class="eyebrow">The official home of</p>
 
-  <h1>Raven<br>Steele</h1>
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="ph ph-hero">
+        <span>Video loop or photo</span>
+        <span>Raven on stage, filling the whole screen</span>
+      </div>
 
-  <p class="tagline">Rock star. Rebel. Storyteller.</p>
+      <p class="eyebrow" style="margin-top:1.75rem">The official home of</p>
+      <h1>Raven<br>Steele</h1>
+      <p class="tagline">Rock star. Rebel. Storyteller.</p>
 
-  <div class="rule"></div>
+      <a class="btn btn-primary" href="#rebels">Join the Rebels</a>
+      <p class="note">Free to join. Get [YOUR FREE GIFT] when you sign up.</p>
+    </div>
+  </section>
 
-  <p class="status">
-    <span class="dot"></span><strong>Site in progress.</strong><br>
-    This page is only here to prove the address works.
-  </p>
+  <!-- ===================== PICK YOUR DOOR ===================== -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Why are you here?</p>
+        <h2>Pick your door</h2>
+      </div>
+
+      <div class="stack stack-3">
+        <span class="card door">
+          <h3>Watch</h3>
+          <p>The Raven and Ethan story</p>
+        </span>
+        <span class="card door">
+          <h3>Listen</h3>
+          <p>The music and the videos</p>
+        </span>
+        <span class="card door">
+          <h3>Learn</h3>
+          <p>Build your own avatar and brand</p>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== THE STORY ===================== -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The story</p>
+        <h2>Raven and Ethan</h2>
+      </div>
+
+      <div class="ph ph-wide" style="margin-bottom:1.1rem">
+        <span>Photo: Raven and Ethan together</span>
+      </div>
+
+      <p class="lede" style="margin-top:0">
+        [SHORT INTRO: who they are, how they met and where the story is now.
+        Two or three lines.]
+      </p>
+
+      <div class="grid-3" style="margin-top:1.4rem">
+        <span class="card" style="padding:1rem">
+          <span class="eyebrow" style="display:block; margin-bottom:.35rem">Story 1</span>
+          <span style="font-size:.85rem">[STORY TITLE]</span>
+        </span>
+        <span class="card" style="padding:1rem">
+          <span class="eyebrow" style="display:block; margin-bottom:.35rem">Story 2</span>
+          <span style="font-size:.85rem">[STORY TITLE]</span>
+        </span>
+        <span class="card" style="padding:1rem">
+          <span class="eyebrow" style="display:block; margin-bottom:.35rem">Story 3</span>
+          <span style="font-size:.85rem">[STORY TITLE]</span>
+        </span>
+      </div>
+
+      <div class="cta-wide" style="margin-top:1.4rem">
+        <span class="btn btn-ghost">Read the full story</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== THE MUSIC ===================== -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The music</p>
+        <h2>Latest release</h2>
+      </div>
+
+      <div class="ph ph-wide" style="margin-bottom:1.1rem">
+        <span class="play" aria-hidden="true"></span>
+        <span>Music video: [SONG TITLE]</span>
+      </div>
+
+      <div class="stack">
+        <span class="song">
+          <span class="name">[SONG TITLE]</span>
+          <span class="go">Play</span>
+        </span>
+        <span class="song">
+          <span class="name">[SONG TITLE]</span>
+          <span class="go">Play</span>
+        </span>
+        <span class="song">
+          <span class="name">[SONG TITLE]</span>
+          <span class="go">Play</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FROM THE EVENTS ===================== -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The gallery</p>
+        <h2>From the events</h2>
+      </div>
+
+      <div class="grid-2 events">
+        <span class="tile">
+          <span class="ph ph-square"><span>Photo</span></span>
+          <span class="name" style="display:block">[EVENT NAME]</span>
+        </span>
+        <span class="tile">
+          <span class="ph ph-square"><span>Photo</span></span>
+          <span class="name" style="display:block">[EVENT NAME]</span>
+        </span>
+        <span class="tile">
+          <span class="ph ph-square"><span>Photo</span></span>
+          <span class="name" style="display:block">[EVENT NAME]</span>
+        </span>
+        <span class="tile">
+          <span class="ph ph-square"><span>Photo</span></span>
+          <span class="name" style="display:block">[EVENT NAME]</span>
+        </span>
+      </div>
+
+      <div class="cta-wide" style="margin-top:1.4rem">
+        <span class="btn btn-ghost">See all events</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BE LIKE RAVEN ===================== -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">For the learners</p>
+        <h2>Be like Raven</h2>
+        <p class="lede">Want your own avatar, brand and income? Start here.</p>
+      </div>
+
+      <div class="stack" style="margin-top:1.4rem">
+        <span class="card">
+          <h3>The Schools</h3>
+          <p style="color:var(--grey); font-size:.88rem; margin-top:.3rem">
+            [YOUR SCHOOL NAMES AND ONE LINE EACH]
+          </p>
+        </span>
+        <span class="card">
+          <h3>Digital Products</h3>
+          <p style="color:var(--grey); font-size:.88rem; margin-top:.3rem">
+            Toolboxes, prompt packs and more
+          </p>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GET THE GEAR ===================== -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The shop</p>
+        <h2>Get the gear</h2>
+      </div>
+
+      <div class="grid-2">
+        <span class="product">
+          <span class="ph ph-tall"><span>Product</span></span>
+          <span class="name" style="display:block">[PRODUCT NAME]</span>
+          <span class="price">[YOUR PRICE]</span>
+        </span>
+        <span class="product">
+          <span class="ph ph-tall"><span>Product</span></span>
+          <span class="name" style="display:block">[PRODUCT NAME]</span>
+          <span class="price">[YOUR PRICE]</span>
+        </span>
+      </div>
+
+      <div class="waitlist">
+        <h3>Merch is coming</h3>
+        <p>Join the waitlist and hear first.</p>
+        <a class="btn btn-primary" href="#rebels">Tell me first</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== JOIN THE REBELS ===================== -->
+  <section class="rebels" id="rebels">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Join the <span class="accent">Rebels</span></h2>
+        <p class="lede">
+          First to hear new songs, behind the scenes, and [YOUR FREE GIFT].
+        </p>
+      </div>
+
+      <form class="form" data-rebels novalidate>
+        <div class="field">
+          <label for="email">Your email</label>
+          <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email">
+        </div>
+
+        <div class="field">
+          <span class="label-like" id="reason-label"
+                style="display:block; font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; margin-bottom:.5rem">
+            What are you here for?
+          </span>
+          <div class="chips" role="group" aria-labelledby="reason-label">
+            <button type="button" class="chip" aria-pressed="true">Watch</button>
+            <button type="button" class="chip" aria-pressed="false">Listen</button>
+            <button type="button" class="chip" aria-pressed="false">Learn</button>
+          </div>
+          <input type="hidden" id="reason" name="reason" value="Watch">
+        </div>
+
+        <button type="submit" class="btn btn-primary">I'm in</button>
+        <p class="form-note" role="status"></p>
+      </form>
+    </div>
+  </section>
+
 </main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="socials">
+      <a href="https://www.instagram.com/therealravenai/" rel="noopener">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">YouTube</a>
+    </div>
+    <div class="legal">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Cookies</a>
+    </div>
+    <p class="copyright">&copy; 2026 Raven Steele</p>
+  </div>
+</footer>
+
+<!-- ===================== THE PINNED BAR =====================
+     On every page. The promise changes to match the page. -->
+<div class="pinned">
+  <div class="wrap">
+    <p>First to hear new songs, behind the scenes, and&nbsp;[YOUR&nbsp;FREE&nbsp;GIFT].</p>
+    <a class="btn btn-primary" href="#rebels">Join</a>
+  </div>
+</div>
+
 </body>
 </html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop | Raven Steele</title>
+<meta name="description" content="Toolboxes, prompt packs and more. Merch is coming.">
+<meta name="theme-color" content="#000000">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shop | Raven Steele">
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/site.js" defer></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="index.html">Raven Steele</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="site-nav" id="site-nav" data-open="false">
+      <div class="wrap">
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="story.html">The Story</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="be-like-raven.html">Be Like Raven</a></li>
+        <li><a href="shop.html" aria-current="page">Shop</a></li>
+        </ul>
+      </div>
+    </nav>
+</header>
+
+<main>
+
+  <section class="hero" style="padding-top:1.5rem">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Get the gear</p>
+        <h2>Shop</h2>
+      </div>
+
+      <!-- Digital / Merch tabs, as drawn. Merch is deliberately disabled
+           rather than hidden, so people can see it is coming. -->
+      <div class="tabs" role="tablist">
+        <button data-panel="digital" aria-selected="true" role="tab">Digital</button>
+        <button data-panel="merch" aria-selected="false" role="tab" disabled>Merch (soon)</button>
+      </div>
+
+      <div data-panel-name="digital" data-hidden="false">
+
+        <div class="filters" data-target="products">
+          <button class="chip" data-filter="all" aria-pressed="true">All</button>
+          <button class="chip" data-filter="toolbox" aria-pressed="false">Toolboxes</button>
+          <button class="chip" data-filter="prompt" aria-pressed="false">Prompts</button>
+          <button class="chip" data-filter="pack" aria-pressed="false">Packs</button>
+        </div>
+
+        <!-- Best seller, above everything else. -->
+        <div class="best">
+          <p class="eyebrow">Best seller</p>
+          <div class="ph ph-wide"><span>Product</span></div>
+          <p class="name">[PRODUCT NAME]</p>
+          <p class="price">[YOUR PRICE]</p>
+          <a class="btn btn-primary" href="#" style="margin-top:1rem">Get it</a>
+        </div>
+
+        <div class="grid-2" id="products">
+          <span class="product" data-tag="toolbox">
+            <span class="ph ph-tall"><span>Product</span></span>
+            <span class="name" style="display:block">[PRODUCT NAME]</span>
+            <span class="price">[YOUR PRICE]</span>
+          </span>
+          <span class="product" data-tag="prompt">
+            <span class="ph ph-tall"><span>Product</span></span>
+            <span class="name" style="display:block">[PRODUCT NAME]</span>
+            <span class="price">[YOUR PRICE]</span>
+          </span>
+          <span class="product" data-tag="pack">
+            <span class="ph ph-tall"><span>Product</span></span>
+            <span class="name" style="display:block">[PRODUCT NAME]</span>
+            <span class="price">[YOUR PRICE]</span>
+          </span>
+          <span class="product" data-tag="toolbox">
+            <span class="ph ph-tall"><span>Product</span></span>
+            <span class="name" style="display:block">[PRODUCT NAME]</span>
+            <span class="price">[YOUR PRICE]</span>
+          </span>
+          <p class="empty" data-hidden="true">Nothing in that one yet.</p>
+        </div>
+      </div>
+
+      <div data-panel-name="merch" data-hidden="true">
+        <p class="empty">Merch is coming. Join the waitlist below.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MERCH WAITLIST =====================
+       The fourth place the list gets fed, and the only one that asks a
+       question back: which merch should exist. -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Merch is <span class="accent">coming</span></h2>
+        <p class="lede">Pop your email in and vote on what we make first.</p>
+      </div>
+
+      <form class="form" data-rebels novalidate style="max-width:32rem;margin:0 auto">
+        <div class="field">
+          <label for="merch-email">Your email</label>
+          <input type="email" id="merch-email" name="email" placeholder="you@email.com" autocomplete="email">
+        </div>
+        <button type="submit" class="btn btn-primary">Tell me first</button>
+        <p class="form-note" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="socials">
+      <a href="https://www.instagram.com/therealravenai/" rel="noopener">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">YouTube</a>
+    </div>
+    <div class="legal">
+      <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a>
+    </div>
+    <p class="copyright">&copy; 2026 Raven Steele</p>
+  </div>
+</footer>
+
+<div class="pinned">
+  <div class="wrap">
+    <p>Rebels hear about new drops first.</p>
+    <a class="btn btn-primary" href="index.html#rebels">Join</a>
+  </div>
+</div>
+
+</body>
+</html>

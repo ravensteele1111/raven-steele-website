@@ -68,7 +68,7 @@ Last updated: 12 November 2026.
 ### Pictures
 
 - [ ] **Opening** — a wide shot of Raven and Ethan.
-- [ ] **Cast portraits ×8** — Raven, Ethan, Lucky, Zeus, Baby Rebel, Jordan, Betty,
+- [ ] **Cast portraits ×8** — Raven, Ethan, Lucky, Zeus, Baby Rebel, Jordyn, Betty,
       and one empty slot.
 
 ### Words
@@ -96,7 +96,46 @@ Last updated: 12 November 2026.
 
 ---
 
+## Music
+
+- [ ] **Newest music video** plus `[SONG TITLE]`.
+- [ ] **Five songs** — each needs its title, who it belongs to (duet / Raven / Ethan) and a link.
+- [ ] **Watch** and **Lyrics** buttons go nowhere yet.
+- [ ] **Listen on** — YouTube is a live slot waiting for the channel address. Spotify and Apple
+      are marked "Coming" until the distributor lands.
+
+## Events
+
+- [ ] **Three event covers**, names, dates and photo counts.
+- [ ] **The guest lists** currently hold real cast names so the search can be tried. They become
+      the real guest lists when the events are real.
+- [ ] Every event card points at the same template page until there are real events.
+
+## One event (the template)
+
+- [ ] **Group shot**, `[DATE]`, `[EVENT NAME]`, `[WHAT HAPPENED]`.
+- [ ] **Two `[GUEST]` slots** beside Raven and Ethan.
+- [ ] **Eight photos**, each needing a mood (goofy or sweet) and whether it is a video.
+- [ ] **Share event** does nothing yet — needs a decision: copy the link, or the phone's share sheet.
+- [ ] The lightbox works; it opens the placeholder because the photos are placeholders.
+
+## Be Like Raven
+
+- [ ] **Where the three doors point** — `[YOUR BEGINNER SKOOL]`, `[YOUR PRODUCTS SKOOL]`,
+      `[YOUR COMMUNITY SKOOL]`.
+- [ ] **`[YOUR FREE STARTER GIFT]`** — what it is.
+- [ ] **The Skools** — Revenue Revolution is in and leading. Two more slots need names, one line
+      each, thumbnails and links.
+- [ ] **Rebel wins** — two real member wins, a screenshot or a quote each, with names.
+
+## Shop
+
+- [ ] **Best seller** — name, price, picture, and where "Get it" sends people.
+- [ ] **Four products** — name, price, picture, and which filter each belongs to.
+- [ ] **Merch tab** is deliberately switched off until there is merch.
+
+---
+
 ## Not yet built
 
-Music · All Events · One Event · Be Like Raven · Shop.
-Section-by-section specs for all of them are in the project folder.
+Legal pages: Privacy, Terms, Cookies.

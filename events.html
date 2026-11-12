@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events | Raven Steele</title>
+<meta name="description" content="Every night out, every red carpet, every photo.">
+<meta name="theme-color" content="#000000">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Events | Raven Steele">
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/site.js" defer></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="index.html">Raven Steele</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="site-nav" id="site-nav" data-open="false">
+      <div class="wrap">
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="story.html">The Story</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="events.html" aria-current="page">Events</a></li>
+        <li><a href="be-like-raven.html">Be Like Raven</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        </ul>
+      </div>
+    </nav>
+</header>
+
+<main>
+
+  <section class="hero" style="padding-top:1.5rem">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The gallery</p>
+        <h2>Events</h2>
+        <p class="lede">Every night out, and everyone who was there.</p>
+      </div>
+
+      <div class="filters" data-target="events">
+        <button class="chip" data-filter="all" aria-pressed="true">Newest</button>
+        <button class="chip" data-filter="2026" aria-pressed="false">2026</button>
+        <button class="chip" data-filter="2025" aria-pressed="false">2025</button>
+      </div>
+
+      <!-- Each card carries its own guest list. That one attribute is what
+           makes the name search below work, with no backend and no database. -->
+      <div class="stack" id="events">
+
+        <a class="event-card" href="event.html"
+           data-tag="2026"
+           data-event="[EVENT NAME]"
+           data-guests="Raven, Ethan, Jordyn, Betty, Kiki, Pierce, Lacy, Daniel, Rosie, Gio">
+          <span class="ph ph-wide"><span>Best photo from this event</span></span>
+          <span class="name" style="display:block">[EVENT NAME]</span>
+          <span class="meta">[DATE] · [NUMBER] photos</span>
+        </a>
+
+        <a class="event-card" href="event.html"
+           data-tag="2026"
+           data-event="[EVENT NAME]"
+           data-guests="Raven, Ethan, Andy, Chanel, Nico, Samira, HeeJae">
+          <span class="ph ph-wide"><span>Best photo from this event</span></span>
+          <span class="name" style="display:block">[EVENT NAME]</span>
+          <span class="meta">[DATE] · [NUMBER] photos</span>
+        </a>
+
+        <a class="event-card" href="event.html"
+           data-tag="2025"
+           data-event="[EVENT NAME]"
+           data-guests="Raven, Ethan, Betty, Jordyn, Rip">
+          <span class="ph ph-wide"><span>Best photo from this event</span></span>
+          <span class="name" style="display:block">[EVENT NAME]</span>
+          <span class="meta">[DATE] · [NUMBER] photos</span>
+        </a>
+
+        <p class="empty" data-hidden="true">Nothing from that year yet.</p>
+      </div>
+
+      <!-- ===== Were you there? =====
+           Searches the guest lists above. The build plan has the reasoning:
+           it searches the guest list, not every photo. Tagging who appears in
+           which individual photo is hundreds of decisions per event, and that
+           work is not the builder's. -->
+      <div class="finder">
+        <h3>Were you there?</h3>
+        <p>Type a name to find which nights they turned up to.</p>
+        <label for="guest-search" class="visually-hidden" style="position:absolute;left:-9999px">Search guest lists</label>
+        <input type="search" id="guest-search" placeholder="Start typing a name" autocomplete="off">
+        <ul class="results" id="guest-results"></ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="socials">
+      <a href="https://www.instagram.com/therealravenai/" rel="noopener">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">YouTube</a>
+    </div>
+    <div class="legal">
+      <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a>
+    </div>
+    <p class="copyright">&copy; 2026 Raven Steele</p>
+  </div>
+</footer>
+
+<div class="pinned">
+  <div class="wrap">
+    <p>Want an invite to the next one?</p>
+    <a class="btn btn-primary" href="index.html#rebels">Join</a>
+  </div>
+</div>
+
+</body>
+</html>

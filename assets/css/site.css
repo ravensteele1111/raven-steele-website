@@ -480,3 +480,177 @@ a.card:hover{ border-color:rgba(255,255,255,.28); background:#161616; }
   .timeline{ max-width:38rem; margin-left:auto; margin-right:auto; }
   .mini-grid{ grid-template-columns:repeat(3,minmax(0,1fr)); max-width:46rem; margin-left:auto; margin-right:auto; }
 }
+
+/* =========================================================================
+   Filters and tabs — one component, used on Music, Events, Be Like Raven
+   and the Shop. The chips on the signup form share the .chip look.
+   ========================================================================= */
+.filters{ display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1.1rem; }
+.filters .chip{ font-size:.78rem; padding:.5rem 1rem; }
+
+.tabs{ display:flex; gap:1.5rem; border-bottom:1px solid var(--line); margin-bottom:1.1rem; }
+.tabs button{
+  padding:.7rem 0;
+  font-family:var(--display); font-size:1.15rem;
+  text-transform:uppercase; letter-spacing:.04em;
+  color:var(--grey-dim);
+  border-bottom:2px solid transparent;
+  margin-bottom:-1px;
+}
+.tabs button[aria-selected="true"]{ color:var(--white); border-bottom-color:var(--red); }
+.tabs button[disabled]{ opacity:.45; cursor:default; }
+
+[data-hidden="true"]{ display:none !important; }
+
+.empty{ color:var(--grey-dim); font-size:.85rem; padding:1.5rem 0; text-align:center; }
+
+/* =========================================================================
+   Music
+   ========================================================================= */
+.song .tag{
+  color:var(--gold); font-size:.62rem; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase;
+}
+.listen{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.6rem; }
+.listen a, .listen span{
+  display:grid; place-items:center;
+  padding:1rem .5rem;
+  border:1px solid var(--line);
+  border-radius:.4rem;
+  background:var(--panel);
+  font-size:.78rem; font-weight:600;
+  text-decoration:none;
+  text-align:center;
+}
+.listen span{ color:var(--grey-dim); border-style:dashed; }
+.listen .state{ display:block; font-size:.58rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-top:.2rem; }
+
+/* =========================================================================
+   Events
+   ========================================================================= */
+.event-card{ display:block; text-decoration:none; }
+.event-card .name{ margin-top:.6rem; font-family:var(--display); font-size:1.25rem; text-transform:uppercase; }
+.event-card .meta{ color:var(--grey-dim); font-size:.78rem; }
+
+.finder{
+  margin-top:1.6rem;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:.5rem;
+  padding:1.25rem;
+}
+.finder h3{ font-size:1.3rem; }
+.finder p{ color:var(--grey); font-size:.84rem; margin:.3rem 0 .9rem; }
+.finder input[type="search"]{
+  width:100%; padding:.9rem 1rem;
+  background:var(--black); border:1px solid var(--line);
+  border-radius:.35rem; color:var(--white);
+  font-family:var(--body); font-size:1rem;
+}
+.finder input:focus{ outline:none; border-color:var(--gold); }
+.results{ margin-top:.9rem; font-size:.85rem; }
+.results li{ list-style:none; padding:.5rem 0; border-bottom:1px solid var(--line-soft); }
+.results .where{ color:var(--gold); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; }
+
+/* --- One event --------------------------------------------------------- */
+.back{ display:inline-block; color:var(--grey); font-size:.8rem; text-decoration:none; margin-bottom:1rem; }
+.back:hover{ color:var(--white); }
+.event-date{ color:var(--gold); font-size:.68rem; font-weight:600; letter-spacing:.24em; text-transform:uppercase; }
+.guests{ display:flex; flex-wrap:wrap; gap:.5rem; }
+.guests span{
+  padding:.45rem .9rem; border:1px solid var(--line); border-radius:999px;
+  background:var(--panel); font-size:.8rem;
+}
+.photo-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.6rem; }
+.photo-grid button{ position:relative; display:block; width:100%; }
+.photo-grid .badge{
+  position:absolute; right:.45rem; bottom:.45rem;
+  width:1.6rem; height:1.6rem; border-radius:50%;
+  background:rgba(0,0,0,.65); border:1px solid rgba(255,255,255,.5);
+  display:grid; place-items:center;
+}
+.photo-grid .badge::after{
+  content:""; width:0; height:0;
+  border-left:.42rem solid var(--white);
+  border-top:.27rem solid transparent;
+  border-bottom:.27rem solid transparent;
+  margin-left:.12rem;
+}
+.hint{ color:var(--grey-dim); font-size:.78rem; text-align:center; margin-top:.9rem; }
+
+/* --- Lightbox ----------------------------------------------------------- */
+.lightbox{
+  position:fixed; inset:0; z-index:80;
+  background:rgba(0,0,0,.94);
+  display:none; place-items:center;
+  padding:1.5rem;
+}
+.lightbox[data-open="true"]{ display:grid; }
+.lightbox .ph{ width:min(100%, 34rem); aspect-ratio:1; }
+.lightbox .close{
+  position:absolute; top:1rem; right:1rem;
+  width:2.5rem; height:2.5rem; border-radius:50%;
+  border:1px solid var(--line); color:var(--white); font-size:1.2rem;
+}
+.lightbox .label{ margin-top:1rem; color:var(--grey); font-size:.85rem; text-align:center; }
+
+/* =========================================================================
+   Be Like Raven
+   ========================================================================= */
+.steps{ display:grid; gap:.85rem; counter-reset:step; }
+.step{ display:flex; gap:1rem; align-items:flex-start; }
+.step .n{
+  flex:none;
+  width:2rem; height:2rem; border-radius:50%;
+  display:grid; place-items:center;
+  background:var(--red); color:var(--white);
+  font-weight:700; font-size:.9rem;
+}
+.step .what{ font-size:1.05rem; font-weight:600; }
+.step .where{ color:var(--gold); font-size:.78rem; margin-top:.15rem; }
+
+.free{
+  margin-top:1.6rem;
+  border:1px solid var(--gold);
+  border-radius:.5rem;
+  padding:1.4rem;
+  text-align:center;
+}
+.free .eyebrow{ margin-bottom:.4rem; }
+.free h3{ font-size:1.5rem; }
+.free p{ color:var(--grey); font-size:.85rem; margin:.4rem 0 1.1rem; }
+
+.skools{ display:grid; gap:.85rem; }
+.skool{ display:flex; gap:1rem; align-items:center; }
+.skool .ph{ flex:none; width:5.5rem; aspect-ratio:16/10; }
+.skool .name{ font-family:var(--display); font-size:1.2rem; text-transform:uppercase; }
+.skool .line{ color:var(--grey); font-size:.8rem; }
+.skool.main .name{ color:var(--red); }
+
+.packs{ display:flex; flex-wrap:wrap; gap:.5rem; }
+.packs span{
+  padding:.6rem 1rem; border:1px solid var(--line); border-radius:.35rem;
+  background:var(--panel); font-size:.82rem;
+}
+
+.win{ border-left:3px solid var(--red); padding:.3rem 0 .3rem 1rem; }
+.win p{ color:var(--grey); font-size:.88rem; font-style:italic; }
+.win .who{ color:var(--gold); font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; margin-top:.4rem; }
+
+/* =========================================================================
+   Shop
+   ========================================================================= */
+.best{ border:1px solid var(--red); border-radius:.5rem; padding:1.25rem; margin-bottom:1.4rem; }
+.best .eyebrow{ color:var(--red); }
+.best .name{ font-family:var(--display); font-size:1.6rem; text-transform:uppercase; margin-top:.2rem; }
+.best .price{ color:var(--gold); font-weight:600; }
+.best .ph{ margin-bottom:1rem; }
+
+@media (min-width:46rem){
+  .listen{ max-width:34rem; margin-left:auto; margin-right:auto; }
+  .finder{ max-width:34rem; margin-left:auto; margin-right:auto; }
+  .photo-grid{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .steps, .free, .skools, .packs, .best{ max-width:34rem; margin-left:auto; margin-right:auto; }
+  .filters, .tabs{ justify-content:center; }
+  .guests{ justify-content:center; }
+}

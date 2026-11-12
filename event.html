@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[EVENT NAME] | Raven Steele</title>
+
+<!-- THIS IS A TEMPLATE. Every event page looks like this one; only the
+     name, date, story, guests and photos change. When there are real
+     events, a small script generates one of these per event from a data
+     file, so nobody hand-edits forty pages. -->
+
+<meta name="description" content="One night, the story of it, and every photo.">
+<meta name="theme-color" content="#000000">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/site.js" defer></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="index.html">Raven Steele</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="site-nav" id="site-nav" data-open="false">
+      <div class="wrap">
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="story.html">The Story</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="events.html" aria-current="page">Events</a></li>
+        <li><a href="be-like-raven.html">Be Like Raven</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        </ul>
+      </div>
+    </nav>
+</header>
+
+<main>
+
+  <section class="hero" style="padding-top:1.25rem">
+    <div class="wrap">
+      <a class="back" href="events.html">&larr; Back to all events</a>
+
+      <div class="ph ph-wide" style="margin-bottom:1.25rem">
+        <span>Group shot, full width</span>
+      </div>
+
+      <p class="event-date">[DATE]</p>
+      <h2 style="margin-top:.3rem">[EVENT NAME]</h2>
+      <p class="lede">
+        [WHAT HAPPENED: two lines telling the story of the night.]
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== WHO WAS THERE ===================== -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The guest list</p>
+        <h2>Who was there</h2>
+      </div>
+      <div class="guests">
+        <span>Raven</span>
+        <span>Ethan</span>
+        <span>[GUEST]</span>
+        <span>[GUEST]</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== THE PHOTOS =====================
+       Filters are moods only. The mockup had "All / Goofy / Sweet / Video",
+       which mixes two different things: Goofy and Sweet are moods, Video is
+       a file type, so a fan picking "Sweet" cannot tell whether sweet videos
+       are in or out. Videos now sit in the grid with a play badge on them. -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The night</p>
+        <h2>Photos</h2>
+      </div>
+
+      <div class="filters" data-target="photos">
+        <button class="chip" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" data-filter="goofy" aria-pressed="false">Goofy</button>
+        <button class="chip" data-filter="sweet" aria-pressed="false">Sweet</button>
+      </div>
+
+      <div class="photo-grid" id="photos">
+        <button data-tag="sweet" data-caption="Photo 1"><span class="ph ph-square"><span>Photo</span></span></button>
+        <button data-tag="goofy" data-caption="Photo 2"><span class="ph ph-square"><span>Photo</span></span></button>
+        <button data-tag="sweet" data-caption="Video 1"><span class="ph ph-square"><span>Video</span></span><span class="badge" aria-hidden="true"></span></button>
+        <button data-tag="goofy" data-caption="Photo 3"><span class="ph ph-square"><span>Photo</span></span></button>
+        <button data-tag="sweet" data-caption="Photo 4"><span class="ph ph-square"><span>Photo</span></span></button>
+        <button data-tag="goofy" data-caption="Video 2"><span class="ph ph-square"><span>Video</span></span><span class="badge" aria-hidden="true"></span></button>
+        <button data-tag="sweet" data-caption="Photo 5"><span class="ph ph-square"><span>Photo</span></span></button>
+        <button data-tag="goofy" data-caption="Photo 6"><span class="ph ph-square"><span>Photo</span></span></button>
+      </div>
+
+      <p class="hint">Tap any photo to see it big and share it.</p>
+
+      <div class="entry">
+        <span class="btn btn-ghost">Share event</span>
+        <a class="btn btn-primary" href="event.html">Next event</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="socials">
+      <a href="https://www.instagram.com/therealravenai/" rel="noopener">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">YouTube</a>
+    </div>
+    <div class="legal">
+      <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a>
+    </div>
+    <p class="copyright">&copy; 2026 Raven Steele</p>
+  </div>
+</footer>
+
+<div class="pinned">
+  <div class="wrap">
+    <p>Want to be in the next one?</p>
+    <a class="btn btn-primary" href="index.html#rebels">Join</a>
+  </div>
+</div>
+
+<!-- The lightbox. Opens whatever photo was tapped. -->
+<div class="lightbox" id="lightbox" data-open="false" role="dialog" aria-modal="true" aria-label="Photo">
+  <button class="close" aria-label="Close">&times;</button>
+  <div>
+    <div class="ph"><span>Photo, full size</span></div>
+    <p class="label"></p>
+  </div>
+</div>
+
+</body>
+</html>

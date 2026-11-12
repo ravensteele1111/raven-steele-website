@@ -654,3 +654,42 @@ a.card:hover{ border-color:rgba(255,255,255,.28); background:#161616; }
   .filters, .tabs{ justify-content:center; }
   .guests{ justify-content:center; }
 }
+
+
+/* =========================================================================
+   Jumping to an anchor
+   -------------------------------------------------------------------------
+   The header is sticky, so without this a link to #chapter-1 parks that
+   chapter underneath the header and the first thing you actually read is
+   chapter two. scroll-margin-top reserves the header's height plus a little
+   air above whatever you jumped to.
+   ========================================================================= */
+:target,
+.chapter,
+section[id],
+[id^="chapter-"]{ scroll-margin-top:5rem; }
+
+/* =========================================================================
+   Buttons that cannot work yet
+   -------------------------------------------------------------------------
+   Something that looks like a button and does nothing reads as broken. These
+   say "soon" instead, so it is clearly waiting for content rather than bust.
+   Remove data-pending when the real link exists.
+   ========================================================================= */
+.btn[data-pending]{
+  position:relative;
+  opacity:.5;
+  cursor:default;
+}
+.btn[data-pending]::after{
+  content:"Soon";
+  margin-left:.6rem;
+  font-size:.58rem;
+  letter-spacing:.16em;
+  color:var(--gold);
+  border:1px solid rgba(201,162,39,.45);
+  border-radius:999px;
+  padding:.1rem .4rem;
+  vertical-align:middle;
+}
+.btn-primary[data-pending]{ background:var(--panel); color:var(--grey); border:1px solid var(--line); }

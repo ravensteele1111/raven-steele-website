@@ -61,7 +61,42 @@ Last updated: 12 November 2026.
 
 ---
 
+---
+
+## The Story page
+
+### Pictures
+
+- [ ] **Opening** — a wide shot of Raven and Ethan.
+- [ ] **Cast portraits ×8** — Raven, Ethan, Lucky, Zeus, Baby Rebel, Jordan, Betty,
+      and one empty slot.
+
+### Words
+
+- [ ] **The chapter titles are proposed, not approved.** The Brand Bible records what
+      happened in each chapter but not what each one is called, so the twelve titles
+      on the page were written here from the Bible's own details. They are meant to be
+      argued with. The *events* in them are the Bible's, not invented.
+- [ ] **`[NEXT CHAPTER TITLE]`** — chapter thirteen, shown dimmed as "coming next".
+      Candidates from the Bible: Kiki and Pierce renewing their vows, the Boss and
+      Ballers baby shower, the safari, the cruise ship, the recording studio series.
+- [ ] **`[CAST MEMBER]` / `[ONE LINE]`** — the eighth cast slot. The wider world has
+      plenty more: Lacy and Daniel, Rosie and Gio, Kiki and Pierce, Andy, Rip, Roxy.
+- [ ] **`[MINI STORY TITLE]` ×3**, with their format labels.
+
+### Still to decide
+
+- [ ] **Does each chapter get its own page?** Right now the timeline is the whole
+      story: title and a few lines each. If a chapter should open into a full page with
+      its video and photos, that is a bigger build and worth saying now.
+- [ ] **The Easter eggs.** The Bible has a table of them — the keychain, the baseball
+      bat, the white shirt, the Blue Mustang, the crown collection, the RR collars.
+      An index of them is the single strongest fan feature available, it needs no new
+      footage, and it is not in the mockup. One word and it gets built.
+
+---
+
 ## Not yet built
 
-The Story · Music · All Events · One Event · Be Like Raven · Shop.
+Music · All Events · One Event · Be Like Raven · Shop.
 Section-by-section specs for all of them are in the project folder.

@@ -235,7 +235,7 @@ a.card:hover{ border-color:rgba(255,255,255,.28); background:#161616; }
 /* =========================================================================
    Hero
    ========================================================================= */
-.hero{ padding:2rem 0 3rem; }
+.hero{ padding:2rem 0 3rem; text-align:center; }
 .hero h1{
   font-size:clamp(3.1rem, 18vw, 4.6rem);
   line-height:.92;
@@ -391,7 +391,7 @@ a.card:hover{ border-color:rgba(255,255,255,.28); background:#161616; }
   section{ padding:4.5rem 0; }
   h2{ font-size:3.2rem; }
 
-  .hero{ padding:4rem 0 5rem; text-align:center; }
+  .hero{ padding:4rem 0 5rem; }
   .hero h1{ font-size:6.5rem; }
   .hero .tagline{ font-size:1.25rem; }
   .hero .btn{ max-width:22rem; margin-left:auto; margin-right:auto; }
@@ -693,3 +693,10 @@ section[id],
   vertical-align:middle;
 }
 .btn-primary[data-pending]{ background:var(--panel); color:var(--grey); border:1px solid var(--line); }
+
+
+/* --- Things inside a centred hero that should still read left -----------
+   The hero is centred, which is right for a title block. It is wrong for a
+   row of text sitting beside a number, and wrong for a back link.          */
+.step{ text-align:left; }
+.back{ display:block; text-align:left; }

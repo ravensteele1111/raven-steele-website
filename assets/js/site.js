@@ -11,9 +11,14 @@
   var nav = document.getElementById("site-nav");
 
   if (btn && nav) {
+    // Where the page was when the menu opened, so a scroll can be measured
+    // against it rather than against nothing.
+    var openedAt = 0;
+
     var setOpen = function (open) {
       nav.setAttribute("data-open", open ? "true" : "false");
       btn.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) { openedAt = window.pageYOffset; }
     };
 
     btn.addEventListener("click", function () {
@@ -26,6 +31,21 @@
     });
     document.addEventListener("click", function (e) {
       if (!nav.contains(e.target) && !btn.contains(e.target)) { setOpen(false); }
+    });
+
+    // Starting to scroll means you have moved on. Leaving the menu hanging
+    // open over the page is the thing people notice and dislike.
+    // The small threshold is so a stray pixel of momentum does not shut it
+    // the instant it opens.
+    window.addEventListener("scroll", function () {
+      if (nav.getAttribute("data-open") !== "true") { return; }
+      if (Math.abs(window.pageYOffset - openedAt) > 12) { setOpen(false); }
+    }, { passive: true });
+
+    // Tapping a menu item closes it too. Matters for links that jump within
+    // the same page, where nothing reloads to close it for us.
+    nav.addEventListener("click", function (e) {
+      if (e.target.closest("a")) { setOpen(false); }
     });
   }
 

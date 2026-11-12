@@ -1,0 +1,4 @@
+# Nothing here is meant for search engines yet.
+# This comes off when the real site goes live on its own domain.
+User-agent: *
+Disallow: /

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raven Steele</title>
+
+<!-- This is a holding page, not the website.
+
+     It exists so the repository is not empty, which is what GitHub needs
+     before a branch appears and Pages can be switched on. It gets replaced
+     by the real home page.
+
+     Colours are the agreed ones: black page, white text, red for anything
+     you click, gold for the small quiet marks. The real headline face is a
+     condensed display sans and gets self-hosted properly with the home page;
+     this page uses what is already on the device. -->
+
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Raven Steele. Site in progress.">
+<meta name="theme-color" content="#000000">
+
+<style>
+  :root{
+    /* One place for every colour. Changing the palette is editing these. */
+    --black:   #000000;
+    --panel:   #0e0e0e;
+    --white:   #ffffff;
+    --grey:    #a8a6a2;
+    --red:     #e01a24;
+    --gold:    #c9a227;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{ height:100%; }
+
+  body{
+    background:var(--black);
+    color:var(--white);
+    font-family:"Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    display:grid;
+    grid-template-columns:minmax(0, 1fr);
+    align-content:center;
+    justify-items:center;
+    padding:2rem 1.5rem;
+    overflow-x:hidden;
+    text-align:center;
+  }
+
+  /* A very faint red wash from the top, so the black is not flat. */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:radial-gradient(120% 70% at 50% -10%, rgba(224,26,36,.16), transparent 60%);
+    pointer-events:none;
+  }
+
+  main{ position:relative; min-width:0; width:100%; max-width:34rem; }
+
+  .eyebrow{
+    color:var(--gold);
+    font-size:.68rem;
+    font-weight:600;
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    margin-bottom:1.6rem;
+  }
+
+  h1{
+    font-size:clamp(2.4rem, 12.5vw, 6.5rem);
+    font-weight:900;
+    line-height:.94;
+    letter-spacing:-.035em;
+    text-transform:uppercase;
+  }
+
+  .tagline{
+    color:var(--grey);
+    font-size:clamp(.95rem, 3.6vw, 1.15rem);
+    margin-top:1.5rem;
+  }
+
+  .rule{
+    width:3.5rem;
+    height:2px;
+    background:var(--gold);
+    margin:2.4rem auto;
+  }
+
+  .status{
+    color:var(--grey);
+    font-size:.8rem;
+    line-height:1.8;
+    max-width:17rem;
+    margin:0 auto;
+    overflow-wrap:break-word;
+  }
+
+  .status strong{ color:var(--white); font-weight:600; }
+
+  .dot{
+    display:inline-block;
+    width:.5rem;
+    height:.5rem;
+    border-radius:50%;
+    background:var(--red);
+    margin-right:.5rem;
+    vertical-align:middle;
+  }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">The official home of</p>
+
+  <h1>Raven<br>Steele</h1>
+
+  <p class="tagline">Rock star. Rebel. Storyteller.</p>
+
+  <div class="rule"></div>
+
+  <p class="status">
+    <span class="dot"></span><strong>Site in progress.</strong><br>
+    This page is only here to prove the address works.
+  </p>
+</main>
+</body>
+</html>

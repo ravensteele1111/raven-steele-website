@@ -33,7 +33,7 @@ Last updated: 12 November 2026.
 - [ ] **`[STORY TITLE]` ×3** — the three stories featured on the home page.
 - [ ] **`[SONG TITLE]` ×4** — the latest music video plus three songs.
 - [ ] **`[EVENT NAME]` ×4** — the four events in the gallery.
-- [ ] **`[YOUR SCHOOL NAMES AND ONE LINE EACH]`** — Revenue Revolution is the main one.
+- [ ] **`[YOUR SKOOL NAMES AND ONE LINE EACH]`** — Revenue Revolution is the main one.
       The others follow.
 - [ ] **`[PRODUCT NAME]` and `[YOUR PRICE]` ×2** — the two featured products.
 

@@ -190,7 +190,7 @@ a.card:hover{ border-color:rgba(255,255,255,.28); background:#161616; }
   backdrop-filter:blur(8px);
   border-bottom:1px solid var(--line-soft);
 }
-.site-head .wrap{
+.site-head > .wrap{
   display:flex; align-items:center; justify-content:space-between;
   height:3.5rem;
 }
@@ -206,6 +206,7 @@ a.card:hover{ border-color:rgba(255,255,255,.28); background:#161616; }
 
 .site-nav{ display:none; border-top:1px solid var(--line-soft); background:var(--black); }
 .site-nav[data-open="true"]{ display:block; }
+.site-nav{ max-height:calc(100vh - 3.5rem); overflow-y:auto; }
 .site-nav ul{ list-style:none; padding:.5rem 0 1rem; }
 .site-nav a,
 .site-nav span{

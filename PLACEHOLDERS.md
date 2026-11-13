@@ -28,9 +28,13 @@ and a website.
 
 ## 2. The shop
 
-**43 products, every address the customer sent in the third round.** Filters are Tools,
-Prompts, Meme Bots and Toolboxes. No prices anywhere: the price is on the product page, so
-it changes without anybody touching this website.
+**29 products on the site.** Filters are Tools, Prompts and Meme Bots. No prices anywhere:
+the price is on the product page, so it changes without anybody touching this website.
+
+**The 14 Toolboxes are off the site.** Blue clicked three by hand on 13 November and none
+of them opened, so all fourteen came down rather than leaving dead links up. They are
+hidden in `products.json`, not deleted: delete the `hide` flag, rerun `build-shop.py`, and
+they are back in seconds.
 
 `products.json` holds the lot and `build-shop.py` writes the page. Removing a product is
 deleting four lines of data and running it again.
@@ -40,12 +44,13 @@ deleting four lines of data and running it again.
 - **Eleven were confirmed to open from here.** Then Beacons started refusing this machine
   entirely, after roughly a hundred requests from one address. That is rate limiting, not
   broken products: The Sales Page Builder answered 200 and then 403 within the hour
-- **The fourteen Toolboxes could not be checked at all.** `revenuerevolution.store`
-  resolves to a real address but drops the connection during the TLS handshake for
-  anything that is not a browser. Both OpenSSL and Windows get the same unexpected end of
-  file. Nothing about that says the pages are broken, only that this machine cannot see them
-- [ ] **Blue to click three Toolboxes** to confirm that batch: Side Hustle Moms, Anti-Guru,
-      The Custom Quote Toolbox. If those three open, the other eleven share the same shape
+- **The fourteen Toolboxes are genuinely broken, not just unreachable from here.** This
+  machine could not get a TLS handshake out of `revenuerevolution.store` at all, so the
+  three test links went to Blue, and none of the three opened in a real browser either.
+  That settles it: the addresses are wrong or the pages are gone
+- [ ] **Working Toolbox addresses.** Fourteen products are written, named and carry their
+      taglines, waiting on addresses that load. Worth asking whether they live on Beacons
+      like everything else, rather than on `revenuerevolution.store`
 
 Still missing:
 

@@ -197,99 +197,114 @@
    "tag": "toolbox",
    "base": "https://revenuerevolution.store/shop/",
    "id": "c19c3673-c800-4806-af9b-88a374eb5d1b",
-   "line": "They called it a phase. It just paid the rent."
+   "line": "They called it a phase. It just paid the rent.",
+   "hide": true
   },
   {
    "name": "9-5 Escape",
    "tag": "toolbox",
    "base": "https://revenuerevolution.store/shop/",
    "id": "25741f03-9671-4cc2-8dc5-a1982283b622",
-   "line": "My two weeks notice was the best thing I ever wrote."
+   "line": "My two weeks notice was the best thing I ever wrote.",
+   "hide": true
   },
   {
    "name": "Nurse Life",
    "tag": "toolbox",
    "base": "https://revenuerevolution.store/shop/",
    "id": "16f9eb36-aeeb-4302-b801-62c557410262",
-   "line": "My body clocked out. My license won't let me."
+   "line": "My body clocked out. My license won't let me.",
+   "hide": true
   },
   {
    "name": "Wealthy Woman Energy",
    "tag": "toolbox",
    "base": "https://revenuerevolution.store/shop/",
    "id": "ecb6cbaa-e627-474c-9446-a12c6f308223",
-   "line": "Quiet money. Loud life."
+   "line": "Quiet money. Loud life.",
+   "hide": true
   },
   {
    "name": "Healing After Divorce",
    "tag": "toolbox",
    "base": "https://revenuerevolution.store/shop/",
    "id": "8af36918-4e97-4b23-a1f6-1bae27a85518",
-   "line": "He got the record collection. I got the rest of my life."
+   "line": "He got the record collection. I got the rest of my life.",
+   "hide": true
   },
   {
    "name": "Legacy Dad",
    "tag": "toolbox",
    "base": "https://revenuerevolution.store/shop/",
    "id": "38bd4d8d-6ada-4115-beb1-a94556a64470",
-   "line": "It ends with me."
+   "line": "It ends with me.",
+   "hide": true
   },
   {
    "name": "Stoic Money",
    "tag": "toolbox",
    "base": "https://revenuerevolution.store/shop/",
    "id": "7e08581c-a184-44f0-b048-63627f362827",
-   "line": "Boring built my wealth."
+   "line": "Boring built my wealth.",
+   "hide": true
   },
   {
    "name": "Grown Love",
    "tag": "toolbox",
    "base": "https://revenuerevolution.store/shop/",
    "id": "b9d70c56-5dd7-4f71-9b42-2a7fa9186b09",
-   "line": "Four bots. One voice. Grown love, told beautifully."
+   "line": "Four bots. One voice. Grown love, told beautifully.",
+   "hide": true
   },
   {
    "name": "Teacher Life",
    "tag": "toolbox",
    "base": "https://revenuerevolution.store/shop/",
    "id": "5f5074ca-fb8c-4c5d-baa7-b4a772d43824",
-   "line": "Ran on coffee and stubbornness."
+   "line": "Ran on coffee and stubbornness.",
+   "hide": true
   },
   {
    "name": "Unhinged Truth",
    "tag": "toolbox",
    "base": "https://revenuerevolution.store/shop/",
    "id": "33ba3f63-4cb7-4d39-a240-2aa3e5b1108a",
-   "line": "Says the thing everyone is thinking."
+   "line": "Says the thing everyone is thinking.",
+   "hide": true
   },
   {
    "name": "Anti-Guru",
    "tag": "toolbox",
    "base": "https://revenuerevolution.store/shop/",
    "id": "2afd999f-127e-43c2-8e10-d474dc98d68d",
-   "line": "You didn't build a business, you bought a personality."
+   "line": "You didn't build a business, you bought a personality.",
+   "hide": true
   },
   {
    "name": "Parenting",
    "tag": "toolbox",
    "base": "https://revenuerevolution.store/shop/",
    "id": "7749be24-4772-4810-b205-813f80b2714e",
-   "line": "Feral, unfiltered, spent, tender."
+   "line": "Feral, unfiltered, spent, tender.",
+   "hide": true
   },
   {
    "name": "Millennial",
    "tag": "toolbox",
    "base": "https://revenuerevolution.store/shop/",
    "id": "9b4a1e9c-ec3c-4512-a9b4-b96bc9b786c9",
-   "line": "I'm not lazy, I've just been tired since 2008."
+   "line": "I'm not lazy, I've just been tired since 2008.",
+   "hide": true
   },
   {
    "name": "The Custom Quote Toolbox",
    "tag": "toolbox",
    "base": "https://revenuerevolution.store/shop/",
    "id": "587cc3fd-dd2f-471f-8db9-9c420b79266c",
-   "line": "Four bots, built to your voice. Never sold to anyone else."
+   "line": "Four bots, built to your voice. Never sold to anyone else.",
+   "hide": true
   }
  ],
- "_checked": "Addresses supplied by the customer 13 Nov. Eleven were confirmed to open from here before Beacons began refusing this machine; the rest share the identical address shape. The revenuerevolution.store ones could not be reached from here at all - that domain drops the connection for anything that is not a browser."
+ "_checked": "Addresses supplied by the customer 13 Nov. Eleven were confirmed to open from here before Beacons began refusing this machine; the rest share the identical address shape. The revenuerevolution.store ones could not be reached from here at all - that domain drops the connection for anything that is not a browser.",
+ "_hidden": "The 14 Toolboxes are hidden, not deleted: their revenuerevolution.store addresses do not open. Blue checked three by hand on 13 Nov and none of them loaded. Remove the hide flag and rerun build-shop.py when working addresses arrive."
 }

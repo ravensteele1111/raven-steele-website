@@ -75,7 +75,8 @@
     "Ethan"
    ],
    "guests_complete": false,
-   "photos": 8
+   "photos": 8,
+   "cover": 3
   },
   {
    "slug": "haunted-carnival",
@@ -106,7 +107,8 @@
     "Giothaplugg"
    ],
    "guests_complete": false,
-   "photos": 8
+   "photos": 8,
+   "cover": 2
   },
   {
    "slug": "xori-baby-shower",
@@ -179,5 +181,6 @@
    "guests_complete": false,
    "photos": 24
   }
- ]
+ ],
+ "_cover": "cover is which photo to use for the cover and the hero, counting from 1. RULE: Raven must be visible in it. Leave it out and photo 1 is used, so check photo 1 before leaving it out."
 }

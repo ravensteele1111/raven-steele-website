@@ -112,11 +112,23 @@ def filters_for(slug):
     return "" if PHOTOS.get(slug) else FILTER_ROW
 
 
-def cover_for(slug):
-    shots = PHOTOS.get(slug) or []
-    if shots:
+def cover_shot(ev):
+    """The photo used for the cover and the hero. events.json can name one
+    with "cover": N, counting from 1; otherwise it is the first."""
+    shots = PHOTOS.get(ev["slug"]) or []
+    if not shots:
+        return None
+    n = ev.get("cover", 1)
+    if not isinstance(n, int) or n < 1 or n > len(shots):
+        n = 1
+    return shots[n - 1]
+
+
+def cover_for(ev):
+    shot = cover_shot(ev)
+    if shot:
         return ('<img src="assets/events/%s/%s-sm.webp" alt="" '
-                'width="400" height="533" loading="lazy">' % (slug, shots[0]))
+                'width="400" height="533" loading="lazy">' % (ev["slug"], shot))
     return '<span class="ph ph-wide"><span>Best photo from this event</span></span>'
 
 
@@ -127,10 +139,10 @@ def home_tiles(events, n=4):
         pick += [e for e in events if e not in pick][:n - len(pick)]
     out = []
     for ev in pick:
-        shots = PHOTOS.get(ev["slug"]) or []
-        if shots:
+        shot = cover_shot(ev)
+        if shot:
             pic = ('<img src="assets/events/%s/%s-sm.webp" alt="" width="400"'
-                   ' height="533" loading="lazy">' % (ev["slug"], shots[0]))
+                   ' height="533" loading="lazy">' % (ev["slug"], shot))
         else:
             pic = '<span class="ph ph-square"><span>Photo</span></span>'
         out.append(chr(10).join([
@@ -150,11 +162,11 @@ def page(ev, nxt):
     if not ev.get("guests_complete", False):
         guests += '\n        <span>[MORE GUESTS]</span>'
 
-    shots = PHOTOS.get(ev["slug"]) or []
-    if shots:
+    shot = cover_shot(ev)
+    if shot:
         hero = ('      <img src="assets/events/%s/%s.webp" alt="%s" width="900" height="1200"'
                 ' style="border-radius:.5rem; margin-bottom:1.25rem">'
-                % (ev["slug"], shots[0], ev["name"]))
+                % (ev["slug"], shot, ev["name"]))
     else:
         hero = ('      <div class="ph ph-wide" style="margin-bottom:1.25rem">'
                 '<span>Group shot, full width</span></div>')
@@ -266,7 +278,7 @@ def card(ev):
         "year": ev["year"],
         "name": ev["name"],
         "guests": ", ".join(ev["guests"]),
-        "cover": cover_for(ev["slug"]),
+        "cover": cover_for(ev),
         "meta": meta,
     }
 

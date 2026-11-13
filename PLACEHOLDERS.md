@@ -21,9 +21,9 @@ and a website.
 - [ ] **EVENT covers x6** - one per event
 - [ ] **EVENT photos** - eight or more per event, each marked goofy, sweet or action
 - [ ] **EVENT group shots x6**
-- [ ] **SKOOL icons x4** - Revenue Revolution, AI for Beginners, Digital Marketing 4
-      Beginners, Digital Products with Claude. The customer asked for the real icons, and
-      the tiles are built to lead with the picture
+- [x] **Skool artwork: all four in.** Revenue Revolution, AI for Beginners, Digital Gold
+      Rush and Digital Marketing 4 Beginners. The tiles are banner-shaped to suit the art,
+      which is what the customer asked for: lead with the picture
 - [ ] **PRODUCT pictures x5** - the best seller plus four
 
 ## 2. The shop

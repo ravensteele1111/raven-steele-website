@@ -72,7 +72,30 @@ Still missing:
       back. The repository is public, and a real person's name and words do not go up
       without their yes. The text is ready the moment it comes
 
-## 5. Waiting on the customer, from round two
+## 5. Pictures from Instagram: what we can take and what we cannot
+
+Tested 13 November, not assumed.
+
+**Reels and posts: we can take the cover frame ourselves.** Instagram still answers
+`/p/<code>/media/?size=l` with the real frame and no login. The mirror video chapter
+already shows it, gold dress and tuxedo. `fetch-ig.py` does it for any reel or post
+address, and the picture is downloaded and kept, because the addresses Instagram hands
+back expire within days.
+
+**So: send a reel or post address and the picture arrives free.**
+
+- [ ] **Reel or post addresses for the other chapters.** Only the mirror video has one so
+      far. Every chapter with a reel behind it can have a picture at no cost to anybody
+
+**Highlights: we cannot.** A highlight is a collection rather than a post, so there is no
+code to ask for, and the page behind it is a login wall. Confirmed by trying it.
+
+- [ ] **Highlight covers have to come from the customer.** On a phone: open the highlight,
+      tap Edit highlight, and the cover can be saved from there. Eleven of them: Camping
+      Chaos, First Date Disaster, Bury the Problem, The Saga, Hale's Secret, Ethan Music,
+      Sprout, Second Date, Music, The third Date, The Meadows
+
+## 6. Waiting on the customer, from round two
 
 - [ ] **The Google Drive link for the photos.** It was blank on the form and there is no
       link anywhere in the document. Nothing can be swapped in until it arrives
@@ -83,14 +106,14 @@ Still missing:
 - [ ] **Is a Lyrics button wanted at all?** The lyrics are in every YouTube description,
       so the button was removed rather than left saying "Soon". Easy to put back
 
-## 6. Noted, not built
+## 7. Noted, not built
 
 - **Locking the extras behind signing up.** The idea: join the email list and you get
   access to the extra event photos and so on. Written down on purpose and not started.
   It would mean every page is public except some photos, which needs either a password
   everyone shares or real accounts. Worth a proper conversation before any of it is built
 
-## 7. Questions the answers raised
+## 8. Questions the answers raised
 
 - [ ] **"Where It Better" is spelled that way on YouTube.** The customer said the title
       should be **Wear It Better**. The video's own title on YouTube reads "Where It
@@ -108,7 +131,7 @@ Still missing:
       names written here: the night he saw her on stage, the white shirt, the recording
       studio, the mirror video, Jamaica, babysitting
 
-## 8. Legal
+## 9. Legal
 
 The Privacy, Terms and Cookies questions came back blank, so those pages are not built
 and the footer links still go nowhere.
@@ -117,7 +140,7 @@ What we do have: **Marketing Ambition PTY LTD, Australia**, and
 **aiinfluencerraven@gmail.com** as the contact. That is everything needed to write them
 the moment the answer is yes.
 
-## 9. The email list
+## 10. The email list
 
 Still not connected. The form works, the Watch / Listen / Learn tagging works, and
 submitting says so plainly. It needs an account in the customer's name.

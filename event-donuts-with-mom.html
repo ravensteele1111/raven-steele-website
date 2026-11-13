@@ -11,8 +11,8 @@
 <meta name="description" content="Donuts With Mom. The night, and every photo from it.">
 <meta name="theme-color" content="#000000">
 <meta name="robots" content="noindex, nofollow">
-<link rel="stylesheet" href="assets/css/site.css?v=2be8c086">
-<script src="assets/js/site.js?v=89561b08" defer></script>
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/site.js" defer></script>
 </head>
 <body>
 
@@ -121,9 +121,11 @@
   </div>
 </div>
 
-<div class="lightbox" id="lightbox" data-open="false" role="dialog" aria-modal="true" aria-label="Photo">
+<div class="lightbox" id="lightbox" data-open="false" role="dialog" aria-modal="true" aria-label="Photos">
   <button class="close" aria-label="Close">&times;</button>
-  <div>
+  <button class="lb-prev" aria-label="Previous photo"></button>
+  <button class="lb-next" aria-label="Next photo"></button>
+  <div class="lb-stage">
     <div class="ph"><span>Photo, full size</span></div>
     <p class="label"></p>
   </div>

@@ -201,49 +201,96 @@
     });
   }
 
-  /* --- The photo lightbox ------------------------------------------------
-     "Tap any photo to see it big and share it." While the photos are
-     placeholders it opens the placeholder, which is honest and proves the
-     behaviour.                                                             */
+  /* --- The photo viewer --------------------------------------------------
+     Opening one photo and closing it to see the next one is a miserable way
+     to look at an evening. This one opens the whole set: arrows on both
+     sides, a cross to close, arrow keys, and a swipe on a phone.           */
   var box = document.getElementById("lightbox");
 
   if (box) {
     var caption = box.querySelector(".label");
+    var stage = box.querySelector(".ph");
+    var shots = [];
+    var at = 0;
 
-    var open = function (text) {
-      if (caption) { caption.textContent = text; }
+    function collect() {
+      shots = [];
+      Array.prototype.forEach.call(
+        document.querySelectorAll(".photo-grid button"), function (b) {
+          if (b.getAttribute("data-hidden") === "true") { return; }
+          shots.push({
+            big: b.getAttribute("data-big"),
+            caption: b.getAttribute("data-caption") || "Photo"
+          });
+        });
+    }
+
+    function render() {
+      var shot = shots[at];
+      if (!shot) { return; }
+      if (shot.big) {
+        var img = document.createElement("img");
+        img.src = shot.big;
+        img.alt = "";
+        img.className = "shot";
+        stage.replaceWith(img);
+        stage = img;
+      }
+      if (caption) {
+        caption.textContent = shots.length > 1
+          ? shot.caption + "  ( " + (at + 1) + " of " + shots.length + " )"
+          : shot.caption;
+      }
+    }
+
+    function show(i) {
+      if (!shots.length) { return; }
+      at = (i + shots.length) % shots.length;
+      render();
       box.setAttribute("data-open", "true");
       document.body.style.overflow = "hidden";
-    };
-    var close = function () {
+    }
+
+    function hide() {
       box.setAttribute("data-open", "false");
       document.body.style.overflow = "";
-    };
+    }
 
-    var slot = box.querySelector(".ph");
-
-    Array.prototype.forEach.call(document.querySelectorAll(".photo-grid button"), function (b) {
-      b.addEventListener("click", function () {
-        var big = b.getAttribute("data-big");
-        if (big && slot) {
-          var img = document.createElement("img");
-          img.src = big;
-          img.alt = "";
-          img.style.width = "100%";
-          img.style.borderRadius = ".5rem";
-          slot.replaceWith(img);
-          slot = img;
-        }
-        open(b.getAttribute("data-caption") || "Photo");
-      });
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest(".photo-grid button");
+      if (!b) { return; }
+      collect();
+      var all = [].slice.call(document.querySelectorAll(".photo-grid button"))
+                  .filter(function (x) { return x.getAttribute("data-hidden") !== "true"; });
+      show(all.indexOf(b));
     });
 
     box.addEventListener("click", function (e) {
-      if (e.target === box || e.target.closest(".close")) { close(); }
+      if (e.target.closest(".lb-next")) { show(at + 1); return; }
+      if (e.target.closest(".lb-prev")) { show(at - 1); return; }
+      if (e.target.closest(".close")) { hide(); return; }
+      if (e.target === box) { hide(); }
     });
+
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") { close(); }
+      if (box.getAttribute("data-open") !== "true") { return; }
+      if (e.key === "Escape") { hide(); }
+      if (e.key === "ArrowRight") { show(at + 1); }
+      if (e.key === "ArrowLeft") { show(at - 1); }
     });
+
+    // Swipe, because this is mostly looked at on a phone.
+    var downX = null;
+    box.addEventListener("touchstart", function (e) {
+      downX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    box.addEventListener("touchend", function (e) {
+      if (downX === null) { return; }
+      var dx = e.changedTouches[0].clientX - downX;
+      downX = null;
+      if (Math.abs(dx) < 45) { return; }
+      show(dx < 0 ? at + 1 : at - 1);
+    }, { passive: true });
   }
 })();
 

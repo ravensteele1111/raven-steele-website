@@ -58,9 +58,11 @@ FOOT = """<footer class="site-foot">
   </div>
 </div>
 
-<div class="lightbox" id="lightbox" data-open="false" role="dialog" aria-modal="true" aria-label="Photo">
+<div class="lightbox" id="lightbox" data-open="false" role="dialog" aria-modal="true" aria-label="Photos">
   <button class="close" aria-label="Close">&times;</button>
-  <div>
+  <button class="lb-prev" aria-label="Previous photo"></button>
+  <button class="lb-next" aria-label="Next photo"></button>
+  <div class="lb-stage">
     <div class="ph"><span>Photo, full size</span></div>
     <p class="label"></p>
   </div>
@@ -116,6 +118,27 @@ def cover_for(slug):
         return ('<img src="assets/events/%s/%s-sm.webp" alt="" '
                 'width="400" height="533" loading="lazy">' % (slug, shots[0]))
     return '<span class="ph ph-wide"><span>Best photo from this event</span></span>'
+
+
+def home_tiles(events, n=4):
+    """The four event tiles on the home page, from the same data as the rest."""
+    pick = [e for e in events if PHOTOS.get(e["slug"])][:n]
+    if len(pick) < n:
+        pick += [e for e in events if e not in pick][:n - len(pick)]
+    out = []
+    for ev in pick:
+        shots = PHOTOS.get(ev["slug"]) or []
+        if shots:
+            pic = ('<img src="assets/events/%s/%s-sm.webp" alt="" width="400"'
+                   ' height="533" loading="lazy">' % (ev["slug"], shots[0]))
+        else:
+            pic = '<span class="ph ph-square"><span>Photo</span></span>'
+        out.append(chr(10).join([
+            '        <a class="tile" href="event-%s.html">' % ev["slug"],
+            '          %s' % pic,
+            '          <span class="name" style="display:block">%s</span>' % ev["name"],
+            '        </a>']))
+    return chr(10).join(out)
 
 
 def page(ev, nxt):
@@ -274,6 +297,13 @@ def main():
                       lambda m: m.group(1) + "\n" + listing + "\n        " + m.group(2),
                       text, flags=re.S)
         io.open("events.html", "w", encoding="utf-8").write(text)
+
+    home = io.open("index.html", encoding="utf-8").read()
+    if "HOMEEVENTS:START" in home:
+        home = re.sub(r"(<!-- HOMEEVENTS:START -->).*?(<!-- HOMEEVENTS:END -->)",
+                      lambda m: m.group(1) + chr(10) + home_tiles(events) + chr(10) + "        " + m.group(2),
+                      home, flags=re.S)
+        io.open("index.html", "w", encoding="utf-8").write(home)
 
     withphotos = sum(1 for e in events if PHOTOS.get(e["slug"]))
     print("%d events, %d with real photos" % (len(events), withphotos))

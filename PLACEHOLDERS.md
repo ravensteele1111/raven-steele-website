@@ -44,6 +44,10 @@ deleting four lines of data and running it again.
 - **Eleven were confirmed to open from here.** Then Beacons started refusing this machine
   entirely, after roughly a hundred requests from one address. That is rate limiting, not
   broken products: The Sales Page Builder answered 200 and then 403 within the hour
+- **Beacons links cannot be checked automatically any more, at all.** A later run returned
+  403 on all 29, and a request through a completely different network path returned 403 too.
+  Beacons refuses automated requests. **The only reliable test is a person opening the link
+  in a normal browser.** Do not trust a script that says these are broken
 - **The fourteen Toolboxes are genuinely broken, not just unreachable from here.** This
   machine could not get a TLS handshake out of `revenuerevolution.store` at all, so the
   three test links went to Blue, and none of the three opened in a real browser either.

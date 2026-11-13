@@ -815,3 +815,13 @@ section[id],
 }
 .highlight-link:hover{ color:var(--white); border-bottom-color:var(--white); }
 .highlight-link::after{ content:" \2197"; }
+
+/* Product cards became links when the shop got real products. Without this
+   the browser underlines every word inside them. */
+a.product{ text-decoration:none; display:block; }
+a.product:hover .name{ color:var(--red); }
+a.product .ph{ transition:border-color .15s; }
+a.product:hover .ph{ border-color:rgba(255,255,255,.4); }
+a.tile{ text-decoration:none; }
+a.skool-tile{ text-decoration:none; }
+.song{ text-decoration:none; }

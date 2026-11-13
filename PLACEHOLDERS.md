@@ -26,13 +26,32 @@ and a website.
       the tiles are built to lead with the picture
 - [ ] **PRODUCT pictures x5** - the best seller plus four
 
-## 2. Prices and the shop
+## 2. The shop
 
-- [ ] **Prices for all five products.** Names are in, `[PRICE]` is showing
-- [ ] **The best seller** - still being worked out from Beacons
-- [ ] **Where "Get it" sends people.** The Beacons link is still to come.
-      `revenuerevolution.store` is used in Skool posts, but it was not confirmed as the
-      place to send buyers from here
+**Nine products are live and every link was checked.** They were taken off the Beacons
+page at `beacons.ai/therealravenai`, which is where the real catalogue lives:
+
+Tools: The Sales Page Builder, Pinterest Rebel, The UGC Beginner Playbook.
+Prompts: The Hair Vault Prompt Pack, Ultra Realistic Skin Prompt Pack, The Body Blueprint
+Prompt Pack, Body Blueprint Add On Pack, Body Vault Prompt Pack. Meme Bots: Hustle Meme Bots.
+
+**No prices anywhere on the site**, by the customer's instruction: the price is on the
+product page, so it can change without anybody touching this website. The cards say
+"See the price".
+
+Still missing:
+
+- [ ] **Every other product.** The long list the customer sent had around forty: the
+      eight niche Toolboxes, the other ten Meme Bots, the SEEN Collection, Rebel Music
+      Studio, the Hair and Skin packs. **None of their addresses came through** - in the
+      message every one of them was the words "CLICK HERE FOR MORE" with the address
+      behind it, and copying the text leaves the address behind. They are not on the
+      site because a product nobody can click is worse than no product
+- [ ] **Product pictures.** Nine cards, nine grey boxes. Beacons has pictures but nothing
+      on the page says which picture belongs to which product, and a wrong picture on a
+      product is worse than none
+- [ ] **Which one is the best seller.** The block is on the page waiting for a name
+- [ ] **The Toolboxes filter** comes back the moment there is one with a working address
 
 ## 3. Words still open
 

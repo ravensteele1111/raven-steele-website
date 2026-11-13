@@ -1,0 +1,58 @@
+{
+ "_note": "Only products whose link has been checked and opens go in here. No prices: the price lives on the product page, so it can change without touching the website.",
+ "_tags": {
+  "tool": "Tools",
+  "prompt": "Prompts",
+  "meme": "Meme Bots",
+  "toolbox": "Toolboxes"
+ },
+ "base": "https://shop.beacons.ai/therealravenai/",
+ "best_seller": null,
+ "products": [
+  {
+   "name": "The Sales Page Builder",
+   "tag": "tool",
+   "id": "f1c54bfd-000c-468a-84ab-b61f513a5957"
+  },
+  {
+   "name": "Pinterest Rebel",
+   "tag": "tool",
+   "id": "8631768a-3f27-40d7-92a5-69750af534b1"
+  },
+  {
+   "name": "The UGC Beginner Playbook",
+   "tag": "tool",
+   "id": "ef813084-13d8-453a-9cca-31027853d9df"
+  },
+  {
+   "name": "The Hair Vault Prompt Pack",
+   "tag": "prompt",
+   "id": "90b848fd-8ede-4b2c-abb3-0356433a59a1"
+  },
+  {
+   "name": "Ultra Realistic Skin Prompt Pack",
+   "tag": "prompt",
+   "id": "ae311f72-536a-48eb-83ff-86953dc9684f"
+  },
+  {
+   "name": "The Body Blueprint Prompt Pack",
+   "tag": "prompt",
+   "id": "b959386e-8ee5-4cfe-8e04-c90f9ddb147c"
+  },
+  {
+   "name": "Body Blueprint Add On Pack",
+   "tag": "prompt",
+   "id": "4b05c072-3a24-46af-92eb-9ba9954f6cc2"
+  },
+  {
+   "name": "Body Vault Prompt Pack",
+   "tag": "prompt",
+   "id": "01b4ad04-0859-49d7-97a7-f5cf99ae1c80"
+  },
+  {
+   "name": "Hustle Meme Bots",
+   "tag": "meme",
+   "id": "27519784-3a09-4220-8f99-1e9e68d03115"
+  }
+ ]
+}

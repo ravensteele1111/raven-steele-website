@@ -58,9 +58,8 @@ deleting four lines of data and running it again.
 
 Still missing:
 
-- [x] **Product artwork: 28 of 29 done.** Only The Complete SEEN Collection is still a
-      grey box. 866 KB for the lot
-- [ ] **One product picture: The Complete SEEN Collection**
+- [x] **Product artwork: all 29 done.** The shop has no placeholders left, 899 KB for
+      the lot
 - [ ] **Which one is the best seller.** The block is on the page waiting for a name
 
 ## 3. Words still open

@@ -122,7 +122,8 @@
     "Ethan"
    ],
    "guests_complete": false,
-   "photos": 24
+   "photos": 24,
+   "cover": 12
   },
   {
    "slug": "blossom-meadows",

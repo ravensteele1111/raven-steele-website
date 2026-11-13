@@ -10,6 +10,10 @@ run this:
 
 It writes one event-<slug>.html per event, and rewrites the list of events on
 events.html between the two EVENTS markers.
+
+Real photos are used wherever assets/events/index.json has them, which
+photos.py fills in from the shared Drive folders. Events with no photos yet
+get labelled placeholders instead.
 """
 
 import io
@@ -18,6 +22,8 @@ import os
 import re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+
+PHOTOS = {}
 
 NAV = """  <nav class="site-nav" id="site-nav" data-open="false">
       <div class="wrap">
@@ -64,21 +70,52 @@ FOOT = """<footer class="site-foot">
 </html>
 """
 
-# Moods the customer asked for: Goofy, Sweet, and Action for the shots of
-# people actually doing something at the party.
 MOODS = ["sweet", "goofy", "action"]
 
+FILTER_ROW = """      <div class="filters" data-target="photos">
+        <button class="chip" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" data-filter="goofy" aria-pressed="false">Goofy</button>
+        <button class="chip" data-filter="sweet" aria-pressed="false">Sweet</button>
+        <button class="chip" data-filter="action" aria-pressed="false">Action</button>
+      </div>
 
-def photo_grid(count):
-    out = []
+"""
+
+
+def photo_grid(slug, count):
+    """Real photos where we have them, labelled placeholders where we do not."""
+    names = PHOTOS.get(slug) or []
+    if names:
+        rows = []
+        for i, n in enumerate(names, 1):
+            rows.append(
+                '        <button data-caption="Photo %d" data-big="assets/events/%s/%s.webp">'
+                '<img src="assets/events/%s/%s-sm.webp" alt="" width="400" height="533" '
+                'loading="lazy"></button>' % (i, slug, n, slug, n))
+        return "\n".join(rows)
+
+    rows = []
     for i in range(count):
-        mood = MOODS[i % len(MOODS)]
-        out.append(
+        rows.append(
             '        <button data-tag="%s" data-caption="Photo %d">'
             '<span class="ph ph-square"><span>Photo</span></span></button>'
-            % (mood, i + 1)
-        )
-    return "\n".join(out)
+            % (MOODS[i % len(MOODS)], i + 1))
+    return "\n".join(rows)
+
+
+def filters_for(slug):
+    """Mood filters only mean something once somebody has tagged the photos.
+    Nobody has, so where there are real photos the row is left out rather than
+    shown doing nothing."""
+    return "" if PHOTOS.get(slug) else FILTER_ROW
+
+
+def cover_for(slug):
+    shots = PHOTOS.get(slug) or []
+    if shots:
+        return ('<img src="assets/events/%s/%s-sm.webp" alt="" '
+                'width="400" height="533" loading="lazy">' % (slug, shots[0]))
+    return '<span class="ph ph-wide"><span>Best photo from this event</span></span>'
 
 
 def page(ev, nxt):
@@ -86,11 +123,18 @@ def page(ev, nxt):
     date = ev.get("date", "")
     sub = ev.get("subtitle")
 
-    guests = "\n".join(
-        '        <span>%s</span>' % g for g in ev["guests"]
-    )
+    guests = "\n".join('        <span>%s</span>' % g for g in ev["guests"])
     if not ev.get("guests_complete", False):
         guests += '\n        <span>[MORE GUESTS]</span>'
+
+    shots = PHOTOS.get(ev["slug"]) or []
+    if shots:
+        hero = ('      <img src="assets/events/%s/%s.webp" alt="%s" width="900" height="1200"'
+                ' style="border-radius:.5rem; margin-bottom:1.25rem">'
+                % (ev["slug"], shots[0], ev["name"]))
+    else:
+        hero = ('      <div class="ph ph-wide" style="margin-bottom:1.25rem">'
+                '<span>Group shot, full width</span></div>')
 
     return """<!DOCTYPE html>
 <html lang="en">
@@ -126,9 +170,7 @@ def page(ev, nxt):
     <div class="wrap">
       <a class="back" href="events.html">&larr; Back to all events</a>
 
-      <div class="ph ph-wide" style="margin-bottom:1.25rem">
-        <span>Group shot, full width</span>
-      </div>
+%(hero)s
 
       %(datep)s
       <h2 style="margin-top:.3rem">%(name)s</h2>%(sub)s
@@ -155,14 +197,7 @@ def page(ev, nxt):
         <h2>Photos</h2>
       </div>
 
-      <div class="filters" data-target="photos">
-        <button class="chip" data-filter="all" aria-pressed="true">All</button>
-        <button class="chip" data-filter="goofy" aria-pressed="false">Goofy</button>
-        <button class="chip" data-filter="sweet" aria-pressed="false">Sweet</button>
-        <button class="chip" data-filter="action" aria-pressed="false">Action</button>
-      </div>
-
-      <div class="photo-grid" id="photos">
+%(filters)s      <div class="photo-grid" id="photos">
 %(photos)s
       </div>
 
@@ -180,11 +215,13 @@ def page(ev, nxt):
 %(foot)s""" % {
         "name": ev["name"],
         "nav": NAV,
+        "hero": hero,
         "datep": ('<p class="event-date">%s</p>' % date) if date else "",
         "sub": ('\n      <p class="lede" style="margin-top:.2rem"><em>%s</em></p>' % sub) if sub else "",
         "story": story,
         "guests": guests,
-        "photos": photo_grid(ev.get("photos", 8)),
+        "filters": filters_for(ev["slug"]),
+        "photos": photo_grid(ev["slug"], ev.get("photos", 8)),
         "next": nxt,
         "foot": FOOT,
     }
@@ -192,11 +229,13 @@ def page(ev, nxt):
 
 def card(ev):
     date = ev.get("date", "")
+    count = len(PHOTOS.get(ev["slug"]) or []) or ev.get("photos", 8)
+    meta = ("%s &middot; %s photos" % (date, count)) if date else ("%s photos" % count)
     return """        <a class="event-card" href="event-%(slug)s.html"
            data-tag="%(year)s"
            data-event="%(name)s"
            data-guests="%(guests)s">
-          <span class="ph ph-wide"><span>Best photo from this event</span></span>
+          %(cover)s
           <span class="name" style="display:block">%(name)s</span>
           <span class="meta">%(meta)s</span>
         </a>""" % {
@@ -204,37 +243,40 @@ def card(ev):
         "year": ev["year"],
         "name": ev["name"],
         "guests": ", ".join(ev["guests"]),
-        "meta": ("%s &middot; %s photos" % (date, ev.get("photos", 8))) if date else ("%s photos" % ev.get("photos", 8)),
+        "cover": cover_for(ev["slug"]),
+        "meta": meta,
     }
 
 
 def main():
+    global PHOTOS
     os.chdir(HERE)
+
+    index = os.path.join("assets", "events", "index.json")
+    if os.path.exists(index):
+        PHOTOS = json.load(io.open(index, encoding="utf-8"))
+
     data = json.load(io.open("events.json", encoding="utf-8"))
     events = data["events"]
 
     for i, ev in enumerate(events):
         nxt = events[(i + 1) % len(events)]["slug"]
         io.open("event-%s.html" % ev["slug"], "w", encoding="utf-8").write(page(ev, nxt))
-        print("wrote event-%s.html" % ev["slug"])
 
     listing = "\n\n".join(card(ev) for ev in events)
     listing += '\n\n        <p class="empty" data-hidden="true">Nothing from that year yet.</p>'
 
-    page_text = io.open("events.html", encoding="utf-8").read()
-    new = re.sub(
-        r"(<!-- EVENTS:START -->).*?(<!-- EVENTS:END -->)",
-        lambda m: m.group(1) + "\n" + listing + "\n        " + m.group(2),
-        page_text,
-        flags=re.S,
-    )
-    if new == page_text:
-        print("!! EVENTS markers not found in events.html — listing not updated")
+    text = io.open("events.html", encoding="utf-8").read()
+    if "EVENTS:START" not in text:
+        print("!! EVENTS markers missing from events.html")
     else:
-        io.open("events.html", "w", encoding="utf-8").write(new)
-        print("updated the listing on events.html")
+        text = re.sub(r"(<!-- EVENTS:START -->).*?(<!-- EVENTS:END -->)",
+                      lambda m: m.group(1) + "\n" + listing + "\n        " + m.group(2),
+                      text, flags=re.S)
+        io.open("events.html", "w", encoding="utf-8").write(text)
 
-    print("%d events" % len(events))
+    withphotos = sum(1 for e in events if PHOTOS.get(e["slug"]))
+    print("%d events, %d with real photos" % (len(events), withphotos))
 
 
 if __name__ == "__main__":

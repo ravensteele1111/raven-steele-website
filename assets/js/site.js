@@ -220,8 +220,20 @@
       document.body.style.overflow = "";
     };
 
+    var slot = box.querySelector(".ph");
+
     Array.prototype.forEach.call(document.querySelectorAll(".photo-grid button"), function (b) {
       b.addEventListener("click", function () {
+        var big = b.getAttribute("data-big");
+        if (big && slot) {
+          var img = document.createElement("img");
+          img.src = big;
+          img.alt = "";
+          img.style.width = "100%";
+          img.style.borderRadius = ".5rem";
+          slot.replaceWith(img);
+          slot = img;
+        }
         open(b.getAttribute("data-caption") || "Photo");
       });
     });

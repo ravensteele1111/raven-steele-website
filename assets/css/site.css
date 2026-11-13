@@ -854,3 +854,19 @@ a.skool-tile{ text-decoration:none; }
   background:var(--panel);
 }
 .product .name{ margin-top:.6rem; }
+
+/* The Skool artwork is wide banner art, so the tiles are too. */
+.skool-tile img{
+  display:block; width:100%; aspect-ratio:16/9; object-fit:cover;
+  border-radius:.4rem; border:1px solid var(--line); margin-bottom:.6rem;
+}
+.skool-tile .ph{ aspect-ratio:16/9; }
+
+/* The toolboxes come with a line of their own. */
+.product .line{
+  display:block;
+  color:var(--grey);
+  font-size:.74rem;
+  line-height:1.4;
+  margin-top:.15rem;
+}

@@ -12,50 +12,284 @@
   {
    "name": "The Sales Page Builder",
    "tag": "tool",
+   "base": "https://shop.beacons.ai/therealravenai/",
    "id": "f1c54bfd-000c-468a-84ab-b61f513a5957",
    "img": "the-sales-page-builder"
   },
   {
+   "name": "Rebel Music Studio",
+   "tag": "tool",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "40070e87-7145-4ab4-acb2-3b069a27ad07"
+  },
+  {
    "name": "Pinterest Rebel",
    "tag": "tool",
+   "base": "https://shop.beacons.ai/therealravenai/",
    "id": "8631768a-3f27-40d7-92a5-69750af534b1",
    "img": "pinterest-rebel"
   },
   {
-   "name": "The Hair Vault Prompt Pack",
+   "name": "The Complete SEEN Collection",
    "tag": "prompt",
-   "id": "90b848fd-8ede-4b2c-abb3-0356433a59a1",
-   "img": "the-hair-vault-prompt-pack"
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "f6da22bd-f7c0-4036-967d-f77190a6f827"
   },
   {
    "name": "Ultra Realistic Skin Prompt Pack",
    "tag": "prompt",
+   "base": "https://shop.beacons.ai/therealravenai/",
    "id": "ae311f72-536a-48eb-83ff-86953dc9684f",
    "img": "ultra-realistic-skin-prompt-pack"
   },
   {
+   "name": "The Complete Hair Add-On Pack",
+   "tag": "prompt",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "f5d7b3a9-af91-4f74-996d-1970e92d748b"
+  },
+  {
+   "name": "The Hair Vault Prompt Pack",
+   "tag": "prompt",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "90b848fd-8ede-4b2c-abb3-0356433a59a1",
+   "img": "the-hair-vault-prompt-pack"
+  },
+  {
    "name": "The Body Blueprint Prompt Pack",
    "tag": "prompt",
+   "base": "https://shop.beacons.ai/therealravenai/",
    "id": "b959386e-8ee5-4cfe-8e04-c90f9ddb147c",
    "img": "the-body-blueprint-prompt-pack"
   },
   {
-   "name": "Body Blueprint Add On Pack",
+   "name": "The Hair Vault",
    "tag": "prompt",
-   "id": "4b05c072-3a24-46af-92eb-9ba9954f6cc2",
-   "img": "body-blueprint-add-on-pack"
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "9321bc66-c3cc-4a26-8893-0f795a707ff7"
+  },
+  {
+   "name": "The Body Vault",
+   "tag": "prompt",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "35410814-8015-4599-b72e-18e80ccbf044"
+  },
+  {
+   "name": "The Skin Vault",
+   "tag": "prompt",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "c928c337-c965-4fe0-a23a-859c224adc7e"
+  },
+  {
+   "name": "The Occasion Hair Prompt Pack",
+   "tag": "prompt",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "fe957d9a-8851-4b41-8f2a-f59c4af8e00c"
+  },
+  {
+   "name": "The Hair Style Vault",
+   "tag": "prompt",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "30a9083e-983e-40cd-979b-59f50540a5bb"
+  },
+  {
+   "name": "The Colour Lab",
+   "tag": "prompt",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "acf7a55f-ab36-4087-abd4-b5fcad9823fe"
+  },
+  {
+   "name": "Ultra Realistic Skin Conditions Pack",
+   "tag": "prompt",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "a2412ad4-67f9-4e08-85f3-6a1ff32d8fd7"
+  },
+  {
+   "name": "The Complete Skin Add-On Pack",
+   "tag": "prompt",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "54fe1131-487e-47fe-8f10-df96e4344cfb"
   },
   {
    "name": "Body Vault Prompt Pack",
    "tag": "prompt",
+   "base": "https://shop.beacons.ai/therealravenai/",
    "id": "01b4ad04-0859-49d7-97a7-f5cf99ae1c80",
    "img": "body-vault-prompt-pack"
   },
   {
+   "name": "Body Blueprint Add-On Pack",
+   "tag": "prompt",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "4b05c072-3a24-46af-92eb-9ba9954f6cc2",
+   "img": "body-blueprint-add-on-pack"
+  },
+  {
+   "name": "Complete Meme Bot Bundle",
+   "tag": "meme",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "bdd51754-d63c-439d-861f-22223ef6b75f",
+   "line": "All of them."
+  },
+  {
+   "name": "Money Moves Meme Bots",
+   "tag": "meme",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "69e20728-350a-4813-a986-77d90d72cdac"
+  },
+  {
+   "name": "Clock Out Meme Bots",
+   "tag": "meme",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "229734df-2011-41a1-9e8d-742b36ff0157"
+  },
+  {
+   "name": "Soft Life Meme Bots",
+   "tag": "meme",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "a299bc09-76b9-4f8d-82a6-ed0457313caa"
+  },
+  {
+   "name": "Pure Chaos Meme Bots",
+   "tag": "meme",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "fc28e880-61be-4e71-9c1a-0b1d84ed2cb0"
+  },
+  {
+   "name": "Status Update Meme Bots",
+   "tag": "meme",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "d868c93d-75d8-4219-b9dc-42631db9af07"
+  },
+  {
+   "name": "Trade Secrets Meme Bots",
+   "tag": "meme",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "d908930d-0d0d-42d2-96f3-8daffb538573"
+  },
+  {
+   "name": "Fully Obsessed Meme Bots",
+   "tag": "meme",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "7cbd13ea-ed9d-4e07-b147-eb16cf7d03d0"
+  },
+  {
+   "name": "Home Team Meme Bots",
+   "tag": "meme",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "2768c829-5dc6-4675-a269-8ee54a435a1d"
+  },
+  {
    "name": "Hustle Meme Bots",
    "tag": "meme",
+   "base": "https://shop.beacons.ai/therealravenai/",
    "id": "27519784-3a09-4220-8f99-1e9e68d03115",
    "img": "hustle-meme-bots"
+  },
+  {
+   "name": "Vibes Meme Bots",
+   "tag": "meme",
+   "base": "https://shop.beacons.ai/therealravenai/",
+   "id": "51b5d632-30c6-4ac3-90b7-8dd599a0b5ba"
+  },
+  {
+   "name": "Side Hustle Moms",
+   "tag": "toolbox",
+   "base": "https://revenuerevolution.store/shop/",
+   "id": "c19c3673-c800-4806-af9b-88a374eb5d1b",
+   "line": "They called it a phase. It just paid the rent."
+  },
+  {
+   "name": "9-5 Escape",
+   "tag": "toolbox",
+   "base": "https://revenuerevolution.store/shop/",
+   "id": "25741f03-9671-4cc2-8dc5-a1982283b622",
+   "line": "My two weeks notice was the best thing I ever wrote."
+  },
+  {
+   "name": "Nurse Life",
+   "tag": "toolbox",
+   "base": "https://revenuerevolution.store/shop/",
+   "id": "16f9eb36-aeeb-4302-b801-62c557410262",
+   "line": "My body clocked out. My license won't let me."
+  },
+  {
+   "name": "Wealthy Woman Energy",
+   "tag": "toolbox",
+   "base": "https://revenuerevolution.store/shop/",
+   "id": "ecb6cbaa-e627-474c-9446-a12c6f308223",
+   "line": "Quiet money. Loud life."
+  },
+  {
+   "name": "Healing After Divorce",
+   "tag": "toolbox",
+   "base": "https://revenuerevolution.store/shop/",
+   "id": "8af36918-4e97-4b23-a1f6-1bae27a85518",
+   "line": "He got the record collection. I got the rest of my life."
+  },
+  {
+   "name": "Legacy Dad",
+   "tag": "toolbox",
+   "base": "https://revenuerevolution.store/shop/",
+   "id": "38bd4d8d-6ada-4115-beb1-a94556a64470",
+   "line": "It ends with me."
+  },
+  {
+   "name": "Stoic Money",
+   "tag": "toolbox",
+   "base": "https://revenuerevolution.store/shop/",
+   "id": "7e08581c-a184-44f0-b048-63627f362827",
+   "line": "Boring built my wealth."
+  },
+  {
+   "name": "Grown Love",
+   "tag": "toolbox",
+   "base": "https://revenuerevolution.store/shop/",
+   "id": "b9d70c56-5dd7-4f71-9b42-2a7fa9186b09",
+   "line": "Four bots. One voice. Grown love, told beautifully."
+  },
+  {
+   "name": "Teacher Life",
+   "tag": "toolbox",
+   "base": "https://revenuerevolution.store/shop/",
+   "id": "5f5074ca-fb8c-4c5d-baa7-b4a772d43824",
+   "line": "Ran on coffee and stubbornness."
+  },
+  {
+   "name": "Unhinged Truth",
+   "tag": "toolbox",
+   "base": "https://revenuerevolution.store/shop/",
+   "id": "33ba3f63-4cb7-4d39-a240-2aa3e5b1108a",
+   "line": "Says the thing everyone is thinking."
+  },
+  {
+   "name": "Anti-Guru",
+   "tag": "toolbox",
+   "base": "https://revenuerevolution.store/shop/",
+   "id": "2afd999f-127e-43c2-8e10-d474dc98d68d",
+   "line": "You didn't build a business, you bought a personality."
+  },
+  {
+   "name": "Parenting",
+   "tag": "toolbox",
+   "base": "https://revenuerevolution.store/shop/",
+   "id": "7749be24-4772-4810-b205-813f80b2714e",
+   "line": "Feral, unfiltered, spent, tender."
+  },
+  {
+   "name": "Millennial",
+   "tag": "toolbox",
+   "base": "https://revenuerevolution.store/shop/",
+   "id": "9b4a1e9c-ec3c-4512-a9b4-b96bc9b786c9",
+   "line": "I'm not lazy, I've just been tired since 2008."
+  },
+  {
+   "name": "The Custom Quote Toolbox",
+   "tag": "toolbox",
+   "base": "https://revenuerevolution.store/shop/",
+   "id": "587cc3fd-dd2f-471f-8db9-9c420b79266c",
+   "line": "Four bots, built to your voice. Never sold to anyone else."
   }
- ]
+ ],
+ "_checked": "Addresses supplied by the customer 13 Nov. Eleven were confirmed to open from here before Beacons began refusing this machine; the rest share the identical address shape. The revenuerevolution.store ones could not be reached from here at all - that domain drops the connection for anything that is not a browser."
 }

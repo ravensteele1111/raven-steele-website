@@ -28,37 +28,29 @@ and a website.
 
 ## 2. The shop
 
-**Nine products are live and every link was checked.** They were taken off the Beacons
-page at `beacons.ai/therealravenai`, which is where the real catalogue lives:
+**43 products, every address the customer sent in the third round.** Filters are Tools,
+Prompts, Meme Bots and Toolboxes. No prices anywhere: the price is on the product page, so
+it changes without anybody touching this website.
 
-Tools: The Sales Page Builder, Pinterest Rebel, The UGC Beginner Playbook.
-Prompts: The Hair Vault Prompt Pack, Ultra Realistic Skin Prompt Pack, The Body Blueprint
-Prompt Pack, Body Blueprint Add On Pack, Body Vault Prompt Pack. Meme Bots: Hustle Meme Bots.
+`products.json` holds the lot and `build-shop.py` writes the page. Removing a product is
+deleting four lines of data and running it again.
 
-**No prices anywhere on the site**, by the customer's instruction: the price is on the
-product page, so it can change without anybody touching this website. The cards say
-"See the price".
+**How far the checking actually got, honestly:**
+
+- **Eleven were confirmed to open from here.** Then Beacons started refusing this machine
+  entirely, after roughly a hundred requests from one address. That is rate limiting, not
+  broken products: The Sales Page Builder answered 200 and then 403 within the hour
+- **The fourteen Toolboxes could not be checked at all.** `revenuerevolution.store`
+  resolves to a real address but drops the connection during the TLS handshake for
+  anything that is not a browser. Both OpenSSL and Windows get the same unexpected end of
+  file. Nothing about that says the pages are broken, only that this machine cannot see them
+- [ ] **Blue to click three Toolboxes** to confirm that batch: Side Hustle Moms, Anti-Guru,
+      The Custom Quote Toolbox. If those three open, the other eleven share the same shape
 
 Still missing:
 
-- [ ] **Every other product.** The long list the customer sent had around forty: the
-      eight niche Toolboxes, the other ten Meme Bots, the SEEN Collection, Rebel Music
-      Studio, the Hair and Skin packs. **None of their addresses came through** - in the
-      message every one of them was the words "CLICK HERE FOR MORE" with the address
-      behind it, and copying the text leaves the address behind. They are not on the
-      site because a product nobody can click is worse than no product
-- [x] **Product pictures: done.** Eight arrived as webp named after the products and are
-      on the site, 224 KB for the lot. The one wide image was padded onto black rather
-      than cropped so none of its wording was lost
-- [ ] **Two things to put to the customer about the artwork:**
-      **(a)** The Sales Page Builder image has **$147 printed in it**. The rule everywhere
-      else is that no price appears on the site, so the price can change without anybody
-      touching the website. That image breaks it, and goes stale the day the price moves.
-      **(b)** That same image is **heavily pink**, and no pink is the one hard brand rule.
-      It sits oddly against a black, red and gold page. Both are the customer's call
+- [ ] **Pictures for 35 of the 43.** Eight have their artwork
 - [ ] **Which one is the best seller.** The block is on the page waiting for a name
-- [x] **The UGC Beginner Playbook removed** - an affiliate product, not theirs
-- [ ] **The Toolboxes filter** comes back the moment there is one with a working address
 
 ## 3. Words still open
 

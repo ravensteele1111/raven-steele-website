@@ -842,3 +842,15 @@ a.skool-tile{ text-decoration:none; }
   border:1px solid var(--line);
 }
 .chapter figure a{ display:inline-block; }
+
+/* Product pictures are square and they are the whole point of the card. */
+.product img{
+  display:block;
+  width:100%;
+  aspect-ratio:1;
+  object-fit:cover;
+  border-radius:.4rem;
+  border:1px solid var(--line);
+  background:var(--panel);
+}
+.product .name{ margin-top:.6rem; }

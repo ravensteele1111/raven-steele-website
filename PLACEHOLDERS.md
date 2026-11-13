@@ -47,10 +47,17 @@ Still missing:
       message every one of them was the words "CLICK HERE FOR MORE" with the address
       behind it, and copying the text leaves the address behind. They are not on the
       site because a product nobody can click is worse than no product
-- [ ] **Product pictures.** Nine cards, nine grey boxes. Beacons has pictures but nothing
-      on the page says which picture belongs to which product, and a wrong picture on a
-      product is worse than none
+- [x] **Product pictures: done.** Eight arrived as webp named after the products and are
+      on the site, 224 KB for the lot. The one wide image was padded onto black rather
+      than cropped so none of its wording was lost
+- [ ] **Two things to put to the customer about the artwork:**
+      **(a)** The Sales Page Builder image has **$147 printed in it**. The rule everywhere
+      else is that no price appears on the site, so the price can change without anybody
+      touching the website. That image breaks it, and goes stale the day the price moves.
+      **(b)** That same image is **heavily pink**, and no pink is the one hard brand rule.
+      It sits oddly against a black, red and gold page. Both are the customer's call
 - [ ] **Which one is the best seller.** The block is on the page waiting for a name
+- [x] **The UGC Beginner Playbook removed** - an affiliate product, not theirs
 - [ ] **The Toolboxes filter** comes back the moment there is one with a working address
 
 ## 3. Words still open

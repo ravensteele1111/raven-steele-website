@@ -20,7 +20,8 @@
    "name": "Rebel Music Studio",
    "tag": "tool",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "40070e87-7145-4ab4-acb2-3b069a27ad07"
+   "id": "40070e87-7145-4ab4-acb2-3b069a27ad07",
+   "img": "rebel-music-studio"
   },
   {
    "name": "Pinterest Rebel",
@@ -46,7 +47,8 @@
    "name": "The Complete Hair Add-On Pack",
    "tag": "prompt",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "f5d7b3a9-af91-4f74-996d-1970e92d748b"
+   "id": "f5d7b3a9-af91-4f74-996d-1970e92d748b",
+   "img": "the-complete-hair-add-on-pack"
   },
   {
    "name": "The Hair Vault Prompt Pack",
@@ -66,49 +68,57 @@
    "name": "The Hair Vault",
    "tag": "prompt",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "9321bc66-c3cc-4a26-8893-0f795a707ff7"
+   "id": "9321bc66-c3cc-4a26-8893-0f795a707ff7",
+   "img": "the-hair-vault"
   },
   {
    "name": "The Body Vault",
    "tag": "prompt",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "35410814-8015-4599-b72e-18e80ccbf044"
+   "id": "35410814-8015-4599-b72e-18e80ccbf044",
+   "img": "the-body-vault"
   },
   {
    "name": "The Skin Vault",
    "tag": "prompt",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "c928c337-c965-4fe0-a23a-859c224adc7e"
+   "id": "c928c337-c965-4fe0-a23a-859c224adc7e",
+   "img": "the-skin-vault"
   },
   {
    "name": "The Occasion Hair Prompt Pack",
    "tag": "prompt",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "fe957d9a-8851-4b41-8f2a-f59c4af8e00c"
+   "id": "fe957d9a-8851-4b41-8f2a-f59c4af8e00c",
+   "img": "the-occasion-hair-prompt-pack"
   },
   {
    "name": "The Hair Style Vault",
    "tag": "prompt",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "30a9083e-983e-40cd-979b-59f50540a5bb"
+   "id": "30a9083e-983e-40cd-979b-59f50540a5bb",
+   "img": "the-hair-style-vault"
   },
   {
    "name": "The Colour Lab",
    "tag": "prompt",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "acf7a55f-ab36-4087-abd4-b5fcad9823fe"
+   "id": "acf7a55f-ab36-4087-abd4-b5fcad9823fe",
+   "img": "the-colour-lab"
   },
   {
    "name": "Ultra Realistic Skin Conditions Pack",
    "tag": "prompt",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "a2412ad4-67f9-4e08-85f3-6a1ff32d8fd7"
+   "id": "a2412ad4-67f9-4e08-85f3-6a1ff32d8fd7",
+   "img": "ultra-realistic-skin-conditions-pack"
   },
   {
    "name": "The Complete Skin Add-On Pack",
    "tag": "prompt",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "54fe1131-487e-47fe-8f10-df96e4344cfb"
+   "id": "54fe1131-487e-47fe-8f10-df96e4344cfb",
+   "img": "the-complete-skin-add-on-pack"
   },
   {
    "name": "Body Vault Prompt Pack",
@@ -129,55 +139,64 @@
    "tag": "meme",
    "base": "https://shop.beacons.ai/therealravenai/",
    "id": "bdd51754-d63c-439d-861f-22223ef6b75f",
-   "line": "All of them."
+   "line": "All of them.",
+   "img": "complete-meme-bot-bundle"
   },
   {
    "name": "Money Moves Meme Bots",
    "tag": "meme",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "69e20728-350a-4813-a986-77d90d72cdac"
+   "id": "69e20728-350a-4813-a986-77d90d72cdac",
+   "img": "money-moves-meme-bots"
   },
   {
    "name": "Clock Out Meme Bots",
    "tag": "meme",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "229734df-2011-41a1-9e8d-742b36ff0157"
+   "id": "229734df-2011-41a1-9e8d-742b36ff0157",
+   "img": "clock-out-meme-bots"
   },
   {
    "name": "Soft Life Meme Bots",
    "tag": "meme",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "a299bc09-76b9-4f8d-82a6-ed0457313caa"
+   "id": "a299bc09-76b9-4f8d-82a6-ed0457313caa",
+   "img": "soft-life-meme-bots"
   },
   {
    "name": "Pure Chaos Meme Bots",
    "tag": "meme",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "fc28e880-61be-4e71-9c1a-0b1d84ed2cb0"
+   "id": "fc28e880-61be-4e71-9c1a-0b1d84ed2cb0",
+   "img": "pure-chaos-meme-bots"
   },
   {
    "name": "Status Update Meme Bots",
    "tag": "meme",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "d868c93d-75d8-4219-b9dc-42631db9af07"
+   "id": "d868c93d-75d8-4219-b9dc-42631db9af07",
+   "img": "status-update-meme-bots"
   },
   {
    "name": "Trade Secrets Meme Bots",
    "tag": "meme",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "d908930d-0d0d-42d2-96f3-8daffb538573"
+   "id": "d908930d-0d0d-42d2-96f3-8daffb538573",
+   "img": "trade-secrets-meme-bots"
   },
   {
    "name": "Fully Obsessed Meme Bots",
    "tag": "meme",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "7cbd13ea-ed9d-4e07-b147-eb16cf7d03d0"
+   "id": "7cbd13ea-ed9d-4e07-b147-eb16cf7d03d0",
+   "img": "fully-obsessed-meme-bots"
   },
   {
    "name": "Home Team Meme Bots",
    "tag": "meme",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "2768c829-5dc6-4675-a269-8ee54a435a1d"
+   "id": "2768c829-5dc6-4675-a269-8ee54a435a1d",
+   "img": "home-team-meme-bots"
   },
   {
    "name": "Hustle Meme Bots",
@@ -190,7 +209,8 @@
    "name": "Vibes Meme Bots",
    "tag": "meme",
    "base": "https://shop.beacons.ai/therealravenai/",
-   "id": "51b5d632-30c6-4ac3-90b7-8dd599a0b5ba"
+   "id": "51b5d632-30c6-4ac3-90b7-8dd599a0b5ba",
+   "img": "vibes-meme-bots"
   },
   {
    "name": "Side Hustle Moms",

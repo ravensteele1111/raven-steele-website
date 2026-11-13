@@ -58,7 +58,9 @@ deleting four lines of data and running it again.
 
 Still missing:
 
-- [ ] **Pictures for 35 of the 43.** Eight have their artwork
+- [x] **Product artwork: 28 of 29 done.** Only The Complete SEEN Collection is still a
+      grey box. 866 KB for the lot
+- [ ] **One product picture: The Complete SEEN Collection**
 - [ ] **Which one is the best seller.** The block is on the page waiting for a name
 
 ## 3. Words still open

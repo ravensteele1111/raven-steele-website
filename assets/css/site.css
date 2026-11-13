@@ -914,3 +914,27 @@ a.skool-tile{ text-decoration:none; }
   .lightbox .lb-prev{ left:2rem; }
   .lightbox .lb-next{ right:2rem; }
 }
+
+/* =========================================================================
+   Instagram highlight covers
+   -------------------------------------------------------------------------
+   The covers carry their own titles, so they are shown rather than described.
+   ========================================================================= */
+.chapter figure img{ max-width:10rem; border-radius:.5rem; }
+
+.hl-pair{
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1rem; max-width:24rem; margin:1.4rem auto 0;
+  text-align:center;
+}
+.hl-pair a{ text-decoration:none; display:block; }
+.hl-pair img{
+  width:100%; aspect-ratio:1; object-fit:cover;
+  border-radius:50%; border:1px solid var(--line);
+}
+.hl-pair span{
+  display:block; margin-top:.5rem;
+  color:var(--gold); font-size:.7rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase;
+}
+.hl-pair a:hover span{ color:var(--white); }

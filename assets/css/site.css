@@ -796,3 +796,22 @@ section[id],
   .player{ max-width:46rem; margin-left:auto; margin-right:auto; }
   .song .thumb{ width:6.5rem; height:3.6rem; }
 }
+
+/* =========================================================================
+   Links out to the Instagram highlights
+   -------------------------------------------------------------------------
+   Most of this story is already told in Raven's highlights, so a chapter
+   points at the one it belongs to rather than repeating it.
+   ========================================================================= */
+.highlight-link{
+  display:inline-block;
+  margin-top:.5rem;
+  color:var(--gold);
+  font-size:.7rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase;
+  text-decoration:none;
+  border-bottom:1px solid rgba(201,162,39,.4);
+  padding-bottom:.1rem;
+}
+.highlight-link:hover{ color:var(--white); border-bottom-color:var(--white); }
+.highlight-link::after{ content:" \2197"; }

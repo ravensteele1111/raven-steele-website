@@ -103,16 +103,6 @@
   "haunted-carnival-23",
   "haunted-carnival-24"
  ],
- "insta-jail": [
-  "insta-jail-01",
-  "insta-jail-02",
-  "insta-jail-03",
-  "insta-jail-04",
-  "insta-jail-05",
-  "insta-jail-06",
-  "insta-jail-07",
-  "insta-jail-08"
- ],
  "xori-baby-shower": [
   "xori-baby-shower-01",
   "xori-baby-shower-02",
@@ -268,5 +258,11 @@
   "busy-bees-baby-shower-22",
   "busy-bees-baby-shower-23",
   "busy-bees-baby-shower-24"
+ ],
+ "insta-jail": [
+  "insta-jail-01",
+  "insta-jail-02",
+  "insta-jail-03",
+  "insta-jail-04"
  ]
 }

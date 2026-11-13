@@ -938,3 +938,24 @@ a.skool-tile{ text-decoration:none; }
   letter-spacing:.14em; text-transform:uppercase;
 }
 .hl-pair a:hover span{ color:var(--white); }
+
+/* =========================================================================
+   The three story cards on the home page
+   -------------------------------------------------------------------------
+   Picture first. The highlight covers carry their own titles, so the card
+   leads with the artwork and the words sit underneath it.
+   ========================================================================= */
+.story-card{
+  display:block;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:.5rem;
+  overflow:hidden;
+  text-decoration:none;
+  transition:border-color .15s, background .15s;
+}
+.story-card:hover{ border-color:rgba(255,255,255,.28); background:#161616; }
+.story-card img{ display:block; width:100%; aspect-ratio:1; object-fit:cover; }
+.story-card .words{ display:block; padding:.6rem .7rem .75rem; }
+.story-card .eyebrow{ display:block; margin-bottom:.2rem; }
+.story-card .title{ display:block; font-size:.82rem; line-height:1.3; }

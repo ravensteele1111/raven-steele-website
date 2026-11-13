@@ -234,3 +234,51 @@
     });
   }
 })();
+
+/* ===========================================================================
+   Play the music here, instead of sending people to YouTube.
+
+   Every song row is a normal link to YouTube, so it still works with no
+   JavaScript at all. When JavaScript is running, the click is caught and the
+   song loads into the player at the top of the page instead.
+
+   Nothing is fetched from YouTube until somebody presses play. Up to that
+   point the page shows our own copy of the thumbnail.
+   =========================================================================== */
+(function () {
+  "use strict";
+
+  var frame = document.getElementById("player-frame");
+  if (!frame) { return; }
+
+  var label = document.getElementById("now-playing");
+
+  function play(id, title) {
+    var iframe = document.createElement("iframe");
+    iframe.src = "https://www.youtube-nocookie.com/embed/" + id +
+                 "?autoplay=1&rel=0&modestbranding=1";
+    iframe.title = title || "Music video";
+    iframe.allow = "accelerometer; autoplay; encrypted-media; picture-in-picture";
+    iframe.allowFullscreen = true;
+    frame.replaceChildren(iframe);
+    if (label && title) { label.textContent = title; }
+  }
+
+  // The big poster itself starts the newest video.
+  frame.addEventListener("click", function () {
+    if (frame.querySelector("iframe")) { return; }
+    play(frame.getAttribute("data-video"), frame.getAttribute("data-title"));
+  });
+
+  // Any song anywhere on the page.
+  document.addEventListener("click", function (e) {
+    var row = e.target.closest("[data-video]");
+    if (!row || row === frame) { return; }
+
+    e.preventDefault();
+    play(row.getAttribute("data-video"), row.getAttribute("data-title"));
+
+    var top = frame.getBoundingClientRect().top + window.pageYOffset - 70;
+    window.scrollTo({ top: top, behavior: "smooth" });
+  });
+})();

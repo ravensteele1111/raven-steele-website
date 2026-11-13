@@ -731,3 +731,68 @@ section[id],
   .skool-tiles{ grid-template-columns:repeat(3,minmax(0,1fr)); max-width:46rem; margin-left:auto; margin-right:auto; }
   .skool-tile.main{ grid-column:1 / -1; }
 }
+
+/* =========================================================================
+   The player, and thumbnails on every song
+   -------------------------------------------------------------------------
+   Songs now play on the page instead of sending people to YouTube. Nothing
+   is requested from YouTube until somebody actually presses play: until
+   then it is our own thumbnail sitting there.
+   ========================================================================= */
+.player{ margin-bottom:1.1rem; }
+.player-frame{
+  position:relative;
+  aspect-ratio:16/9;
+  border-radius:.5rem;
+  overflow:hidden;
+  background:var(--panel);
+  border:1px solid var(--line);
+  display:block;
+  width:100%;
+  padding:0;
+}
+.player-frame img{ width:100%; height:100%; object-fit:cover; display:block; }
+.player-frame iframe{ width:100%; height:100%; border:0; display:block; }
+.player-frame .play-big{
+  position:absolute; inset:0;
+  display:grid; place-items:center;
+  background:linear-gradient(transparent 40%, rgba(0,0,0,.55));
+}
+.player-frame .play-big::after{
+  content:"";
+  width:3.6rem; height:3.6rem; border-radius:50%;
+  background:var(--red);
+  box-shadow:0 .4rem 1.4rem rgba(0,0,0,.5);
+  clip-path:polygon(0 0,100% 0,100% 100%,0 100%);
+}
+.player-frame .play-big::before{
+  content:""; position:absolute; z-index:2;
+  border-left:1.15rem solid var(--white);
+  border-top:.72rem solid transparent;
+  border-bottom:.72rem solid transparent;
+  margin-left:.3rem;
+}
+.now-playing{
+  margin-top:.6rem;
+  font-size:.78rem; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--grey-dim);
+}
+.now-playing strong{ color:var(--white); letter-spacing:.02em; text-transform:none; font-size:.95rem; }
+
+/* Songs: picture first, as the customer asked for everywhere */
+.song{ gap:.8rem; }
+.song .thumb{
+  flex:none;
+  width:5rem; height:2.8rem;
+  object-fit:cover;
+  border-radius:.25rem;
+  background:var(--panel-alt);
+}
+.song .words{ flex:1; min-width:0; }
+.song .name{ display:block; }
+.song .tag{ display:block; margin-top:.1rem; }
+
+@media (min-width:46rem){
+  .player{ max-width:46rem; margin-left:auto; margin-right:auto; }
+  .song .thumb{ width:6.5rem; height:3.6rem; }
+}

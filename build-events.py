@@ -83,7 +83,7 @@ def photo_grid(count):
 
 def page(ev, nxt):
     story = ev.get("story") or "[WHAT HAPPENED: two lines telling the story of the night.]"
-    date = ev.get("date") or "[DATE]"
+    date = ev.get("date", "")
     sub = ev.get("subtitle")
 
     guests = "\n".join(
@@ -130,7 +130,7 @@ def page(ev, nxt):
         <span>Group shot, full width</span>
       </div>
 
-      <p class="event-date">%(date)s</p>
+      %(datep)s
       <h2 style="margin-top:.3rem">%(name)s</h2>%(sub)s
       <p class="lede">%(story)s</p>
     </div>
@@ -180,7 +180,7 @@ def page(ev, nxt):
 %(foot)s""" % {
         "name": ev["name"],
         "nav": NAV,
-        "date": date,
+        "datep": ('<p class="event-date">%s</p>' % date) if date else "",
         "sub": ('\n      <p class="lede" style="margin-top:.2rem"><em>%s</em></p>' % sub) if sub else "",
         "story": story,
         "guests": guests,
@@ -191,21 +191,20 @@ def page(ev, nxt):
 
 
 def card(ev):
-    date = ev.get("date") or "Date to come"
+    date = ev.get("date", "")
     return """        <a class="event-card" href="event-%(slug)s.html"
            data-tag="%(year)s"
            data-event="%(name)s"
            data-guests="%(guests)s">
           <span class="ph ph-wide"><span>Best photo from this event</span></span>
           <span class="name" style="display:block">%(name)s</span>
-          <span class="meta">%(date)s &middot; %(photos)s photos</span>
+          <span class="meta">%(meta)s</span>
         </a>""" % {
         "slug": ev["slug"],
         "year": ev["year"],
         "name": ev["name"],
         "guests": ", ".join(ev["guests"]),
-        "date": date,
-        "photos": ev.get("photos", 8),
+        "meta": ("%s &middot; %s photos" % (date, ev.get("photos", 8))) if date else ("%s photos" % ev.get("photos", 8)),
     }
 
 

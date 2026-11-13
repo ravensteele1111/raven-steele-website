@@ -53,9 +53,31 @@ and a website.
       back. The repository is public, and a real person's name and words do not go up
       without their yes. The text is ready the moment it comes
 
-## 5. Questions the answers raised
+## 5. Waiting on the customer, from round two
 
-- [ ] **There are no Ethan solo songs.** 25 songs are on the Music page: 6 duets and 19
+- [ ] **The Google Drive link for the photos.** It was blank on the form and there is no
+      link anywhere in the document. Nothing can be swapped in until it arrives
+- [ ] **Instagram highlight links.** Almost everything is in the highlights, and the
+      chapters and mini stories should point at them. Instagram highlight addresses look
+      like `instagram.com/stories/highlights/<number>/` and cannot be guessed, so the
+      customer needs to open each highlight and copy the address
+- [ ] **Is a Lyrics button wanted at all?** The lyrics are in every YouTube description,
+      so the button was removed rather than left saying "Soon". Easy to put back
+
+## 6. Noted, not built
+
+- **Locking the extras behind signing up.** The idea: join the email list and you get
+  access to the extra event photos and so on. Written down on purpose and not started.
+  It would mean every page is public except some photos, which needs either a password
+  everyone shares or real accounts. Worth a proper conversation before any of it is built
+
+## 7. Questions the answers raised
+
+- [ ] **"Where It Better" is spelled that way on YouTube.** The customer said the title
+      should be **Wear It Better**. The video's own title on YouTube reads "Where It
+      Better", so the typo is on YouTube and not in anything we were sent. The site
+      currently matches YouTube. Fix the video title and the site follows
+- [ ] **There are no Ethan solo songs.** 26 songs are on the Music page: 6 duets and 19
       of Raven's. The Ethan filter is built, as the design asked, and currently shows
       "nothing in that one yet". Are his coming, or should the filter go?
 - [ ] **"The Meadows"** is one of Raven's Instagram highlights but was not matched to a
@@ -67,7 +89,7 @@ and a website.
       names written here: the night he saw her on stage, the white shirt, the recording
       studio, the mirror video, Jamaica, babysitting
 
-## 6. Legal
+## 8. Legal
 
 The Privacy, Terms and Cookies questions came back blank, so those pages are not built
 and the footer links still go nowhere.
@@ -76,7 +98,7 @@ What we do have: **Marketing Ambition PTY LTD, Australia**, and
 **aiinfluencerraven@gmail.com** as the contact. That is everything needed to write them
 the moment the answer is yes.
 
-## 7. The email list
+## 9. The email list
 
 Still not connected. The form works, the Watch / Listen / Learn tagging works, and
 submitting says so plainly. It needs an account in the customer's name.

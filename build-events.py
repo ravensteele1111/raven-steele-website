@@ -240,9 +240,9 @@ def page(ev, nxt):
 <meta name="theme-color" content="#000000">
 <meta name="robots" content="noindex, nofollow">
 
-<link rel="icon" href="assets/brand/favicon.ico" sizes="any">
-<link rel="icon" href="assets/brand/icon-512.png" type="image/png">
-<link rel="apple-touch-icon" href="assets/brand/icon-180.png">
+<link rel="icon" href="assets/brand/favicon.ico?v=3" sizes="any">
+<link rel="icon" href="assets/brand/icon-512.png?v=3" type="image/png">
+<link rel="apple-touch-icon" href="assets/brand/icon-180.png?v=3">
 
 <!-- The picture that shows when somebody shares this page. It has to be a
      full address: a phone sharing a link does not know where the page came

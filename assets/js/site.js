@@ -99,13 +99,67 @@
   /* --- Filter chips ------------------------------------------------------
      Any .filters block controls the items inside the element named by its
      data-target. A chip's data-filter of "all" shows everything; otherwise
-     it matches an item's data-tag.                                        */
+     it matches an item's data-tag.
+
+     A long list can also be folded up. Put data-collapse="6" on the target
+     and only six show at a time: when "all" is picked, the six marked
+     data-featured, which the page is built with as a mix of each kind, and
+     under any other chip the first six of that kind. A button somewhere on
+     the page carrying data-more="<target id>" opens and closes it. Its
+     wording comes from data-more-label and data-less-label, where {n} is
+     however many the current chip matches.
+
+     The folding lives in here, with the chips, rather than in its own piece
+     of code. Two separate things both deciding whether a row is visible is
+     a fight, and the row loses.                                           */
   Array.prototype.forEach.call(document.querySelectorAll(".filters"), function (bar) {
     var target = document.getElementById(bar.getAttribute("data-target"));
     if (!target) { return; }
 
     var items = target.querySelectorAll("[data-tag]");
     var empty = target.querySelector(".empty");
+    var limit = parseInt(target.getAttribute("data-collapse"), 10) || 0;
+    var more = document.querySelector("[data-more='" + target.id + "']");
+
+    var want = "all";
+    var open = false;
+
+    function label(button, text, n) {
+      button.textContent = text.replace("{n}", n);
+    }
+
+    function apply() {
+      var matched = 0, shown = 0;
+
+      Array.prototype.forEach.call(items, function (item) {
+        var tags = (item.getAttribute("data-tag") || "").split(" ");
+        var fits = want === "all" || tags.indexOf(want) !== -1;
+        var show = fits;
+
+        if (fits) {
+          matched++;
+          if (limit && !open) {
+            show = want === "all"
+              ? item.getAttribute("data-featured") === "true"
+              : matched <= limit;
+          }
+        }
+
+        item.setAttribute("data-hidden", show ? "false" : "true");
+        if (show) { shown++; }
+      });
+
+      if (empty) { empty.setAttribute("data-hidden", matched ? "true" : "false"); }
+
+      if (more) {
+        var foldable = matched > shown || open;
+        more.setAttribute("data-hidden", foldable ? "false" : "true");
+        label(more,
+              open ? (more.getAttribute("data-less-label") || "Show fewer")
+                   : (more.getAttribute("data-more-label") || "Show all {n}"),
+              matched);
+      }
+    }
 
     bar.addEventListener("click", function (e) {
       var chip = e.target.closest(".chip");
@@ -115,18 +169,24 @@
         c.setAttribute("aria-pressed", c === chip ? "true" : "false");
       });
 
-      var want = chip.getAttribute("data-filter");
-      var shown = 0;
-
-      Array.prototype.forEach.call(items, function (item) {
-        var tags = (item.getAttribute("data-tag") || "").split(" ");
-        var show = want === "all" || tags.indexOf(want) !== -1;
-        item.setAttribute("data-hidden", show ? "false" : "true");
-        if (show) { shown++; }
-      });
-
-      if (empty) { empty.setAttribute("data-hidden", shown ? "true" : "false"); }
+      want = chip.getAttribute("data-filter");
+      open = false;          /* a new chip starts folded up again */
+      apply();
     });
+
+    if (more) {
+      more.addEventListener("click", function () {
+        open = !open;
+        apply();
+        if (!open) {
+          /* Folding away two hundred rows would otherwise leave the reader
+             stranded a long way down an empty page. */
+          var top = target.getBoundingClientRect().top + window.pageYOffset - 90;
+          window.scrollTo({ top: top, behavior: "smooth" });
+        }
+      });
+      apply();
+    }
   });
 
   /* --- Tabs -------------------------------------------------------------- */

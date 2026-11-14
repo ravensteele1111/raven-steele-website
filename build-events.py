@@ -25,6 +25,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 
 PHOTOS = {}
 
+# Where the site lives. Only used for the share pictures, which have to be
+# full addresses. Change this line the day a real domain is pointed here.
+SITE = "https://ravensteele1111.github.io/raven-steele-website/"
+
 NAV = """  <nav class="site-nav" id="site-nav" data-open="false">
       <div class="wrap">
         <ul>
@@ -108,6 +112,71 @@ def cover_shot(ev):
     return shots[n - 1]
 
 
+def share_card(slug, shot):
+    """A JPEG of the event's cover, for the preview when a link is shared.
+
+    It has to be a JPEG. The photos on the site are webp, which is smaller
+    and better, but WhatsApp and the iPhone message preview will not draw a
+    webp and simply show nothing instead. A share picture that nobody can
+    see is the same as no share picture.
+
+    Square, because the surfaces this lands in treat a square kindly and a
+    tall photograph badly: a wide crop out of a portrait shot keeps about a
+    quarter of its height, which is how people lose their heads.
+    """
+    out = os.path.join(HERE, "assets", "share", slug + ".jpg")
+    src = os.path.join(HERE, "assets", "events", slug, shot + ".webp")
+    if not os.path.exists(src):
+        return None
+    if os.path.exists(out) and os.path.getmtime(out) >= os.path.getmtime(src):
+        return "assets/share/%s.jpg" % slug
+
+    try:
+        from PIL import Image
+    except ImportError:
+        print("  no Pillow, share picture not made for", slug)
+        return None
+
+    im = Image.open(src).convert("RGB")
+    side = min(im.width, im.height)
+    left = (im.width - side) // 2
+    # A third of the way down rather than the middle: in a standing shot the
+    # faces are in the top half, and the middle crop cuts them off.
+    top = int((im.height - side) * 0.33)
+    im = im.crop((left, top, left + side, top + side))
+    if side != 1200:
+        im = im.resize((1200, 1200), Image.LANCZOS)
+
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    im.save(out, "JPEG", quality=82, optimize=True)
+    print("  share picture:", os.path.basename(out))
+    return "assets/share/%s.jpg" % slug
+
+
+def share_tags(ev, shot):
+    """What a phone shows when this event gets shared.
+
+    An event already owns the right picture: its own cover. Pages that are
+    not an event have nothing of their own yet and are waiting on a logo
+    from the customer, which is why this only exists here.
+    """
+    lines = ['<meta property="og:type" content="article">',
+             '<meta property="og:title" content="%s">' % ev["name"],
+             '<meta property="og:description" content="%s. The night, and every photo from it.">'
+             % ev["name"],
+             '<meta property="og:url" content="%sevent-%s.html">' % (SITE, ev["slug"])]
+    card = share_card(ev["slug"], shot) if shot else None
+    if card:
+        pic = SITE + card
+        lines.append('<meta property="og:image" content="%s">' % pic)
+        lines.append('<meta property="og:image:width" content="1200">')
+        lines.append('<meta property="og:image:height" content="1200">')
+        lines.append('<meta property="og:image:alt" content="%s">' % ev["name"])
+        lines.append('<meta name="twitter:card" content="summary_large_image">')
+        lines.append('<meta name="twitter:image" content="%s">' % pic)
+    return "\n".join(lines)
+
+
 def cover_for(ev):
     shot = cover_shot(ev)
     if shot:
@@ -152,6 +221,8 @@ def page(ev, nxt):
         hero = ('      <div class="ph ph-wide" style="margin-bottom:1.25rem">'
                 '<span>Group shot, full width</span></div>')
 
+    share = share_tags(ev, shot)
+
     return """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -165,6 +236,13 @@ def page(ev, nxt):
 <meta name="description" content="%(name)s. The night, and every photo from it.">
 <meta name="theme-color" content="#000000">
 <meta name="robots" content="noindex, nofollow">
+
+<!-- The picture that shows when somebody shares this page. It has to be a
+     full address: a phone sharing a link does not know where the page came
+     from, so "assets/..." means nothing to it. SITE at the top of
+     build-events.py is that address, and it changes the day a real domain
+     is pointed at the site. -->
+%(share)s
 <link rel="stylesheet" href="assets/css/site.css">
 <script src="assets/js/site.js" defer></script>
 </head>
@@ -207,7 +285,12 @@ def page(ev, nxt):
 
       <p class="hint">Tap any photo to see it big and share it.</p>
 
+      <!-- "#top" with nothing of that name on the page is the browser's own
+           way of saying the top of the document. No script, and it works
+           even if the page is still loading. Somebody who has scrolled past
+           two dozen photographs should not have to swipe all the way back. -->
       <div class="entry">
+        <a class="btn btn-ghost" href="#top">&uarr; Back to the top</a>
         <button class="btn btn-ghost" data-share>Share event</button>
         <a class="btn btn-primary" href="event-%(next)s.html">Next event</a>
       </div>
@@ -225,6 +308,7 @@ def page(ev, nxt):
         "story": story,
         "photos": photo_grid(ev["slug"], ev.get("photos", 8)),
         "next": nxt,
+        "share": share,
         "foot": FOOT,
     }
 

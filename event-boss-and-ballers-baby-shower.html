@@ -11,8 +11,24 @@
 <meta name="description" content="Boss and Ballers Baby Shower. The night, and every photo from it.">
 <meta name="theme-color" content="#000000">
 <meta name="robots" content="noindex, nofollow">
+
+<!-- The picture that shows when somebody shares this page. It has to be a
+     full address: a phone sharing a link does not know where the page came
+     from, so "assets/..." means nothing to it. SITE at the top of
+     build-events.py is that address, and it changes the day a real domain
+     is pointed at the site. -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Boss and Ballers Baby Shower">
+<meta property="og:description" content="Boss and Ballers Baby Shower. The night, and every photo from it.">
+<meta property="og:url" content="https://ravensteele1111.github.io/raven-steele-website/event-boss-and-ballers-baby-shower.html">
+<meta property="og:image" content="https://ravensteele1111.github.io/raven-steele-website/assets/share/boss-and-ballers-baby-shower.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Boss and Ballers Baby Shower">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ravensteele1111.github.io/raven-steele-website/assets/share/boss-and-ballers-baby-shower.jpg">
 <link rel="stylesheet" href="assets/css/site.css?v=b66a418c">
-<script src="assets/js/site.js?v=bf0b9ac3" defer></script>
+<script src="assets/js/site.js?v=8e358dca" defer></script>
 </head>
 <body>
 
@@ -87,7 +103,12 @@
 
       <p class="hint">Tap any photo to see it big and share it.</p>
 
+      <!-- "#top" with nothing of that name on the page is the browser's own
+           way of saying the top of the document. No script, and it works
+           even if the page is still loading. Somebody who has scrolled past
+           two dozen photographs should not have to swipe all the way back. -->
       <div class="entry">
+        <a class="btn btn-ghost" href="#top">&uarr; Back to the top</a>
         <button class="btn btn-ghost" data-share>Share event</button>
         <a class="btn btn-primary" href="event-busy-bees-baby-shower.html">Next event</a>
       </div>

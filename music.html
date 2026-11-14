@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Music | Raven Steele">
 <link rel="stylesheet" href="assets/css/site.css?v=b66a418c">
-<script src="assets/js/site.js?v=bf0b9ac3" defer></script>
+<script src="assets/js/site.js?v=8e358dca" defer></script>
 </head>
 <body>
 
@@ -45,15 +45,17 @@
         <h2>Music</h2>
       </div>
 
+      <!-- PLAYER -->
       <div class="player">
         <button class="player-frame" id="player-frame"
-                data-video="VkQRPUc7gwk" data-title="Eviction Notice"
-                aria-label="Play Eviction Notice">
-          <img src="assets/thumbs/VkQRPUc7gwk.jpg" alt="" width="640" height="360">
+                data-video="7Q0JOzCVJy0" data-title="Not Your Hallmark Christmas"
+                aria-label="Play Not Your Hallmark Christmas">
+          <img src="assets/thumbs/7Q0JOzCVJy0.jpg" alt="" width="640" height="360">
           <span class="play-big" aria-hidden="true"></span>
         </button>
-        <p class="now-playing">Now playing &nbsp;<strong id="now-playing">Eviction Notice</strong></p>
+        <p class="now-playing">Now playing &nbsp;<strong id="now-playing">Not Your Hallmark Christmas</strong></p>
       </div>
+      <!-- /PLAYER -->
 
     </div>
   </section>
@@ -66,6 +68,7 @@
         <h2>All songs</h2>
       </div>
 
+      <!-- SONGS -->
       <div class="filters" data-target="songs">
         <button class="chip" data-filter="all" aria-pressed="true">All</button>
         <button class="chip" data-filter="duet" aria-pressed="false">Duets</button>
@@ -73,302 +76,330 @@
         <button class="chip" data-filter="ethan" aria-pressed="false">Ethan</button>
       </div>
 
-      <div class="stack" id="songs">
-        <a class="song" data-tag="raven"
+      <div class="stack" id="songs" data-collapse="6">
+        <a class="song" data-tag="raven" data-featured="true" data-hidden="false"
+           href="https://www.youtube.com/watch?v=7Q0JOzCVJy0"
+           data-video="7Q0JOzCVJy0" data-title="Not Your Hallmark Christmas">
+          <img class="thumb" src="assets/thumbs/7Q0JOzCVJy0-sm.jpg" alt="" loading="lazy" width="160" height="90">
+          <span class="words"><span class="name">Not Your Hallmark Christmas</span><span class="tag">Raven</span></span>
+          <span class="go">Play</span>
+        </a>
+        <a class="song" data-tag="raven" data-featured="true" data-hidden="false"
+           href="https://www.youtube.com/watch?v=jjvIflETirY"
+           data-video="jjvIflETirY" data-title="Drunk Uncle Energy">
+          <img class="thumb" src="assets/thumbs/jjvIflETirY-sm.jpg" alt="" loading="lazy" width="160" height="90">
+          <span class="words"><span class="name">Drunk Uncle Energy</span><span class="tag">Raven</span></span>
+          <span class="go">Play</span>
+        </a>
+        <a class="song" data-tag="raven" data-hidden="true"
+           href="https://www.youtube.com/watch?v=eqKP0s-p75g"
+           data-video="eqKP0s-p75g" data-title="Bow Down to December">
+          <img class="thumb" src="assets/thumbs/eqKP0s-p75g-sm.jpg" alt="" loading="lazy" width="160" height="90">
+          <span class="words"><span class="name">Bow Down to December</span><span class="tag">Raven</span></span>
+          <span class="go">Play</span>
+        </a>
+        <a class="song" data-tag="raven" data-hidden="true"
+           href="https://www.youtube.com/watch?v=6MqzNwm5PCs"
+           data-video="6MqzNwm5PCs" data-title="After the Wrapping Paper">
+          <img class="thumb" src="assets/thumbs/6MqzNwm5PCs-sm.jpg" alt="" loading="lazy" width="160" height="90">
+          <span class="words"><span class="name">After the Wrapping Paper</span><span class="tag">Raven</span></span>
+          <span class="go">Play</span>
+        </a>
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=VkQRPUc7gwk"
            data-video="VkQRPUc7gwk" data-title="Eviction Notice">
           <img class="thumb" src="assets/thumbs/VkQRPUc7gwk-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Eviction Notice</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="duet"
+        <a class="song" data-tag="duet" data-featured="true" data-hidden="false"
            href="https://www.youtube.com/watch?v=-ka4_nCwBQI"
            data-video="-ka4_nCwBQI" data-title="Hale Vs Steele">
           <img class="thumb" src="assets/thumbs/-ka4_nCwBQI-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Hale Vs Steele</span><span class="tag">Duet</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=_E80lJz6GSc"
            data-video="_E80lJz6GSc" data-title="Kiss Me There">
           <img class="thumb" src="assets/thumbs/_E80lJz6GSc-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Kiss Me There</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=A6sHlMwN7i8"
-           data-video="A6sHlMwN7i8" data-title="Hot & Heavy">
+           data-video="A6sHlMwN7i8" data-title="Hot &amp; Heavy">
           <img class="thumb" src="assets/thumbs/A6sHlMwN7i8-sm.jpg" alt="" loading="lazy" width="160" height="90">
-          <span class="words"><span class="name">Hot & Heavy</span><span class="tag">Raven</span></span>
+          <span class="words"><span class="name">Hot &amp; Heavy</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="duet"
+        <a class="song" data-tag="duet" data-featured="true" data-hidden="false"
            href="https://www.youtube.com/watch?v=yQnEh7DSRRc"
            data-video="yQnEh7DSRRc" data-title="Love You For You">
           <img class="thumb" src="assets/thumbs/yQnEh7DSRRc-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Love You For You</span><span class="tag">Duet</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="duet"
+        <a class="song" data-tag="duet" data-hidden="true"
            href="https://www.youtube.com/watch?v=RbpEYQaXnlQ"
            data-video="RbpEYQaXnlQ" data-title="You Make Me Smile">
           <img class="thumb" src="assets/thumbs/RbpEYQaXnlQ-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">You Make Me Smile</span><span class="tag">Duet</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="duet"
+        <a class="song" data-tag="duet" data-hidden="true"
            href="https://www.youtube.com/watch?v=Kri4Tja3jeg"
            data-video="Kri4Tja3jeg" data-title="Rebel Heart">
           <img class="thumb" src="assets/thumbs/Kri4Tja3jeg-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Rebel Heart</span><span class="tag">Duet</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="duet"
+        <a class="song" data-tag="duet" data-hidden="true"
            href="https://www.youtube.com/watch?v=wlGuZmlJA6I"
            data-video="wlGuZmlJA6I" data-title="Same Empty Room">
           <img class="thumb" src="assets/thumbs/wlGuZmlJA6I-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Same Empty Room</span><span class="tag">Duet</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="duet"
+        <a class="song" data-tag="duet" data-hidden="true"
            href="https://www.youtube.com/watch?v=M00szcJYIo8"
            data-video="M00szcJYIo8" data-title="Happy Birthday Niko">
           <img class="thumb" src="assets/thumbs/M00szcJYIo8-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Happy Birthday Niko</span><span class="tag">Duet</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=RUDrLQeOr8I"
            data-video="RUDrLQeOr8I" data-title="Watch Me">
           <img class="thumb" src="assets/thumbs/RUDrLQeOr8I-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Watch Me</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=DPj5B5rf-9w"
            data-video="DPj5B5rf-9w" data-title="Appetite">
           <img class="thumb" src="assets/thumbs/DPj5B5rf-9w-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Appetite</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=LqvgA5AItxQ"
            data-video="LqvgA5AItxQ" data-title="Wrong One">
           <img class="thumb" src="assets/thumbs/LqvgA5AItxQ-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Wrong One</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=kcccXDJ0t68"
            data-video="kcccXDJ0t68" data-title="You Belong With Me">
           <img class="thumb" src="assets/thumbs/kcccXDJ0t68-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">You Belong With Me</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=gvLoWc9jWMA"
            data-video="gvLoWc9jWMA" data-title="Come Here">
           <img class="thumb" src="assets/thumbs/gvLoWc9jWMA-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Come Here</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=NZ5Jt9GvCg8"
            data-video="NZ5Jt9GvCg8" data-title="Trouble">
           <img class="thumb" src="assets/thumbs/NZ5Jt9GvCg8-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Trouble</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=ZihCcvb2m_o"
            data-video="ZihCcvb2m_o" data-title="The Little Things">
           <img class="thumb" src="assets/thumbs/ZihCcvb2m_o-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">The Little Things</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=xqeuTXyIpc4"
            data-video="xqeuTXyIpc4" data-title="Bet Against Me">
           <img class="thumb" src="assets/thumbs/xqeuTXyIpc4-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Bet Against Me</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=l-o5aeq62QE"
            data-video="l-o5aeq62QE" data-title="Underestimated">
           <img class="thumb" src="assets/thumbs/l-o5aeq62QE-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Underestimated</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=dG5FJz4EMKk"
            data-video="dG5FJz4EMKk" data-title="Thank You For Being You">
           <img class="thumb" src="assets/thumbs/dG5FJz4EMKk-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Thank You For Being You</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=AC88_rEhcyI"
            data-video="AC88_rEhcyI" data-title="Not What I Meant">
           <img class="thumb" src="assets/thumbs/AC88_rEhcyI-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Not What I Meant</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=6D8NbUxr3Fs"
            data-video="6D8NbUxr3Fs" data-title="Safe With Me">
           <img class="thumb" src="assets/thumbs/6D8NbUxr3Fs-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Safe With Me</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=7uVkkeoFwCk"
            data-video="7uVkkeoFwCk" data-title="All I Do Is Win">
           <img class="thumb" src="assets/thumbs/7uVkkeoFwCk-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">All I Do Is Win</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=tLGXUJZo1mg"
            data-video="tLGXUJZo1mg" data-title="If You Knew">
           <img class="thumb" src="assets/thumbs/tLGXUJZo1mg-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">If You Knew</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=3xSMeUjfEvw"
            data-video="3xSMeUjfEvw" data-title="Where It Better">
           <img class="thumb" src="assets/thumbs/3xSMeUjfEvw-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Where It Better</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=cKTO84neThA"
            data-video="cKTO84neThA" data-title="Show Me">
           <img class="thumb" src="assets/thumbs/cKTO84neThA-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Show Me</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="raven"
+        <a class="song" data-tag="raven" data-hidden="true"
            href="https://www.youtube.com/watch?v=16GTiH4WwBA"
            data-video="16GTiH4WwBA" data-title="December Truths">
           <img class="thumb" src="assets/thumbs/16GTiH4WwBA-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">December Truths</span><span class="tag">Raven</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="ethan"
+        <a class="song" data-tag="ethan" data-featured="true" data-hidden="false"
            href="https://www.youtube.com/watch?v=Gdga3H9vKIs"
            data-video="Gdga3H9vKIs" data-title="You Want More">
           <img class="thumb" src="assets/thumbs/Gdga3H9vKIs-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">You Want More</span><span class="tag">Ethan</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="ethan"
+        <a class="song" data-tag="ethan" data-featured="true" data-hidden="false"
            href="https://www.youtube.com/watch?v=ctD_avcdYP8"
            data-video="ctD_avcdYP8" data-title="When the Shadows Fall">
           <img class="thumb" src="assets/thumbs/ctD_avcdYP8-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">When the Shadows Fall</span><span class="tag">Ethan</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="ethan"
+        <a class="song" data-tag="ethan" data-hidden="true"
            href="https://www.youtube.com/watch?v=AytvPY0GNZ8"
            data-video="AytvPY0GNZ8" data-title="If I'd Known">
           <img class="thumb" src="assets/thumbs/AytvPY0GNZ8-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">If I'd Known</span><span class="tag">Ethan</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="ethan"
+        <a class="song" data-tag="ethan" data-hidden="true"
            href="https://www.youtube.com/watch?v=jQuHAkRbbtc"
            data-video="jQuHAkRbbtc" data-title="I See It Now">
           <img class="thumb" src="assets/thumbs/jQuHAkRbbtc-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">I See It Now</span><span class="tag">Ethan</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="ethan"
+        <a class="song" data-tag="ethan" data-hidden="true"
            href="https://www.youtube.com/watch?v=2mHDIaGt3C0"
            data-video="2mHDIaGt3C0" data-title="Stay a Little Longer">
           <img class="thumb" src="assets/thumbs/2mHDIaGt3C0-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Stay a Little Longer</span><span class="tag">Ethan</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="ethan"
+        <a class="song" data-tag="ethan" data-hidden="true"
            href="https://www.youtube.com/watch?v=lfKjrmUjAu0"
            data-video="lfKjrmUjAu0" data-title="Tuesday">
           <img class="thumb" src="assets/thumbs/lfKjrmUjAu0-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Tuesday</span><span class="tag">Ethan</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="ethan"
+        <a class="song" data-tag="ethan" data-hidden="true"
            href="https://www.youtube.com/watch?v=le12n4UNyhw"
            data-video="le12n4UNyhw" data-title="Somewhere Along the Way">
           <img class="thumb" src="assets/thumbs/le12n4UNyhw-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Somewhere Along the Way</span><span class="tag">Ethan</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="ethan"
+        <a class="song" data-tag="ethan" data-hidden="true"
            href="https://www.youtube.com/watch?v=RYyLKfKgg2s"
            data-video="RYyLKfKgg2s" data-title="Already Gone">
           <img class="thumb" src="assets/thumbs/RYyLKfKgg2s-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Already Gone</span><span class="tag">Ethan</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="ethan"
+        <a class="song" data-tag="ethan" data-hidden="true"
            href="https://www.youtube.com/watch?v=tRsqqGyMKwk"
            data-video="tRsqqGyMKwk" data-title="The Whole Story">
           <img class="thumb" src="assets/thumbs/tRsqqGyMKwk-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">The Whole Story</span><span class="tag">Ethan</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="ethan"
+        <a class="song" data-tag="ethan" data-hidden="true"
            href="https://www.youtube.com/watch?v=EzWxBBsEUuE"
            data-video="EzWxBBsEUuE" data-title="Brick by Brick">
           <img class="thumb" src="assets/thumbs/EzWxBBsEUuE-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Brick by Brick</span><span class="tag">Ethan</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="ethan"
+        <a class="song" data-tag="ethan" data-hidden="true"
            href="https://www.youtube.com/watch?v=cF50Jt_yNyk"
            data-video="cF50Jt_yNyk" data-title="I Don't Know What to Do With Kindness">
           <img class="thumb" src="assets/thumbs/cF50Jt_yNyk-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">I Don't Know What to Do With Kindness</span><span class="tag">Ethan</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="ethan"
+        <a class="song" data-tag="ethan" data-hidden="true"
            href="https://www.youtube.com/watch?v=9JZgaTwG2mQ"
            data-video="9JZgaTwG2mQ" data-title="Counting Exits">
           <img class="thumb" src="assets/thumbs/9JZgaTwG2mQ-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Counting Exits</span><span class="tag">Ethan</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="ethan"
+        <a class="song" data-tag="ethan" data-hidden="true"
            href="https://www.youtube.com/watch?v=NHVYWzk81_g"
            data-video="NHVYWzk81_g" data-title="I'll Stay">
           <img class="thumb" src="assets/thumbs/NHVYWzk81_g-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">I'll Stay</span><span class="tag">Ethan</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="ethan"
+        <a class="song" data-tag="ethan" data-hidden="true"
            href="https://www.youtube.com/watch?v=8eU7P5vcI6Q"
            data-video="8eU7P5vcI6Q" data-title="Not Alone">
           <img class="thumb" src="assets/thumbs/8eU7P5vcI6Q-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Not Alone</span><span class="tag">Ethan</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="ethan"
+        <a class="song" data-tag="ethan" data-hidden="true"
            href="https://www.youtube.com/watch?v=G_q_8gZd2ZQ"
            data-video="G_q_8gZd2ZQ" data-title="Half of Me">
           <img class="thumb" src="assets/thumbs/G_q_8gZd2ZQ-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">Half of Me</span><span class="tag">Ethan</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="ethan"
+        <a class="song" data-tag="ethan" data-hidden="true"
            href="https://www.youtube.com/watch?v=UF39ASmHv_U"
            data-video="UF39ASmHv_U" data-title="When I Can't">
           <img class="thumb" src="assets/thumbs/UF39ASmHv_U-sm.jpg" alt="" loading="lazy" width="160" height="90">
           <span class="words"><span class="name">When I Can't</span><span class="tag">Ethan</span></span>
           <span class="go">Play</span>
         </a>
-        <a class="song" data-tag="ethan"
+        <a class="song" data-tag="ethan" data-hidden="true"
            href="https://www.youtube.com/watch?v=CHTt7XmvjwI"
            data-video="CHTt7XmvjwI" data-title="From a Distance">
           <img class="thumb" src="assets/thumbs/CHTt7XmvjwI-sm.jpg" alt="" loading="lazy" width="160" height="90">
@@ -377,6 +408,13 @@
         </a>
         <p class="empty" data-hidden="true">Nothing in that one yet.</p>
       </div>
+
+      <div class="cta-wide">
+        <button class="btn btn-ghost" data-more="songs"
+                data-more-label="Show all {n} songs"
+                data-less-label="Show fewer">Show all 47 songs</button>
+      </div>
+      <!-- /SONGS -->
     </div>
   </section>
 

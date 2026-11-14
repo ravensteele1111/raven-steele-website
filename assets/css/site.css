@@ -960,6 +960,8 @@ a.skool-tile{ text-decoration:none; }
   letter-spacing:.14em; text-transform:uppercase;
 }
 .hl-pair a:hover span{ color:var(--white); }
+/* One on its own, rather than a pair. */
+.hl-one{ grid-template-columns:minmax(0,1fr); max-width:11rem; }
 
 /* =========================================================================
    The three story cards on the home page

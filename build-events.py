@@ -128,9 +128,12 @@ def share_card(slug, shot):
     src = os.path.join(HERE, "assets", "events", slug, shot + ".webp")
     if not os.path.exists(src):
         return None
-    if os.path.exists(out) and os.path.getmtime(out) >= os.path.getmtime(src):
-        return "assets/share/%s.jpg" % slug
 
+    # It is remade every time on purpose. Skipping the work when the saved
+    # picture is newer than the photo looks sensible and is wrong: changing
+    # "cover" in events.json points this at a different photo that was
+    # downloaded weeks ago, so the old share picture would always win and the
+    # new cover would silently never appear. Eleven pictures take a second.
     try:
         from PIL import Image
     except ImportError:

@@ -18,7 +18,7 @@
     "Pablo",
     "Pablo's wife"
    ],
-   "guests_complete": false,
+   "guests_complete": true,
    "photos": 8
   },
   {
@@ -38,7 +38,7 @@
     "Gio",
     "Gio's family"
    ],
-   "guests_complete": false,
+   "guests_complete": true,
    "photos": 8
   },
   {
@@ -66,39 +66,39 @@
   {
    "slug": "donuts-with-mom",
    "name": "Donuts With Mom",
-   "date": "",
+   "date": "November 2026",
    "year": "2026",
-   "draft": true,
-   "story": "",
+   "draft": false,
+   "story": "Sprinkles everywhere. Mums, grandmas and a whole crew of kids took over a pastel mermaid donut party, and Ethan went full godfather mode, princess crown and all.",
    "guests": [
     "Raven",
     "Ethan"
    ],
-   "guests_complete": false,
+   "guests_complete": true,
    "photos": 8,
    "cover": 3
   },
   {
    "slug": "haunted-carnival",
    "name": "Haunted Carnival",
-   "date": "",
+   "date": "October 2026",
    "year": "2026",
-   "draft": true,
-   "story": "",
+   "draft": false,
+   "story": "The Queen and King of Hearts crashed a haunted Wonderland carnival. Carousel races, a fortune teller with a giant purple afro, a hall of mirrors and one very crowded ferris wheel. Off with their heads!",
    "guests": [
     "Raven",
     "Ethan"
    ],
-   "guests_complete": false,
+   "guests_complete": true,
    "photos": 8
   },
   {
    "slug": "insta-jail",
    "name": "Insta Jail",
-   "date": "",
+   "date": "October 2026",
    "year": "2026",
-   "draft": true,
-   "story": "",
+   "draft": false,
+   "story": "Everybody got locked up. Raven's charge: making love in an elevator. Ethan's charge: Trusted Steele. Pajamas, mugshots, the pool and the cell block. Nobody posted bail.",
    "subtitle": "Pablo x Giothaplugg Halloween Pajama Jam",
    "guests": [
     "Raven",
@@ -106,80 +106,80 @@
     "Pablo",
     "Giothaplugg"
    ],
-   "guests_complete": false,
+   "guests_complete": true,
    "photos": 8,
    "cover": 2
   },
   {
    "slug": "xori-baby-shower",
    "name": "Xori Baby Shower",
-   "date": "",
+   "date": "October 2026",
    "year": "2026",
-   "draft": true,
-   "story": "",
+   "draft": false,
+   "story": "Black, gold and a whole lot of baby love. The bottle races got way too competitive, the nappy cake castle mostly survived, and the mum-to-be finally got the throne she deserved.",
    "guests": [
     "Raven",
     "Ethan"
    ],
-   "guests_complete": false,
+   "guests_complete": true,
    "photos": 24,
    "cover": 12
   },
   {
    "slug": "blossom-meadows",
    "name": "Blossom Meadows",
-   "date": "",
+   "date": "November 2026",
    "year": "2026",
-   "draft": true,
-   "story": "",
+   "draft": false,
+   "story": "Koi ponds, candlelight and cocktails at the round bar. Keke and Pierce threw the kind of night where the speeches got emotional, the dance floor got full, and Raven and Ethan forgot anyone else was in the room.",
    "guests": [
     "Raven",
     "Ethan"
    ],
-   "guests_complete": false,
+   "guests_complete": true,
    "photos": 24
   },
   {
    "slug": "vampire-birthday",
    "name": "Dream's Royal Vampire Birthday Party",
-   "date": "",
+   "date": "October 2026",
    "year": "2026",
-   "draft": true,
-   "story": "",
+   "draft": false,
+   "story": "Fangs out, crowns on. The birthday queen held court from her throne, then the vampires took over mini golf, go-karts and a smash room. Hale vs Steele got serious. Things got broken. On purpose.",
    "guests": [
     "Raven",
     "Ethan"
    ],
-   "guests_complete": false,
+   "guests_complete": true,
    "photos": 24
   },
   {
    "slug": "circus-of-horrors",
    "name": "Circus of Horrors",
-   "date": "",
+   "date": "October 2026",
    "year": "2026",
-   "draft": true,
+   "draft": false,
    "subtitle": "The Village Women's Group x CLVB FANTAXY",
-   "story": "",
+   "story": "Step right up, if you dare. A fortune teller who knew far too much, a photo booth full of villains and a dance floor nobody wanted to leave. The scariest thing in the room? The bathroom selfie queue.",
    "guests": [
     "Raven",
     "Ethan"
    ],
-   "guests_complete": false,
+   "guests_complete": true,
    "photos": 24
   },
   {
    "slug": "90s-party",
    "name": "90s Party",
-   "date": "",
+   "date": "October 2026",
    "year": "2026",
-   "draft": true,
-   "story": "",
+   "draft": false,
+   "story": "Baggy jeans, gold chains and big 90s energy. Arcade battles, bowling trash talk, dominoes slammed on the table, and a neon hallway that saw way too much kissing.",
    "guests": [
     "Raven",
     "Ethan"
    ],
-   "guests_complete": false,
+   "guests_complete": true,
    "photos": 24
   }
  ],

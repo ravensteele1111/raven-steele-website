@@ -72,18 +72,6 @@ FOOT = """<footer class="site-foot">
 </html>
 """
 
-MOODS = ["sweet", "goofy", "action"]
-
-FILTER_ROW = """      <div class="filters" data-target="photos">
-        <button class="chip" data-filter="all" aria-pressed="true">All</button>
-        <button class="chip" data-filter="goofy" aria-pressed="false">Goofy</button>
-        <button class="chip" data-filter="sweet" aria-pressed="false">Sweet</button>
-        <button class="chip" data-filter="action" aria-pressed="false">Action</button>
-      </div>
-
-"""
-
-
 def photo_grid(slug, count):
     """Real photos where we have them, labelled placeholders where we do not."""
     names = PHOTOS.get(slug) or []
@@ -99,17 +87,13 @@ def photo_grid(slug, count):
     rows = []
     for i in range(count):
         rows.append(
-            '        <button data-tag="%s" data-caption="Photo %d">'
-            '<span class="ph ph-square"><span>Photo</span></span></button>'
-            % (MOODS[i % len(MOODS)], i + 1))
+            '        <button data-caption="Photo %d">'
+            '<span class="ph ph-square"><span>Photo</span></span></button>' % (i + 1))
     return "\n".join(rows)
 
 
-def filters_for(slug):
-    """Mood filters only mean something once somebody has tagged the photos.
-    Nobody has, so where there are real photos the row is left out rather than
-    shown doing nothing."""
-    return "" if PHOTOS.get(slug) else FILTER_ROW
+# Mood filters were removed for good: the customer decided the photos will not
+# be tagged goofy / sweet / action, so there is nothing for them to filter.
 
 
 def cover_shot(ev):
@@ -158,9 +142,6 @@ def page(ev, nxt):
     date = ev.get("date", "")
     sub = ev.get("subtitle")
 
-    guests = "\n".join('        <span>%s</span>' % g for g in ev["guests"])
-    if not ev.get("guests_complete", False):
-        guests += '\n        <span>[MORE GUESTS]</span>'
 
     shot = cover_shot(ev)
     if shot:
@@ -213,18 +194,6 @@ def page(ev, nxt):
     </div>
   </section>
 
-  <section class="alt">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">The guest list</p>
-        <h2>Who was there</h2>
-      </div>
-      <div class="guests">
-%(guests)s
-      </div>
-    </div>
-  </section>
-
   <section>
     <div class="wrap">
       <div class="section-head">
@@ -232,14 +201,14 @@ def page(ev, nxt):
         <h2>Photos</h2>
       </div>
 
-%(filters)s      <div class="photo-grid" id="photos">
+      <div class="photo-grid" id="photos">
 %(photos)s
       </div>
 
       <p class="hint">Tap any photo to see it big and share it.</p>
 
       <div class="entry">
-        <span class="btn btn-ghost" data-pending>Share event</span>
+        <button class="btn btn-ghost" data-share>Share event</button>
         <a class="btn btn-primary" href="event-%(next)s.html">Next event</a>
       </div>
     </div>
@@ -254,8 +223,6 @@ def page(ev, nxt):
         "datep": ('<p class="event-date">%s</p>' % date) if date else "",
         "sub": ('\n      <p class="lede" style="margin-top:.2rem"><em>%s</em></p>' % sub) if sub else "",
         "story": story,
-        "guests": guests,
-        "filters": filters_for(ev["slug"]),
         "photos": photo_grid(ev["slug"], ev.get("photos", 8)),
         "next": nxt,
         "foot": FOOT,
@@ -269,7 +236,7 @@ def card(ev):
     return """        <a class="event-card" href="event-%(slug)s.html"
            data-tag="%(year)s"
            data-event="%(name)s"
-           data-guests="%(guests)s">
+           data-event="%(name)s">
           %(cover)s
           <span class="name" style="display:block">%(name)s</span>
           <span class="meta">%(meta)s</span>
@@ -277,7 +244,6 @@ def card(ev):
         "slug": ev["slug"],
         "year": ev["year"],
         "name": ev["name"],
-        "guests": ", ".join(ev["guests"]),
         "cover": cover_for(ev),
         "meta": meta,
     }

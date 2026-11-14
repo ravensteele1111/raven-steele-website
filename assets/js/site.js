@@ -341,3 +341,41 @@
     window.scrollTo({ top: top, behavior: "smooth" });
   });
 })();
+
+
+/* ===========================================================================
+   Share event. The customer asked for the phone's own share menu.
+   Browsers that do not have one copy the address instead, which is the same
+   job done the only other way available.
+   =========================================================================== */
+(function () {
+  "use strict";
+  var btn = document.querySelector("[data-share]");
+  if (!btn) { return; }
+
+  btn.addEventListener("click", function () {
+    var data = {
+      title: document.title,
+      text: document.title,
+      url: window.location.href
+    };
+    if (navigator.share) {
+      navigator.share(data).catch(function () {});
+      return;
+    }
+    var said = function (msg) {
+      var old = btn.textContent;
+      btn.textContent = msg;
+      setTimeout(function () { btn.textContent = old; }, 1800);
+    };
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(data.url).then(function () {
+        said("Link copied");
+      }, function () {
+        said("Could not copy");
+      });
+    } else {
+      said(data.url);
+    }
+  });
+})();

@@ -15,12 +15,25 @@
 <!-- Off until the site goes live on its own domain. -->
 <meta name="robots" content="noindex, nofollow">
 
+
+
+<!-- The tab icon, and the picture shown when a link is shared. The share
+     picture has to be a full address: a phone sending a link has no idea
+     where the page came from. These change the day the domain lands. -->
+<link rel="icon" href="assets/brand/favicon.ico" sizes="any">
+<link rel="icon" href="assets/brand/icon-512.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/brand/icon-180.png">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Raven Steele">
 <meta property="og:title" content="Raven Steele">
 <meta property="og:description" content="Rock star. Rebel. Storyteller.">
+<meta property="og:url" content="https://ravensteele1111.github.io/raven-steele-website/">
+<meta property="og:image" content="https://ravensteele1111.github.io/raven-steele-website/assets/brand/share-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-
-<link rel="stylesheet" href="assets/css/site.css?v=8cc85530">
+<meta name="twitter:image" content="https://ravensteele1111.github.io/raven-steele-website/assets/brand/share-card.jpg">
+<link rel="stylesheet" href="assets/css/site.css?v=4fb05f22">
 <script src="assets/js/site.js?v=8e358dca" defer></script>
 </head>
 <body>
@@ -53,10 +66,22 @@
   <!-- ===================== HERO ===================== -->
   <section class="hero">
     <div class="wrap">
-      <div class="ph ph-hero">
-        <span>Video loop or photo</span>
-        <span>Raven on stage, filling the whole screen</span>
-      </div>
+      <!-- One of five temporary clips the customer sent. Raven is making the
+           final one. Swapping it is one file: assets/video/hero.mp4 and the
+           poster beside it.
+
+           muted is not optional. A phone will refuse to play a video on its
+           own without it, even one with no sound in it at all, and playsinline
+           stops an iPhone throwing it into the full screen player. The poster
+           is the first frame of the clip, so there is nothing to see when the
+           video takes over. -->
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+             poster="assets/video/hero-poster.webp"
+             aria-label="Raven Steele on stage">
+        <source src="assets/video/hero.mp4" type="video/mp4">
+        <img src="assets/video/hero-poster.webp" alt="Raven Steele on stage"
+             width="1280" height="720">
+      </video>
 
       <p class="eyebrow" style="margin-top:1.75rem">The official home of</p>
       <h1>Raven<br>Steele</h1>

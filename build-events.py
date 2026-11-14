@@ -240,11 +240,16 @@ def page(ev, nxt):
 <meta name="theme-color" content="#000000">
 <meta name="robots" content="noindex, nofollow">
 
+<link rel="icon" href="assets/brand/favicon.ico" sizes="any">
+<link rel="icon" href="assets/brand/icon-512.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/brand/icon-180.png">
+
 <!-- The picture that shows when somebody shares this page. It has to be a
      full address: a phone sharing a link does not know where the page came
      from, so "assets/..." means nothing to it. SITE at the top of
      build-events.py is that address, and it changes the day a real domain
-     is pointed at the site. -->
+     is pointed at the site. An event shares its own cover rather than the
+     logo, because it has something better to show. -->
 %(share)s
 <link rel="stylesheet" href="assets/css/site.css">
 <script src="assets/js/site.js" defer></script>

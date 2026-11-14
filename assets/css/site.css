@@ -451,6 +451,14 @@ a.card:hover{ border-color:rgba(255,255,255,.28); background:#161616; }
   .album-words .entry{ justify-items:start; }
 }
 
+/* --- The hero clip ------------------------------------------------------
+   Same 16:9 block the placeholder held. Raven's final hero may well want
+   the whole screen, which is a different thing, and waits for her.     */
+.hero-video{
+  display:block; width:100%; height:auto; aspect-ratio:16/9;
+  object-fit:cover; border-radius:.5rem; background:#000;
+}
+
 /* --- Meet the cast ------------------------------------------------------ */
 .cast{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.85rem; }
 .cast .who{ margin-top:.55rem; font-size:.95rem; font-weight:600; }

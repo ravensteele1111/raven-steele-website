@@ -429,6 +429,28 @@ a.card:hover{ border-color:rgba(255,255,255,.28); background:#161616; }
 /* Two entry buttons: start at the beginning, or jump to the latest. */
 .entry{ display:grid; gap:.7rem; margin-top:1.4rem; }
 
+/* --- Real pictures in the slots the placeholders used to hold ------------
+   Same shapes as .ph-tall and .ph-wide, so nothing moves when a placeholder
+   is finally filled in.                                                    */
+.shot{ display:block; width:100%; height:auto; border-radius:.5rem; object-fit:cover; }
+.shot-tall{ aspect-ratio:4/5; }
+.shot-wide{ aspect-ratio:16/9; }
+
+/* --- The new album ------------------------------------------------------
+   Cover above the words on a phone, side by side once there is room.     */
+.album{ display:grid; gap:1.1rem; align-items:center; }
+.album img{ display:block; width:100%; height:auto; border-radius:.5rem; max-width:22rem;
+            margin-left:auto; margin-right:auto; }
+.album-words{ text-align:center; }
+.album-words h2{ margin-top:.15rem; }
+.album-words .lede{ margin-bottom:0; }
+@media (min-width:46rem){
+  .album{ grid-template-columns:minmax(0,18rem) minmax(0,1fr); gap:2rem; }
+  .album img{ margin:0; }
+  .album-words{ text-align:left; }
+  .album-words .entry{ justify-items:start; }
+}
+
 /* --- Meet the cast ------------------------------------------------------ */
 .cast{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.85rem; }
 .cast .who{ margin-top:.55rem; font-size:.95rem; font-weight:600; }

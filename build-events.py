@@ -45,7 +45,7 @@ FOOT = """<footer class="site-foot">
       <a href="https://www.youtube.com/@Therealravenai" rel="noopener">YouTube</a>
     </div>
     <div class="legal">
-      <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a>
+      <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="cookies.html">Cookies</a>
     </div>
     <p class="copyright">&copy; 2026 Raven Steele</p>
   </div>

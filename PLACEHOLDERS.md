@@ -29,19 +29,11 @@ They want a reel or post address, which we can fetch the cover from ourselves.
 - [ ] The recording studio
 - [ ] Jamaica
 
-## Two photographs to be remade
-
-Both are up and both look fine at the size they sit on the page.
-
-- [ ] **Lucky** — the RR pendant has a stroke through the first letter
-- [ ] **Baby Rebel** — a floating bar above the RR, and the pendant is thinner
-      than the one on Zeus, which is the one that came out right
-
 ---
 
 ## Everything else is real
 
-The whole cast, all eight, on one backdrop. Every event with its date, its
+The whole cast, all eight, on one backdrop, with the three RR chains matching each other. Every event with its date, its
 story in the customer's own words, its cover and its gallery. Forty seven
 songs, every one checked against YouTube. The album. Twenty nine products with
 their artwork. All four Skools. Every highlight cover with its link. The logo,

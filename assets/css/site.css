@@ -541,6 +541,33 @@ a.card:hover{ border-color:rgba(255,255,255,.28); background:#161616; }
               letter-spacing:.1em; text-transform:uppercase; }
 .review .when{ color:var(--grey-dim); font-size:.72rem; }
 
+/* --- Backstage ----------------------------------------------------------
+   A plain index, built to be added to. Every row is the same shape whether
+   it is open or still coming, so dropping a new set in changes one word
+   and nothing moves.                                                      */
+.backstage-title{ margin:.4rem 0 .6rem; }
+.vaults{ display:grid; gap:.7rem; }
+.vault{
+  display:grid; gap:.15rem;
+  padding:1rem 1.15rem;
+  background:var(--panel); border:1px solid var(--line); border-radius:.45rem;
+  text-decoration:none;
+}
+a.vault:hover{ border-color:rgba(255,255,255,.3); }
+.vault-name{ font-weight:600; font-size:.98rem; color:var(--white); }
+.vault-note{ color:var(--grey); font-size:.82rem; line-height:1.45; }
+.vault-go{
+  margin-top:.35rem;
+  color:var(--gold); font-size:.7rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase;
+}
+.vault[data-soon="true"]{ opacity:.6; }
+.vault[data-soon="true"] .vault-go{ color:var(--grey-dim); }
+
+@media (min-width:46rem){
+  .vaults{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+
 /* --- Meet the cast ------------------------------------------------------ */
 .cast{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.85rem; }
 .cast .who{ margin-top:.55rem; font-size:.95rem; font-weight:600; }
@@ -757,6 +784,11 @@ a.card:hover{ border-color:rgba(255,255,255,.28); background:#161616; }
 .best .name{ font-family:var(--display); font-size:1.6rem; text-transform:uppercase; margin-top:.2rem; }
 .best .price{ color:var(--gold); font-weight:600; }
 .best .ph{ margin-bottom:1rem; }
+/* It is a link now rather than a box with a placeholder in it. */
+.best{ display:block; text-decoration:none; }
+.best img{ display:block; width:100%; height:auto; aspect-ratio:1;
+           object-fit:cover; border-radius:.4rem; margin-bottom:1rem; }
+.best:hover{ border-color:var(--white); }
 
 @media (min-width:46rem){
   .listen{ max-width:34rem; margin-left:auto; margin-right:auto; }

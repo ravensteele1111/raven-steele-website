@@ -23,8 +23,10 @@ import time
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = "https://ravensteele.com/"
 
-# Pages nobody should be sent to from a search result.
-SKIP = {"404.html", "share-test.html"}
+# Pages nobody should be sent to from a search result. backstage.html is
+# the members' page: unlisted rather than locked, so keeping it out of
+# here is half of what makes it unlisted. The other half is its noindex.
+SKIP = {"404.html", "share-test.html", "backstage.html"}
 
 WEIGHT = {
     "index.html": "1.0",

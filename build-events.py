@@ -301,7 +301,8 @@ def page(ev, nxt):
            two dozen photographs should not have to swipe all the way back. -->
       <div class="entry">
         <a class="btn btn-ghost" href="#top">&uarr; Back to the top</a>
-        <button class="btn btn-ghost" data-share>Share event</button>
+        <button class="btn btn-ghost" data-share
+                data-share-image="assets/share/%(slug)s.jpg">Share event</button>
         <a class="btn btn-primary" href="event-%(next)s.html">Next event</a>
       </div>
     </div>
@@ -318,6 +319,7 @@ def page(ev, nxt):
         "story": story,
         "photos": photo_grid(ev["slug"], ev.get("photos", 8)),
         "next": nxt,
+        "slug": ev["slug"],
         "share": share,
         "foot": FOOT,
     }

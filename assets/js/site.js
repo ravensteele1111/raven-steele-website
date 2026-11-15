@@ -405,37 +405,94 @@
 
 /* ===========================================================================
    Share event. The customer asked for the phone's own share menu.
-   Browsers that do not have one copy the address instead, which is the same
-   job done the only other way available.
+
+   WHY THIS CARRIES A PICTURE
+
+   Sharing from Safari's own button shows the event photograph, because Safari
+   is handing over the page it has loaded, metadata and all. Sharing from a
+   button inside the page is different: all the phone receives is a title and
+   an address, and it does not go off and fetch anything for them. So the
+   first thing a visitor sees is an empty grey tile.
+
+   Almost nobody uses the browser's button. They use the one on the page. So
+   the picture has to be handed over too, and the only way to do that is to
+   attach the file.
+
+   TWO THINGS THAT WOULD BREAK IF DONE THE OBVIOUS WAY
+
+   1. The phone will only open the share menu in direct response to a tap. If
+      the picture is fetched first and the menu opened afterwards, the tap has
+      gone stale by the time it is asked for and Safari refuses. So the fetch
+      starts on pointerdown, a moment before the tap finishes, and whatever
+      has arrived by then is used. If it is not ready, the link goes on its
+      own exactly as before. Nobody waits for anything.
+
+   2. Some apps take the picture and quietly drop the link, and the link is
+      the entire reason the button exists. So the address goes in the text as
+      well. Worst case it appears twice in a message, which is untidy. The
+      other worst case is a photograph of somebody's party with no way back to
+      the website, which is not untidy, it is pointless.
    =========================================================================== */
 (function () {
   "use strict";
   var btn = document.querySelector("[data-share]");
   if (!btn) { return; }
 
+  var picture = btn.getAttribute("data-share-image");
+  var file = null;
+  var fetching = false;
+
+  function warm() {
+    if (file || fetching || !picture || !window.fetch || !window.File) { return; }
+    fetching = true;
+    fetch(picture).then(function (r) {
+      return r.ok ? r.blob() : null;
+    }).then(function (blob) {
+      if (!blob) { return; }
+      var name = picture.split("/").pop().split("?")[0];
+      var made = new File([blob], name, { type: blob.type || "image/jpeg" });
+      if (navigator.canShare && navigator.canShare({ files: [made] })) {
+        file = made;
+      }
+    }).catch(function () {}).then(function () {
+      fetching = false;
+    });
+  }
+
+  /* A fraction of a second before the tap lands. */
+  btn.addEventListener("pointerdown", warm);
+  btn.addEventListener("touchstart", warm, { passive: true });
+  btn.addEventListener("mouseenter", warm);
+
   btn.addEventListener("click", function () {
-    var data = {
-      title: document.title,
-      text: document.title,
-      url: window.location.href
-    };
+    var url = window.location.href;
+    var name = document.title.split("|")[0].trim();
+
     if (navigator.share) {
-      navigator.share(data).catch(function () {});
+      var data = { title: name, text: name + " — " + url, url: url };
+      if (file) { data.files = [file]; }
+      navigator.share(data).catch(function () {
+        /* Attaching can be refused outright on some phones. Send the link. */
+        if (data.files) {
+          navigator.share({ title: name, text: name, url: url }).catch(function () {});
+        }
+      });
       return;
     }
+
     var said = function (msg) {
       var old = btn.textContent;
       btn.textContent = msg;
       setTimeout(function () { btn.textContent = old; }, 1800);
     };
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(data.url).then(function () {
+      navigator.clipboard.writeText(url).then(function () {
         said("Link copied");
       }, function () {
         said("Could not copy");
       });
     } else {
-      said(data.url);
+      said(url);
     }
   });
 })();

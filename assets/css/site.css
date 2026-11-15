@@ -442,13 +442,14 @@ a.card:hover{ border-color:rgba(255,255,255,.28); background:#161616; }
 
 /* --- The albums ---------------------------------------------------------
    Cover above the words on a phone, side by side once there is room. The
-   newest one gets a bigger cover, because it is the one she is selling.   */
+   Three albums, three identical covers. An earlier version made the newest
+   one larger, which nobody asked for: they are her three albums, not a lead
+   and two supporting acts.                                                 */
 .album{ display:grid; gap:1.1rem; align-items:center; padding:1.6rem 0;
         border-top:1px solid var(--line-soft); }
 .album:first-child{ border-top:0; padding-top:.4rem; }
 .album img{ display:block; width:100%; height:auto; border-radius:.5rem;
             max-width:15rem; margin-left:auto; margin-right:auto; }
-.album-lead img{ max-width:20rem; }
 .album-words{ text-align:center; }
 .album-words h3{ font-size:1.9rem; margin-top:.15rem; }
 .album-words .lede{ margin-bottom:1rem; font-size:.95rem; }
@@ -470,13 +471,47 @@ a.card:hover{ border-color:rgba(255,255,255,.28); background:#161616; }
 @media (min-width:46rem){
   .album{ grid-template-columns:minmax(0,15rem) minmax(0,1fr); gap:2rem;
           align-items:start; }
-  .album-lead{ grid-template-columns:minmax(0,20rem) minmax(0,1fr); }
   .album img{ margin:0; }
   .album-words{ text-align:left; }
   .album-words .entry{ justify-items:start; }
   .stores{ justify-content:flex-start; }
   .every-store{ text-align:left; }
 }
+
+/* --- The Backstage Pass -------------------------------------------------
+   Raven's wording, November 2026. The list is what you get, so it is set
+   as a list rather than a paragraph: four short promises read at a glance,
+   four clauses in a sentence do not.                                      */
+.pass-intro{
+  margin:1.1rem 0 .5rem; text-align:center;
+  color:var(--gold); font-size:.76rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase;
+}
+.pass-list{
+  list-style:none; margin:0 auto 1.4rem; padding:0;
+  max-width:30rem; display:grid; gap:.5rem;
+}
+.pass-list li{
+  position:relative; padding-left:1.4rem;
+  color:var(--grey); font-size:.92rem; line-height:1.5;
+}
+.pass-list li::before{
+  content:""; position:absolute; left:.25rem; top:.62em;
+  width:.4rem; height:.4rem; border-radius:50%;
+  background:var(--red);
+}
+.pass-small{
+  margin-top:.7rem; text-align:center;
+  color:var(--grey-dim); font-size:.74rem; line-height:1.5;
+}
+
+/* The same idea at the bottom of an event, where the rest of the night is. */
+.backstage{
+  margin-top:1.4rem; padding:1.2rem;
+  border:1px solid var(--line); border-radius:.5rem;
+  background:var(--panel); text-align:center;
+}
+.backstage p{ margin-bottom:.9rem; font-size:.95rem; }
 
 /* --- Meet the cast ------------------------------------------------------ */
 .cast{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.85rem; }

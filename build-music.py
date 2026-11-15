@@ -186,7 +186,7 @@ def albums_block():
                     % a["all"])
 
         out.append(ALBUM_SHELL % {
-            "lead": " album-lead" if i == 0 else "",
+            "lead": "",
             "slug": a["slug"],
             "name": esc(a["name"]),
             "eyebrow": "The new album" if i == 0 else "Album",

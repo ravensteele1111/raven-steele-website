@@ -49,6 +49,7 @@
 <button class="p" id="b3">1. Share the PICTURE only</button>
 <button id="b2">2. Share the picture AND the link</button>
 <button id="b1">3. Share the LINK only</button>
+<button id="b4">4. Picture, with NO address anywhere</button>
 
 <div id="said">Tap one. Whatever the phone says lands here.</div>
 
@@ -119,6 +120,10 @@
   });
   document.getElementById("b1").addEventListener("click", function () {
     go("LINK ONLY", { title: NAME, text: NAME, url: URL_ });
+  });
+  document.getElementById("b4").addEventListener("click", function () {
+    if (!file) { tell("the picture is not ready yet"); return; }
+    go("PICTURE, NO ADDRESS", { files: [file] });
   });
 })();
 </script>

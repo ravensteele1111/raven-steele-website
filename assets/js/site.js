@@ -482,8 +482,18 @@
     var name = document.title.split("|")[0].trim();
 
     if (navigator.share) {
-      var data = { title: name, text: name + " — " + url, url: url };
-      if (file) { data.files = [file]; }
+      var data;
+      if (file) {
+        /* The picture ONLY, with the address inside the text.
+           Handing over a file and a url together makes iOS treat it as two
+           things: the sheet says "1 link and 1 image" and draws a generic
+           document glyph rather than the photograph. One item gets a
+           thumbnail. So the address travels in the words instead, where
+           every app turns it back into a link anyway. */
+        data = { files: [file], text: name + "\n" + url };
+      } else {
+        data = { title: name, text: name, url: url };
+      }
       navigator.share(data).catch(function () {
         /* Attaching can be refused outright on some phones. Send the link. */
         if (data.files) {

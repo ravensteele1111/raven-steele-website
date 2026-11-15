@@ -42,7 +42,8 @@
    "tag": "prompt",
    "base": "https://shop.beacons.ai/therealravenai/",
    "id": "ae311f72-536a-48eb-83ff-86953dc9684f",
-   "img": "ultra-realistic-skin-prompt-pack"
+   "img": "ultra-realistic-skin-prompt-pack",
+   "best": true
   },
   {
    "name": "The Complete Hair Add-On Pack",

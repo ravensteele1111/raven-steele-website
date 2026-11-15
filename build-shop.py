@@ -13,8 +13,38 @@ Rules this follows, from the customer:
 import io, json, os, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+BEST_SHELL = """        <a class="best" href="%s" target="_blank" rel="noopener">
+          <p class="eyebrow">Best seller</p>
+          <img src="assets/products/%s.webp" alt="%s"
+               width="600" height="600">
+          <p class="name">%s</p>
+          <span class="price">See the price</span>
+        </a>"""
+
 LABELS = {"tool": "Tools", "prompt": "Prompts", "meme": "Meme Bots", "toolbox": "Toolboxes"}
-ORDER = ["tool", "prompt", "meme", "toolbox"]
+# Prompts lead. Raven asked for the shop to open with her skin and prompt
+# packs, because that is what sells, and the chips follow the same order
+# so the first one after All is the one she wants pressed.
+ORDER = ["prompt", "tool", "meme", "toolbox"]
+
+# And inside the prompts, her own order rather than the alphabet: the best
+# seller, then skin, then hair, then body. Anything not named here keeps
+# its place behind them.
+LEADS = ["Ultra Realistic Skin Prompt Pack",
+         "Ultra Realistic Skin Conditions Pack",
+         "The Skin Vault",
+         "The Complete Skin Add-On Pack",
+         "The Hair Vault",
+         "The Hair Vault Prompt Pack",
+         "The Hair Style Vault",
+         "The Complete Hair Add-On Pack",
+         "The Occasion Hair Prompt Pack",
+         "The Body Blueprint Prompt Pack",
+         "Body Blueprint Add-On Pack",
+         "The Body Vault",
+         "Body Vault Prompt Pack",
+         "The Colour Lab",
+         "The Complete SEEN Collection"]
 
 
 def card(p, indent="          "):
@@ -38,7 +68,11 @@ def main():
     prods = [p for p in data["products"] if not p.get("hide")]
 
     present = [t for t in ORDER if any(p["tag"] == t for p in prods)]
-    prods.sort(key=lambda p: (ORDER.index(p["tag"]), p["name"]))
+    def place(p):
+        lead = LEADS.index(p["name"]) if p["name"] in LEADS else len(LEADS)
+        return (ORDER.index(p["tag"]), lead, p["name"])
+
+    prods.sort(key=place)
 
     chips = ['        <button class="chip" data-filter="all" aria-pressed="true">All</button>']
     chips += ['        <button class="chip" data-filter="%s" aria-pressed="false">%s</button>'
@@ -49,6 +83,17 @@ def main():
     s = re.sub(r'(<div class="filters" data-target="products">).*?(</div>)',
                lambda m: m.group(1) + "\n" + "\n".join(chips) + "\n        " + m.group(2),
                s, count=1, flags=re.S)
+
+    # The best seller block, from the product carrying "best": true. It used
+    # to be typed into the page by hand, which meant every change left the
+    # comment above it describing a product that was no longer there.
+    best = next((p for p in prods if p.get("best")), None)
+    if best:
+        block = (BEST_SHELL
+                 % (best["base"] + best["id"], best["img"], best["name"], best["name"]))
+        s = re.sub(r"        <!-- BEST -->.*?<!-- /BEST -->",
+                   lambda m: "        <!-- BEST -->\n" + block + "\n        <!-- /BEST -->",
+                   s, count=1, flags=re.S)
 
     a = s.index('<div class="grid-2" id="products">')
     b = s.index('<p class="empty" data-hidden="true">')

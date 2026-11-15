@@ -24,7 +24,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = "https://ravensteele.com/"
 
 # Pages nobody should be sent to from a search result.
-SKIP = {"404.html"}
+SKIP = {"404.html", "share-test.html"}
 
 WEIGHT = {
     "index.html": "1.0",

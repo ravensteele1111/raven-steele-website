@@ -76,15 +76,62 @@
      form action. See PLACEHOLDERS.md.                                      */
   var forms = document.querySelectorAll("form[data-rebels]");
 
+  /* Kit, form 10192153, "Raven Steele website signup".
+
+     This posts to the form's own public address, which needs no API key and
+     no secret in the page. The Watch / Listen / Learn answer travels as a
+     custom field so it arrives with the person rather than being lost.
+
+     The reply cannot be read: the browser is not allowed to see what another
+     site sends back unless that site permits it, and Kit does not. So the
+     page says thank you on the strength of the request having gone, which is
+     honest as long as nobody pretends otherwise. The alternative is Kit's own
+     form dropped onto the page, which costs the design and the question.
+
+     When Raven sends the API key, the same answer can become a tag instead of
+     a field, which is what tags are for. Nothing here has to change for that
+     except where it posts. */
+  var KIT = "https://app.kit.com/forms/10192153/subscriptions";
+
   Array.prototype.forEach.call(forms, function (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+
       var note = form.querySelector(".form-note");
-      if (note) {
-        note.textContent =
-          "Not connected yet. The email list gets wired up before launch.";
-        note.style.color = "#c9a227";
+      var button = form.querySelector("button[type=submit]");
+      var email = form.querySelector("input[type=email]");
+      var reason = form.querySelector("#reason");
+
+      function say(msg, colour) {
+        if (!note) { return; }
+        note.textContent = msg;
+        note.style.color = colour;
       }
+
+      var address = (email && email.value || "").trim();
+      if (address.indexOf("@") < 1 || address.indexOf(".") < 0) {
+        say("That does not look like an email address.", "#c0161e");
+        if (email) { email.focus(); }
+        return;
+      }
+
+      var body = new FormData();
+      body.append("email_address", address);
+      if (reason && reason.value) {
+        body.append("fields[here_for]", reason.value);
+      }
+
+      if (button) { button.disabled = true; }
+      say("Opening the door...", "#c9a227");
+
+      fetch(KIT, { method: "POST", body: body, mode: "no-cors" }).then(function () {
+        form.reset();
+        if (button) { button.disabled = false; }
+        say("You are in. Check your email.", "#4caf50");
+      }).catch(function () {
+        if (button) { button.disabled = false; }
+        say("That did not go through. Try again in a moment.", "#c0161e");
+      });
     });
   });
 })();

@@ -49,7 +49,11 @@ def main():
         versions[asset] = short_hash(asset)
 
     changed = 0
-    for page in sorted(glob.glob("*.html")):
+    # Anything starting with an underscore is a template, not a page. It
+    # gets stamped otherwise, and then the stamp is baked into whatever is
+    # built from it afterwards, which is a version string that never
+    # changes again.
+    for page in sorted(f for f in glob.glob("*.html") if not f.startswith("_")):
         text = io.open(page, encoding="utf-8").read()
         before = text
 

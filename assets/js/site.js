@@ -459,7 +459,20 @@
     });
   }
 
-  /* A fraction of a second before the tap lands. */
+  /* Fetched once the page has settled, NOT when the button is pressed.
+     Starting it on pointerdown was the first attempt and it does not work:
+     the share menu opens about a tenth of a second after a finger goes down,
+     and no picture arrives over a phone network in a tenth of a second. The
+     file was never ready and the tile was always empty. Getting it early
+     costs one small request on a page that has already loaded two dozen
+     photographs. */
+  if (window.requestIdleCallback) {
+    requestIdleCallback(warm, { timeout: 3000 });
+  } else {
+    setTimeout(warm, 1200);
+  }
+
+  /* And again on the way to the tap, in case the first one failed. */
   btn.addEventListener("pointerdown", warm);
   btn.addEventListener("touchstart", warm, { passive: true });
   btn.addEventListener("mouseenter", warm);

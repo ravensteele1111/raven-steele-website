@@ -152,6 +152,18 @@ def share_card(slug, shot):
 
     os.makedirs(os.path.dirname(out), exist_ok=True)
     im.save(out, "JPEG", quality=82, optimize=True)
+
+    # A small one as well, for the Share button to hand to the phone.
+    #
+    # The big one is 300kB and that is the reason the first attempt showed an
+    # empty tile: the fetch starts when a finger goes down and the share menu
+    # opens a tenth of a second later, and 300kB does not arrive over a phone
+    # network in a tenth of a second. The picture was simply never ready.
+    #
+    # At 600 square and about 50kB it arrives in time, and a share sheet draws
+    # it at thumbnail size anyway.
+    im.resize((600, 600), Image.LANCZOS).save(
+        out.replace(".jpg", "-sm.jpg"), "JPEG", quality=78, optimize=True)
     print("  share picture:", os.path.basename(out))
     return "assets/share/%s.jpg" % slug
 
@@ -302,7 +314,7 @@ def page(ev, nxt):
       <div class="entry">
         <a class="btn btn-ghost" href="#top">&uarr; Back to the top</a>
         <button class="btn btn-ghost" data-share
-                data-share-image="assets/share/%(slug)s.jpg">Share event</button>
+                data-share-image="assets/share/%(slug)s-sm.jpg">Share event</button>
         <a class="btn btn-primary" href="event-%(next)s.html">Next event</a>
       </div>
     </div>

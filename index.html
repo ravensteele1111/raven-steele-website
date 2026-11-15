@@ -34,7 +34,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://ravensteele.com/assets/brand/share-card.jpg">
-<link rel="stylesheet" href="assets/css/site.css?v=4fb05f22">
+<link rel="stylesheet" href="assets/css/site.css?v=2c569b70">
 <script src="assets/js/site.js?v=f699395d" defer></script>
 </head>
 <body>
@@ -65,25 +65,26 @@
 <main>
 
   <!-- ===================== HERO ===================== -->
-  <section class="hero">
+  <!-- Raven's own header film. It is the first thing on the page and it runs
+       edge to edge, outside the usual column, because she asked for the whole
+       width rather than a picture sitting in the middle of one.
+
+       muted is not optional: a phone refuses to start a video on its own
+       without it. This clip DOES have a soundtrack, unlike the temporary ones,
+       so muted is also what stops the site shouting at somebody on a bus.
+       playsinline keeps an iPhone from throwing it into the fullscreen player.
+       The poster is the clip's own first frame, so nothing jumps when the
+       video takes over from it. -->
+  <section class="hero hero-film">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto"
+           poster="assets/video/hero-poster.webp"
+           aria-label="Raven Steele, on stage and at home">
+      <source src="assets/video/hero.mp4" type="video/mp4">
+      <img src="assets/video/hero-poster.webp" alt="Raven Steele on stage"
+           width="1280" height="720">
+    </video>
+
     <div class="wrap">
-      <!-- One of five temporary clips the customer sent. Raven is making the
-           final one. Swapping it is one file: assets/video/hero.mp4 and the
-           poster beside it.
-
-           muted is not optional. A phone will refuse to play a video on its
-           own without it, even one with no sound in it at all, and playsinline
-           stops an iPhone throwing it into the full screen player. The poster
-           is the first frame of the clip, so there is nothing to see when the
-           video takes over. -->
-      <video class="hero-video" autoplay muted loop playsinline preload="metadata"
-             poster="assets/video/hero-poster.webp"
-             aria-label="Raven Steele on stage">
-        <source src="assets/video/hero.mp4" type="video/mp4">
-        <img src="assets/video/hero-poster.webp" alt="Raven Steele on stage"
-             width="1280" height="720">
-      </video>
-
       <p class="eyebrow" style="margin-top:1.75rem">The official home of</p>
       <h1>Raven<br>Steele</h1>
       <p class="tagline">Rock star. Rebel. Storyteller.</p>
@@ -103,14 +104,20 @@
 
       <div class="stack stack-3">
         <a class="card door" href="story.html">
+          <img src="assets/doors/watch.webp" alt="Raven on a film set with a clapperboard"
+               width="480" height="600" loading="lazy">
           <h3>Watch</h3>
           <p>The Raven and Ethan story</p>
         </a>
         <a class="card door" href="music.html">
+          <img src="assets/doors/listen.webp" alt="Raven singing in a recording studio"
+               width="480" height="600" loading="lazy">
           <h3>Listen</h3>
           <p>The music and the videos</p>
         </a>
         <a class="card door" href="be-like-raven.html">
+          <img src="assets/doors/learn.webp" alt="Raven in front of a board of charts"
+               width="480" height="600" loading="lazy">
           <h3>Learn</h3>
           <p>Build your own avatar and brand</p>
         </a>

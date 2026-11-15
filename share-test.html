@@ -106,7 +106,14 @@
     navigator.share(data).then(function () {
       tell(what + "\nShared, no error.\n\nDid the top of the sheet show the photograph?");
     }).catch(function (e) {
-      tell(what + "\nThe phone refused it.\n\n" + (e && e.name) + ": " + (e && e.message));
+      /* AbortError means the person closed the sheet. That is not a fault,
+         and reporting it as one cost a whole round of testing. */
+      if (e && e.name === "AbortError") {
+        tell(what + "\nYou closed the sheet. That is not an error.\n\n"
+             + "What did the top of the sheet say?");
+      } else {
+        tell(what + "\nThe phone refused it.\n\n" + (e && e.name) + ": " + (e && e.message));
+      }
     });
   }
 

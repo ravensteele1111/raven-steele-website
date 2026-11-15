@@ -27,7 +27,7 @@ PHOTOS = {}
 
 # Where the site lives. Only used for the share pictures, which have to be
 # full addresses. Change this line the day a real domain is pointed here.
-SITE = "https://ravensteele1111.github.io/raven-steele-website/"
+SITE = "https://ravensteele.com/"
 
 NAV = """  <nav class="site-nav" id="site-nav" data-open="false">
       <div class="wrap">
@@ -238,7 +238,6 @@ def page(ev, nxt):
 
 <meta name="description" content="%(name)s. The night, and every photo from it.">
 <meta name="theme-color" content="#000000">
-<meta name="robots" content="noindex, nofollow">
 
 <link rel="icon" href="assets/brand/favicon.ico?v=4" sizes="any">
 <link rel="icon" href="assets/brand/icon-512.png?v=4" type="image/png">

@@ -48,9 +48,13 @@ def weight(name):
 
 
 def main():
+    # Anything called backstage is members' material and stays out, not just
+    # the index page. The first version named backstage.html exactly, and the
+    # moment a gallery page appeared it walked straight into the sitemap.
     pages = sorted(f for f in os.listdir(HERE)
                    if f.endswith(".html") and f not in SKIP
-                   and not f.startswith("_"))
+                   and not f.startswith("_")
+                   and not f.startswith("backstage"))
 
     # The date each page last really changed, not the date this was run.
     rows = []

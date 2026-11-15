@@ -1,0 +1,59 @@
+{
+ "_note": "Raven's albums, newest first. build-music.py writes the Music page from this. Big buttons are the three she named: Spotify, Apple Music, YouTube Music. Everything else is a small chip. Addresses are exactly as her side sent them, with the https added.",
+ "albums": [
+  {
+   "slug": "appetite",
+   "name": "Appetite",
+   "tracks": 22,
+   "line": "Out now.",
+   "big": [
+    ["Spotify", "https://open.spotify.com/album/2tK8r3Yom0Ci8qhYJFFsTO"],
+    ["Apple Music", "https://music.apple.com/us/album/appetite/6834435133"],
+    ["YouTube Music", "https://music.youtube.com/playlist?list=OLAK5uy_mHNciaazCWgoZkS-s0lEsKAwQvSvC-jVQ"]
+   ],
+   "small": [],
+   "all": "https://distrokid.com/hyperfollow/ravensteele/appetite"
+  },
+  {
+   "slug": "unapologetic",
+   "name": "Unapologetic",
+   "tracks": 20,
+   "line": "The first album.",
+   "big": [
+    ["Spotify", "https://open.spotify.com/album/3CCGoL0I89SktYM4lEwKm3"],
+    ["Apple Music", "https://music.apple.com/us/album/unapologetic/1844066194"],
+    ["YouTube Music", "https://music.youtube.com/browse/MPREb_PYJRWbNoxaD"]
+   ],
+   "small": [
+    ["Amazon Music", "https://music.amazon.com/albums/B0FTMHPMMM"],
+    ["Deezer", "https://deezer.com/album/831254061"],
+    ["TIDAL", "https://listen.tidal.com/album/464408832"],
+    ["Pandora", "https://pandora.com/AL:54326851"],
+    ["iHeartRadio", "https://iheart.com/artist/id-48200472/albums/id-353237506"],
+    ["Boomplay", "https://boomplay.com/albums/117296918"],
+    ["Buy on Amazon", "https://amazon.com/dp/B0FTMHPMMM"]
+   ],
+   "all": "https://distrokid.com/hyperfollow/ravensteele/unapologetic"
+  },
+  {
+   "slug": "mistletoe-mayhem",
+   "name": "Mistletoe & Mayhem",
+   "tracks": 18,
+   "line": "The Christmas album, out 11 December 2025.",
+   "big": [
+    ["Spotify", "https://open.spotify.com/album/6ZNBbMfdsUid5ESoSO8k6q"],
+    ["Apple Music", "https://music.apple.com/us/album/mistletoe-mayhem/1860512138"],
+    ["YouTube Music", "https://music.youtube.com/playlist?list=PLMt0SF3JE0RdJJvSDdaKM1k5Wl-tXHcLH"]
+   ],
+   "small": [
+    ["Amazon Music", "https://music.amazon.com/albums/B0G6CWGH3J"],
+    ["TIDAL", "https://listen.tidal.com/album/480881725"],
+    ["Pandora", "https://pandora.com/AL:57809278"],
+    ["iHeartRadio", "https://iheart.com/artist/id-48200472/albums/id-366396147"],
+    ["Boomplay", "https://boomplay.com/albums/121400775"],
+    ["Buy on Amazon", "https://amazon.com/dp/B0G6CWGH3J"]
+   ],
+   "all": "https://distrokid.com/hyperfollow/ravensteele/mistletoe--mayhem"
+  }
+ ]
+}

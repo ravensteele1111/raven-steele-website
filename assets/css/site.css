@@ -440,38 +440,43 @@ a.card:hover{ border-color:rgba(255,255,255,.28); background:#161616; }
 .shot-tall{ aspect-ratio:4/5; }
 .shot-wide{ aspect-ratio:16/9; }
 
-/* --- The new album ------------------------------------------------------
-   Cover above the words on a phone, side by side once there is room.     */
-.album{ display:grid; gap:1.1rem; align-items:center; }
-.album img{ display:block; width:100%; height:auto; border-radius:.5rem; max-width:22rem;
-            margin-left:auto; margin-right:auto; }
+/* --- The albums ---------------------------------------------------------
+   Cover above the words on a phone, side by side once there is room. The
+   newest one gets a bigger cover, because it is the one she is selling.   */
+.album{ display:grid; gap:1.1rem; align-items:center; padding:1.6rem 0;
+        border-top:1px solid var(--line-soft); }
+.album:first-child{ border-top:0; padding-top:.4rem; }
+.album img{ display:block; width:100%; height:auto; border-radius:.5rem;
+            max-width:15rem; margin-left:auto; margin-right:auto; }
+.album-lead img{ max-width:20rem; }
 .album-words{ text-align:center; }
-.album-words h2{ margin-top:.15rem; }
-.album-words .lede{ margin-bottom:0; }
+.album-words h3{ font-size:1.9rem; margin-top:.15rem; }
+.album-words .lede{ margin-bottom:1rem; font-size:.95rem; }
+
+/* The seven smaller stores. Names rather than badges: nobody sent logos and
+   drawing somebody else's trademark from memory is not ours to do. */
+.stores{ display:flex; flex-wrap:wrap; gap:.4rem; justify-content:center;
+         margin-top:.8rem; }
+.stores a{
+  font-size:.72rem; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--grey); text-decoration:none;
+  border:1px solid var(--line); border-radius:999px;
+  padding:.42rem .8rem;
+}
+.stores a:hover{ color:var(--white); border-color:rgba(255,255,255,.35); }
+.every-store{ margin-top:.7rem; font-size:.78rem; text-align:center; }
+.every-store a{ color:var(--gold); }
+
 @media (min-width:46rem){
-  .album{ grid-template-columns:minmax(0,18rem) minmax(0,1fr); gap:2rem; }
+  .album{ grid-template-columns:minmax(0,15rem) minmax(0,1fr); gap:2rem;
+          align-items:start; }
+  .album-lead{ grid-template-columns:minmax(0,20rem) minmax(0,1fr); }
   .album img{ margin:0; }
   .album-words{ text-align:left; }
   .album-words .entry{ justify-items:start; }
+  .stores{ justify-content:flex-start; }
+  .every-store{ text-align:left; }
 }
-
-/* --- The header film ----------------------------------------------------
-   Edge to edge, the first thing on the page. No rounded corners and no
-   margin: it is the top of the site rather than a picture on it.
-
-   On a phone it is allowed to be taller than 16:9 and crop at the sides,
-   because a 16:9 film across a 390px screen is a 220px strip and nobody
-   can see a face in it. On a wide screen it keeps its own shape and is
-   capped so it never pushes the name and the button off the bottom.      */
-.hero-film{ padding-top:0; }
-.hero-video{
-  display:block; width:100%; background:#000; object-fit:cover;
-  aspect-ratio:4/3; max-height:62vh;
-}
-@media (min-width:46rem){
-  .hero-video{ aspect-ratio:16/9; max-height:76vh; }
-}
-.hero-film > .wrap{ padding-top:1.75rem; }
 
 /* --- Meet the cast ------------------------------------------------------ */
 .cast{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.85rem; }

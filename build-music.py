@@ -137,6 +137,68 @@ def songs_block(data):
             % ("\n".join(rows), total))
 
 
+
+ALBUM_SHELL = """      <div class="album%(lead)s">
+        <img src="assets/albums/%(slug)s.webp" alt="%(name)s, the Raven Steele album"
+             width="640" height="640" loading="lazy">
+        <div class="album-words">
+          <p class="eyebrow">%(eyebrow)s</p>
+          <h3>%(name)s</h3>
+          <p class="lede">%(tracks)d tracks. %(line)s</p>
+          <div class="entry">
+%(big)s
+          </div>%(small)s%(more)s
+        </div>
+      </div>"""
+
+
+def albums_block():
+    """Every album, newest first, from albums.json.
+
+    Three big buttons each, the ones Raven named: Spotify, Apple Music and
+    YouTube Music. Everything else is a small chip, because there are seven
+    per album and seven more big buttons would bury the songs underneath.
+
+    They are chips rather than store badges because nobody sent any badges,
+    and drawing a Deezer logo from memory is putting somebody else's
+    trademark on a customer's website.
+    """
+    data = json.load(io.open(os.path.join(HERE, "albums.json"), encoding="utf-8"))
+    out = []
+    for i, a in enumerate(data["albums"]):
+        big = "\n".join(
+            '            <a class="btn %s" target="_blank" rel="noopener" href="%s">%s</a>'
+            % ("btn-primary" if n == 0 else "btn-ghost", url, esc(name))
+            for n, (name, url) in enumerate(a["big"]))
+
+        small = ""
+        if a["small"]:
+            small = ("\n          <div class=\"stores\">\n"
+                     + "\n".join(
+                         '            <a target="_blank" rel="noopener" href="%s">%s</a>'
+                         % (url, esc(name)) for name, url in a["small"])
+                     + "\n          </div>")
+
+        more = ""
+        if a.get("all"):
+            more = ('\n          <p class="every-store">'
+                    '<a target="_blank" rel="noopener" href="%s">Every other store</a></p>'
+                    % a["all"])
+
+        out.append(ALBUM_SHELL % {
+            "lead": " album-lead" if i == 0 else "",
+            "slug": a["slug"],
+            "name": esc(a["name"]),
+            "eyebrow": "The new album" if i == 0 else "Album",
+            "tracks": a["tracks"],
+            "line": esc(a["line"]),
+            "big": big,
+            "small": small,
+            "more": more,
+        })
+    return "\n\n".join(out)
+
+
 def swap(page, name, block):
     start = "<!-- " + name + " -->"
     end = "<!-- /" + name + " -->"
@@ -152,6 +214,7 @@ def main():
     page = io.open(path, encoding="utf-8").read()
 
     page = swap(page, "PLAYER", player_block(data))
+    page = swap(page, "ALBUMS", albums_block())
     page = swap(page, "SONGS", songs_block(data))
 
     # Default newline handling, so the file keeps the same line endings as

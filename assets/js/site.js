@@ -332,10 +332,27 @@
         });
     }
 
+    /* Backstage photographs are view only, by Raven's request. On those pages
+       the big picture is painted as a background rather than put in an <img>,
+       so a long press or a right click has nothing to offer to save and
+       dragging it out does nothing.
+
+       Everywhere else it stays a real <img>, because the public event photos
+       are meant to be shared and an <img> is what lets somebody do that.
+
+       Nobody is pretending this stops a screenshot. She knows. */
+    var viewOnly = /\/backstage/.test(location.pathname);
+
     function render() {
       var shot = shots[at];
       if (!shot) { return; }
-      if (shot.big) {
+      if (shot.big && viewOnly) {
+        var box = document.createElement("div");
+        box.className = "shot-view";
+        box.style.backgroundImage = "url(" + shot.big + ")";
+        stage.replaceWith(box);
+        stage = box;
+      } else if (shot.big) {
         var img = document.createElement("img");
         img.src = shot.big;
         img.alt = "";

@@ -74,17 +74,17 @@ SET_SHELL = """<!DOCTYPE html>
       <div class="section-head">
         <p class="eyebrow">The full set</p>
         <h2>%(name)s</h2>
-        <p class="lede">%(count)d photographs. Every one from the night.</p>
+        <p class="lede">%(count)d photographs from the night, picked for you.</p>
       </div>
     </div>
   </section>
 
   <section>
-    <div class="wrap">
-      <div class="photo-grid" id="photos">
+    <div class="wrap vault-wide">
+      <div class="vault-grid" id="photos">
 %(grid)s
       </div>
-      <p class="hint">Tap any photo to see it big.</p>
+      <p class="hint">Tap any photo to see it big. Yours to look at, not to download.</p>
       <div class="entry">
         <a class="btn btn-ghost" href="#top">&uarr; Back to the top</a>
         <a class="btn btn-primary" href="backstage.html">Back to Backstage</a>
@@ -134,9 +134,9 @@ def write_sets():
                 big = "assets/backstage/%s/%s-sm.webp" % (slug, n)
             else:
                 big = "assets/backstage/%s/%s.webp" % (slug, n)
-            rows.append('        <button data-big="%s">'
-                        '<img src="assets/backstage/%s/%s-sm.webp" alt="" '
-                        'width="400" height="533" loading="lazy"></button>'
+            rows.append('        <button data-big="%s" '
+                        'style="background-image:url(assets/backstage/%s/%s-sm.webp)" '
+                        'aria-label="Open photograph"></button>'
                         % (big, slug, n))
         page = SET_SHELL % {"name": esc(info["name"]), "count": len(shots),
                             "grid": "\n".join(rows), "foot": foot}

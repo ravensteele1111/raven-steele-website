@@ -568,6 +568,53 @@ a.vault:hover{ border-color:rgba(255,255,255,.3); }
   .vaults{ grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 
+.to-come{
+  margin-top:.5rem;
+  color:var(--grey-dim); font-size:.72rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase;
+}
+
+/* --- The Backstage galleries -------------------------------------------
+   Raven asked for a gallery rather than a file list, so this is not the
+   two-up grid the public event pages use. Three across on a phone and six
+   on a laptop, tight gaps, no rounded corners: a wall of photographs,
+   where the pictures touch and the page gets out of the way.
+
+   View only, by her request. The pictures are a background rather than an
+   <img>, which means a long press or a right click has nothing to offer to
+   save, and dragging one out does nothing. Nobody is pretending this stops
+   a screenshot and she already knows that.                               */
+.vault-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:3px;
+}
+.vault-grid button{
+  display:block; width:100%; aspect-ratio:3/4; padding:0;
+  border:0; background-color:#0c0c0c;
+  background-size:cover; background-position:center;
+  cursor:zoom-in;
+  -webkit-user-select:none; user-select:none;
+  -webkit-touch-callout:none;
+}
+.vault-grid button:hover{ filter:brightness(1.12); }
+.vault-grid button:focus-visible{ outline:2px solid var(--red); outline-offset:2px; }
+
+@media (min-width:38rem){ .vault-grid{ grid-template-columns:repeat(4,minmax(0,1fr)); } }
+@media (min-width:60rem){ .vault-grid{ grid-template-columns:repeat(6,minmax(0,1fr)); } }
+
+/* The viewer, on a gallery page. Same idea: nothing to drag out. */
+.lightbox .shot-view{
+  width:100%; height:100%;
+  background-size:contain; background-position:center;
+  background-repeat:no-repeat;
+  -webkit-user-select:none; user-select:none; -webkit-touch-callout:none;
+}
+
+/* A gallery page is wider than the rest of the site. A wall of photographs
+   two columns wide inside a 30rem column is not a wall, it is a list. */
+.vault-wide{ max-width:72rem; }
+
 /* --- Meet the cast ------------------------------------------------------ */
 .cast{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.85rem; }
 .cast .who{ margin-top:.55rem; font-size:.95rem; font-weight:600; }

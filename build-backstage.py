@@ -155,7 +155,7 @@ def write_sets():
                             % (big, thumb))
         page = SET_SHELL % {"name": esc(info["name"]), "count": len(shots),
                             "grid": "\n".join(rows), "foot": foot}
-        io.open(os.path.join(HERE, "backstage-%s" % slug), "w",
+        io.open(os.path.join(HERE, "backstage-%s.html" % slug), "w",
                 encoding="utf-8").write(page)
         done[slug] = len(shots)
         print("  backstage-%s.html: %d photographs" % (slug, len(shots)))
@@ -194,7 +194,7 @@ def main():
     for e in data["events"]:
         if e["slug"] in live:
             e["ready"] = True
-            e["href"] = "backstage-%s" % e["slug"]
+            e["href"] = "backstage-%s.html" % e["slug"]
             e["count"] = live[e["slug"]]
 
     events = "\n".join(tile(e) for e in data["events"])

@@ -528,100 +528,35 @@
 /* ===========================================================================
    Share event. The customer asked for the phone's own share menu.
 
-   WHY THIS CARRIES A PICTURE
+   THE LINK ONLY. NO FILE. This is a decision, not an oversight.
 
-   Sharing from Safari's own button shows the event photograph, because Safari
-   is handing over the page it has loaded, metadata and all. Sharing from a
-   button inside the page is different: all the phone receives is a title and
-   an address, and it does not go off and fetch anything for them. So the
-   first thing a visitor sees is an empty grey tile.
+   An earlier version attached the event photograph as a file, so that the
+   share sheet would draw the picture instead of a grey tile. It worked, and
+   the cost was that the sheet then described what you were sending as
+   "JPEG-image, 100 KB". That is what a person saw before they sent it, and
+   it was rejected: it reads like sending a file, not like sharing a page.
 
-   Almost nobody uses the browser's button. They use the one on the page. So
-   the picture has to be handed over too, and the only way to do that is to
-   attach the file.
+   Without a file, iOS draws its own Safari glyph next to the title and the
+   address. That was looked at and accepted. The glyph is iOS's, it cannot be
+   replaced from inside a web page, and no choice of title or text removes it.
 
-   TWO THINGS THAT WOULD BREAK IF DONE THE OBVIOUS WAY
-
-   1. The phone will only open the share menu in direct response to a tap. If
-      the picture is fetched first and the menu opened afterwards, the tap has
-      gone stale by the time it is asked for and Safari refuses. So the fetch
-      starts on pointerdown, a moment before the tap finishes, and whatever
-      has arrived by then is used. If it is not ready, the link goes on its
-      own exactly as before. Nobody waits for anything.
-
-   2. Some apps take the picture and quietly drop the link, and the link is
-      the entire reason the button exists. So the address goes in the text as
-      well. Worst case it appears twice in a message, which is untidy. The
-      other worst case is a photograph of somebody's party with no way back to
-      the website, which is not untidy, it is pointless.
+   The picture still appears where it actually matters. Once the link lands in
+   WhatsApp, Messages or anywhere else, those apps fetch the page themselves
+   and use its og:image, which every page here sets. The preview in the
+   conversation is the thing people see; the sheet is on screen for a second.
    =========================================================================== */
 (function () {
   "use strict";
   var btn = document.querySelector("[data-share]");
   if (!btn) { return; }
 
-  var picture = btn.getAttribute("data-share-image");
-  var file = null;
-  var fetching = false;
-
-  function warm() {
-    if (file || fetching || !picture || !window.fetch || !window.File) { return; }
-    fetching = true;
-    fetch(picture).then(function (r) {
-      return r.ok ? r.blob() : null;
-    }).then(function (blob) {
-      if (!blob) { return; }
-      var name = picture.split("/").pop().split("?")[0];
-      var made = new File([blob], name, { type: blob.type || "image/jpeg" });
-      if (navigator.canShare && navigator.canShare({ files: [made] })) {
-        file = made;
-      }
-    }).catch(function () {}).then(function () {
-      fetching = false;
-    });
-  }
-
-  /* Fetched once the page has settled, NOT when the button is pressed.
-     Starting it on pointerdown was the first attempt and it does not work:
-     the share menu opens about a tenth of a second after a finger goes down,
-     and no picture arrives over a phone network in a tenth of a second. The
-     file was never ready and the tile was always empty. Getting it early
-     costs one small request on a page that has already loaded two dozen
-     photographs. */
-  if (window.requestIdleCallback) {
-    requestIdleCallback(warm, { timeout: 3000 });
-  } else {
-    setTimeout(warm, 1200);
-  }
-
-  /* And again on the way to the tap, in case the first one failed. */
-  btn.addEventListener("pointerdown", warm);
-  btn.addEventListener("touchstart", warm, { passive: true });
-  btn.addEventListener("mouseenter", warm);
-
   btn.addEventListener("click", function () {
     var url = window.location.href;
     var name = document.title.split("|")[0].trim();
 
     if (navigator.share) {
-      var data;
-      if (file) {
-        /* The picture ONLY, with the address inside the text.
-           Handing over a file and a url together makes iOS treat it as two
-           things: the sheet says "1 link and 1 image" and draws a generic
-           document glyph rather than the photograph. One item gets a
-           thumbnail. So the address travels in the words instead, where
-           every app turns it back into a link anyway. */
-        data = { files: [file], text: name + "\n" + url };
-      } else {
-        data = { title: name, text: name, url: url };
-      }
-      navigator.share(data).catch(function () {
-        /* Attaching can be refused outright on some phones. Send the link. */
-        if (data.files) {
-          navigator.share({ title: name, text: name, url: url }).catch(function () {});
-        }
-      });
+      navigator.share({ title: name, text: name, url: url })
+        .catch(function () {});   /* AbortError = they closed the sheet. */
       return;
     }
 

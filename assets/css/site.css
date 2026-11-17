@@ -626,7 +626,22 @@ a.vault:hover{ border-color:rgba(255,255,255,.3); }
 
 /* The viewer. Same idea: nothing to drag out. */
 .lightbox .shot-view{
-  width:100%; height:100%;
+  /* A real height, not 100%.
+     The first version said height:100% inside a stage that has no height of
+     its own, so it computed to zero: the element was there, the right
+     picture was loaded into it, and it was nought pixels tall. The viewer
+     opened on a caption and nothing else.
+     78vh is what the <img> version uses, so both look the same. */
+  display:block;
+  /* Sized against the screen, not the parent. width:min(100%, 46rem)
+     measured 97 pixels across: the stage shrinks to fit its content and
+     a background picture is not content, so 100% of nothing is nothing.
+     An <img> never had this problem because an image has a size of its
+     own. A div does not. */
+  width:min(92vw, 46rem);
+  height:78vh;
+  margin:0 auto;
+  border-radius:.5rem;
   background-size:contain; background-position:center;
   background-repeat:no-repeat;
   -webkit-user-select:none; user-select:none; -webkit-touch-callout:none;

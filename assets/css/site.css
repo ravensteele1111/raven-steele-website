@@ -575,35 +575,56 @@ a.vault:hover{ border-color:rgba(255,255,255,.3); }
 }
 
 /* --- The Backstage galleries -------------------------------------------
-   Raven asked for a gallery rather than a file list, so this is not the
-   two-up grid the public event pages use. Three across on a phone and six
-   on a laptop, tight gaps, no rounded corners: a wall of photographs,
-   where the pictures touch and the page gets out of the way.
+   A gallery, not a feed. The difference is scale and rhythm.
 
-   View only, by her request. The pictures are a background rather than an
-   <img>, which means a long press or a right click has nothing to offer to
-   save, and dragging one out does nothing. Nobody is pretending this stops
-   a screenshot and she already knows that.                               */
+   The first attempt was three across on a phone with three pixel gaps, and
+   it read as an Instagram grid: uniform, small, endless. This is two across
+   with room to breathe, and every fifth picture runs the full width as a
+   feature, so the eye has somewhere to land as it goes down the page.
+
+   Portrait photographs by default, because that is how they were taken. The
+   feature ones are landscape, which is what makes them read as a change of
+   pace rather than just a bigger square.
+
+   View only, by Raven's request. The pictures are backgrounds rather than
+   <img>, so a long press or a right click has nothing to offer to save.
+   Nobody is pretending this stops a screenshot; she already said so.      */
 .vault-grid{
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:3px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.7rem;
 }
 .vault-grid button{
   display:block; width:100%; aspect-ratio:3/4; padding:0;
-  border:0; background-color:#0c0c0c;
+  border:0; border-radius:.4rem; overflow:hidden;
+  background-color:#0c0c0c;
   background-size:cover; background-position:center;
   cursor:zoom-in;
-  -webkit-user-select:none; user-select:none;
-  -webkit-touch-callout:none;
+  transition:transform .25s ease, box-shadow .25s ease;
+  -webkit-user-select:none; user-select:none; -webkit-touch-callout:none;
 }
-.vault-grid button:hover{ filter:brightness(1.12); }
-.vault-grid button:focus-visible{ outline:2px solid var(--red); outline-offset:2px; }
 
-@media (min-width:38rem){ .vault-grid{ grid-template-columns:repeat(4,minmax(0,1fr)); } }
-@media (min-width:60rem){ .vault-grid{ grid-template-columns:repeat(6,minmax(0,1fr)); } }
+/* Every fifth one across the whole width, landscape. */
+.vault-grid button:nth-child(5n+1){
+  grid-column:1 / -1;
+  aspect-ratio:16/10;
+}
 
-/* The viewer, on a gallery page. Same idea: nothing to drag out. */
+.vault-grid button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 .6rem 1.4rem rgba(0,0,0,.55);
+}
+.vault-grid button:focus-visible{ outline:2px solid var(--red); outline-offset:3px; }
+
+@media (min-width:38rem){
+  .vault-grid{ grid-template-columns:repeat(3,minmax(0,1fr)); gap:.8rem; }
+  .vault-grid button:nth-child(5n+1){ grid-column:span 2; aspect-ratio:auto; }
+}
+@media (min-width:60rem){
+  .vault-grid{ grid-template-columns:repeat(4,minmax(0,1fr)); gap:.9rem; }
+}
+
+/* The viewer. Same idea: nothing to drag out. */
 .lightbox .shot-view{
   width:100%; height:100%;
   background-size:contain; background-position:center;
@@ -611,8 +632,7 @@ a.vault:hover{ border-color:rgba(255,255,255,.3); }
   -webkit-user-select:none; user-select:none; -webkit-touch-callout:none;
 }
 
-/* A gallery page is wider than the rest of the site. A wall of photographs
-   two columns wide inside a 30rem column is not a wall, it is a list. */
+/* A gallery page is wider than the rest of the site. */
 .vault-wide{ max-width:72rem; }
 
 /* --- Meet the cast ------------------------------------------------------ */

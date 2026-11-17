@@ -323,7 +323,8 @@
     function collect() {
       shots = [];
       Array.prototype.forEach.call(
-        document.querySelectorAll(".photo-grid button"), function (b) {
+        document.querySelectorAll(".photo-grid button, .vault-grid button"),
+        function (b) {
           if (b.getAttribute("data-hidden") === "true") { return; }
           shots.push({
             big: b.getAttribute("data-big"),
@@ -381,10 +382,11 @@
     }
 
     document.addEventListener("click", function (e) {
-      var b = e.target.closest(".photo-grid button");
+      var b = e.target.closest(".photo-grid button, .vault-grid button");
       if (!b) { return; }
       collect();
-      var all = [].slice.call(document.querySelectorAll(".photo-grid button"))
+      var all = [].slice.call(
+        document.querySelectorAll(".photo-grid button, .vault-grid button"))
                   .filter(function (x) { return x.getAttribute("data-hidden") !== "true"; });
       show(all.indexOf(b));
     });

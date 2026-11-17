@@ -555,7 +555,12 @@
     var name = document.title.split("|")[0].trim();
 
     if (navigator.share) {
-      navigator.share({ title: name, text: name, url: url })
+      /* TITLE AND URL ONLY. No text field.
+         Passing text as well makes iOS treat this as "some words that
+         happen to contain a link" rather than as a link, and a text share
+         never gets a preview drawn for it. url on its own is the only
+         shape that gives iOS the chance to build one. */
+      navigator.share({ title: name, url: url })
         .catch(function () {});   /* AbortError = they closed the sheet. */
       return;
     }

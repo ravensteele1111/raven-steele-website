@@ -194,7 +194,10 @@ def main():
     for e in data["events"]:
         if e["slug"] in live:
             e["ready"] = True
-            e["href"] = "backstage-%s.html" % e["slug"]
+            # The address, not the filename. Line 158 writes the file and
+            # keeps its .html: that is the one that must never be touched,
+            # and touching it is what made the galleries download.
+            e["href"] = "backstage-%s" % e["slug"]
             e["count"] = live[e["slug"]]
 
     events = "\n".join(tile(e) for e in data["events"])

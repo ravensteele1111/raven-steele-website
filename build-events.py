@@ -32,12 +32,12 @@ SITE = "https://ravensteele.com/"
 NAV = """  <nav class="site-nav" id="site-nav" data-open="false">
       <div class="wrap">
         <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="story.html">The Story</a></li>
-        <li><a href="music.html">Music</a></li>
-        <li><a href="events.html" aria-current="page">Events</a></li>
-        <li><a href="be-like-raven.html">Be Like Raven</a></li>
-        <li><a href="shop.html">Shop</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="story">The Story</a></li>
+        <li><a href="music">Music</a></li>
+        <li><a href="events" aria-current="page">Events</a></li>
+        <li><a href="be-like-raven">Be Like Raven</a></li>
+        <li><a href="shop">Shop</a></li>
         </ul>
       </div>
     </nav>"""
@@ -49,7 +49,7 @@ FOOT = """<footer class="site-foot">
       <a href="https://www.youtube.com/@Therealravenai" rel="noopener">YouTube</a>
     </div>
     <div class="legal">
-      <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="cookies.html">Cookies</a>
+      <a href="privacy">Privacy</a><a href="terms">Terms</a><a href="cookies">Cookies</a>
     </div>
     <p class="copyright">&copy; 2026 Raven Steele</p>
   </div>
@@ -58,7 +58,7 @@ FOOT = """<footer class="site-foot">
 <div class="pinned">
   <div class="wrap">
     <p>The good stuff is backstage. Get your pass.</p>
-    <a class="btn btn-primary" href="index.html#rebels">Join</a>
+    <a class="btn btn-primary" href="/#rebels">Join</a>
   </div>
 </div>
 
@@ -187,7 +187,7 @@ def share_tags(ev, shot):
              '<meta property="og:title" content="%s">' % ev["name"],
              '<meta property="og:description" content="%s. The night, and every photo from it.">'
              % ev["name"],
-             '<meta property="og:url" content="%sevent-%s.html">' % (SITE, ev["slug"])]
+             '<meta property="og:url" content="%sevent-%s">' % (SITE, ev["slug"])]
     card = share_card(ev["slug"], shot) if shot else None
     if card:
         pic = SITE + card
@@ -222,7 +222,7 @@ def home_tiles(events, n=4):
         else:
             pic = '<span class="ph ph-square"><span>Photo</span></span>'
         out.append(chr(10).join([
-            '        <a class="tile" href="event-%s.html">' % ev["slug"],
+            '        <a class="tile" href="event-%s">' % ev["slug"],
             '          %s' % pic,
             '          <span class="name" style="display:block">%s</span>' % ev["name"],
             '        </a>']))
@@ -280,7 +280,7 @@ def page(ev, nxt):
 
 <header class="site-head">
   <div class="wrap">
-    <a class="logo" href="index.html">Raven Steele</a>
+    <a class="logo" href="/">Raven Steele</a>
     <button class="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -292,7 +292,7 @@ def page(ev, nxt):
 
   <section class="hero" style="padding-top:1.25rem">
     <div class="wrap">
-      <a class="back" href="events.html">&larr; Back to all events</a>
+      <a class="back" href="events">&larr; Back to all events</a>
 
 %(hero)s
 
@@ -320,7 +320,7 @@ def page(ev, nxt):
            door rather than a wall, and it points at the pass itself. -->
       <div class="backstage">
         <p>This is just the warm-up. The rest of the night is backstage.</p>
-        <a class="btn btn-primary" href="index.html#rebels">See the full set</a>
+        <a class="btn btn-primary" href="/#rebels">See the full set</a>
       </div>
 
       <!-- "#top" with nothing of that name on the page is the browser's own
@@ -331,7 +331,7 @@ def page(ev, nxt):
         <a class="btn btn-ghost" href="#top">&uarr; Back to the top</a>
         <button class="btn btn-ghost" data-share
                 data-share-image="assets/share/%(slug)s-sm.jpg">Share event</button>
-        <a class="btn btn-primary" href="event-%(next)s.html">Next event</a>
+        <a class="btn btn-primary" href="event-%(next)s">Next event</a>
       </div>
     </div>
   </section>
@@ -357,7 +357,7 @@ def card(ev):
     date = ev.get("date", "")
     count = len(PHOTOS.get(ev["slug"]) or []) or ev.get("photos", 8)
     meta = ("%s &middot; %s photos" % (date, count)) if date else ("%s photos" % count)
-    return """        <a class="event-card" href="event-%(slug)s.html"
+    return """        <a class="event-card" href="event-%(slug)s"
            data-tag="%(year)s"
            data-event="%(name)s"
            data-event="%(name)s">

@@ -63,14 +63,14 @@ SET_SHELL = """<!DOCTYPE html>
 
 <header class="site-head">
   <div class="wrap">
-    <a class="logo" href="index.html">Raven Steele</a>
+    <a class="logo" href="/">Raven Steele</a>
   </div>
 </header>
 
 <main>
   <section class="hero" style="padding-top:1.25rem">
     <div class="wrap">
-      <a class="back" href="backstage.html">&larr; Back to Backstage</a>
+      <a class="back" href="backstage">&larr; Back to Backstage</a>
       <div class="section-head">
         <p class="eyebrow">The full set</p>
         <h2>%(name)s</h2>
@@ -87,7 +87,7 @@ SET_SHELL = """<!DOCTYPE html>
       <p class="hint">Tap any photo to see it big. Yours to look at, not to download.</p>
       <div class="entry">
         <a class="btn btn-ghost" href="#top">&uarr; Back to the top</a>
-        <a class="btn btn-primary" href="backstage.html">Back to Backstage</a>
+        <a class="btn btn-primary" href="backstage">Back to Backstage</a>
       </div>
     </div>
   </section>
@@ -155,7 +155,7 @@ def write_sets():
                             % (big, thumb))
         page = SET_SHELL % {"name": esc(info["name"]), "count": len(shots),
                             "grid": "\n".join(rows), "foot": foot}
-        io.open(os.path.join(HERE, "backstage-%s.html" % slug), "w",
+        io.open(os.path.join(HERE, "backstage-%s" % slug), "w",
                 encoding="utf-8").write(page)
         done[slug] = len(shots)
         print("  backstage-%s.html: %d photographs" % (slug, len(shots)))
@@ -194,7 +194,7 @@ def main():
     for e in data["events"]:
         if e["slug"] in live:
             e["ready"] = True
-            e["href"] = "backstage-%s.html" % e["slug"]
+            e["href"] = "backstage-%s" % e["slug"]
             e["count"] = live[e["slug"]]
 
     events = "\n".join(tile(e) for e in data["events"])

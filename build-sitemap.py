@@ -61,7 +61,10 @@ def main():
     for name in pages:
         when = time.strftime("%Y-%m-%d",
                              time.gmtime(os.path.getmtime(os.path.join(HERE, name))))
-        where = SITE if name == "index.html" else SITE + name
+        # Without the ending, because that is the address the site now
+        # links to and a sitemap should name one form, not a second one
+        # that also happens to answer.
+        where = SITE if name == "index.html" else SITE + name[:-5]
         rows.append("  <url>\n"
                     "    <loc>%s</loc>\n"
                     "    <lastmod>%s</lastmod>\n"

@@ -134,10 +134,25 @@ def write_sets():
                 big = "assets/backstage/%s/%s-sm.webp" % (slug, n)
             else:
                 big = "assets/backstage/%s/%s.webp" % (slug, n)
-            rows.append('        <button data-big="%s" '
-                        'style="background-image:url(assets/backstage/%s/%s-sm.webp)" '
-                        'aria-label="Open photograph"></button>'
-                        % (big, slug, n))
+            thumb = "assets/backstage/%s/%s-sm.webp" % (slug, n)
+            # The first dozen carry their picture in the markup so the top of
+            # the page is never empty. The rest are fetched as they come into
+            # view.
+            #
+            # An <img> would get this free with loading="lazy". A background
+            # picture does not, and swapping one for the other to make them
+            # unsaveable quietly threw lazy loading away: fifty thumbnails
+            # began downloading at once and tiles sat blank until they
+            # arrived. That is what Blue saw on the 90s Party page.
+            if len(rows) < 12:
+                rows.append('        <button data-big="%s" '
+                            'style="background-image:url(%s)" '
+                            'aria-label="Open photograph"></button>'
+                            % (big, thumb))
+            else:
+                rows.append('        <button data-big="%s" data-thumb="%s" '
+                            'aria-label="Open photograph"></button>'
+                            % (big, thumb))
         page = SET_SHELL % {"name": esc(info["name"]), "count": len(shots),
                             "grid": "\n".join(rows), "foot": foot}
         io.open(os.path.join(HERE, "backstage-%s.html" % slug), "w",

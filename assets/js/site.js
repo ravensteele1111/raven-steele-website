@@ -470,6 +470,62 @@
 
 
 /* ===========================================================================
+   Backstage thumbnails, fetched as they come into view.
+
+   The photographs are backgrounds rather than <img> so they cannot be saved,
+   and that cost the one thing <img> gives away free: loading="lazy". Without
+   it all fifty start downloading at once and the tiles further down sit
+   blank until their turn arrives.
+
+   So this does by hand what the browser would have done. The first dozen
+   carry their picture in the markup, which is what anybody sees first, and
+   the rest are filled in a screen ahead of the scroll.
+   =========================================================================== */
+(function () {
+  "use strict";
+  var waiting = document.querySelectorAll("[data-thumb]");
+  if (!waiting.length) { return; }
+
+  function fill(el) {
+    var src = el.getAttribute("data-thumb");
+    if (!src) { return; }
+    el.style.backgroundImage = "url(" + src + ")";
+    el.removeAttribute("data-thumb");
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    /* Old browser: show everything rather than nothing. */
+    Array.prototype.forEach.call(waiting, fill);
+    return;
+  }
+
+  var watcher = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        fill(entry.target);
+        watcher.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: "600px 0px" });
+
+  Array.prototype.forEach.call(waiting, function (el) { watcher.observe(el); });
+
+  /* And a net underneath it.
+     If the watcher never fires, for any reason, every tile below the first
+     dozen stays blank forever, which is worse than the problem this was
+     written to solve. After four seconds anything still waiting is filled
+     regardless. By then the stampede it was avoiding is over anyway.
+
+     This exists because the watcher could not be tested properly here: the
+     headless browser would not run it, and shipping something unverified
+     whose failure is invisible is how the last three bugs happened. */
+  setTimeout(function () {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-thumb]"), fill);
+  }, 4000);
+})();
+
+
+/* ===========================================================================
    Share event. The customer asked for the phone's own share menu.
 
    WHY THIS CARRIES A PICTURE
